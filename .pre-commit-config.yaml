@@ -1,0 +1,44 @@
+---
+# See https://pre-commit.com for more information
+# See https://pre-commit.com/hooks.html for more hooks
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v2.4.0
+    hooks:
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+        exclude_types: [svg, json]
+      - id: check-added-large-files
+      - id: check-merge-conflict
+
+  - repo: https://github.com/adrienverge/yamllint.git
+    rev: "v1.23.0"
+    hooks:
+      - id: yamllint
+        name: Check for Linting errors on YAML files
+        description: This hook runs yamllint.
+        entry: yamllint
+        language: python
+        types: [file, yaml]
+        args: [--strict, -c=.yamllint]
+
+  - repo: https://github.com/aristanetworks/j2lint.git
+    rev: "742a25e"
+    hooks:
+      - id: j2lint
+        name: Check for Linting errors on Jinja2 files
+
+  - repo: local
+    hooks:
+      - id: ansible-vault
+        name: Validate encrypted vaults
+        entry: ./pre-commit_hooks/vault_validation
+        language: system
+
+  - repo: local
+    hooks:
+      - id: vlan-validate
+        name: Validate all used vlans on ports are present on device
+        entry: pre-commit_hooks/vlan_validator.py
+        language: python
+        stages: [manual]
