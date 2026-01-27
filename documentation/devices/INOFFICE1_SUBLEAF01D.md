@@ -2,6 +2,9 @@
 
 ## Table of Contents
 
+- [Management](#management)
+  - [Management Interfaces](#management-interfaces)
+  - [Management API HTTP](#management-api-http)
 - [Authentication](#authentication)
   - [Enable Password](#enable-password)
 - [Spanning Tree](#spanning-tree)
@@ -10,6 +13,9 @@
 - [Internal VLAN Allocation Policy](#internal-vlan-allocation-policy)
   - [Internal VLAN Allocation Policy Summary](#internal-vlan-allocation-policy-summary)
   - [Internal VLAN Allocation Policy Device Configuration](#internal-vlan-allocation-policy-device-configuration)
+- [Interfaces](#interfaces)
+  - [Ethernet Interfaces](#ethernet-interfaces)
+  - [Port-Channel Interfaces](#port-channel-interfaces)
 - [Routing](#routing)
   - [Service Routing Protocols Model](#service-routing-protocols-model)
   - [IP Routing](#ip-routing)
@@ -19,6 +25,61 @@
 - [VRF Instances](#vrf-instances)
   - [VRF Instances Summary](#vrf-instances-summary)
   - [VRF Instances Device Configuration](#vrf-instances-device-configuration)
+
+## Management
+
+### Management Interfaces
+
+#### Management Interfaces Summary
+
+##### IPv4
+
+| Management Interface | Description | Type | VRF | IP Address | Gateway |
+| -------------------- | ----------- | ---- | --- | ---------- | ------- |
+| Management0 | OOB_MANAGEMENT | oob | MGMT | 172.16.100.109/24 | - |
+
+##### IPv6
+
+| Management Interface | Description | Type | VRF | IPv6 Address | IPv6 Gateway |
+| -------------------- | ----------- | ---- | --- | ------------ | ------------ |
+| Management0 | OOB_MANAGEMENT | oob | MGMT | - | - |
+
+#### Management Interfaces Device Configuration
+
+```eos
+!
+interface Management0
+   description OOB_MANAGEMENT
+   no shutdown
+   vrf MGMT
+   ip address 172.16.100.109/24
+```
+
+### Management API HTTP
+
+#### Management API HTTP Summary
+
+| HTTP | HTTPS | UNIX-Socket | Default Services |
+| ---- | ----- | ----------- | ---------------- |
+| False | True | - | - |
+
+#### Management API VRF Access
+
+| VRF Name | IPv4 ACL | IPv6 ACL |
+| -------- | -------- | -------- |
+| MGMT | - | - |
+
+#### Management API HTTP Device Configuration
+
+```eos
+!
+management api http-commands
+   protocol https
+   no shutdown
+   !
+   vrf MGMT
+      no shutdown
+```
 
 ## Authentication
 
@@ -36,14 +97,14 @@ STP mode: **mstp**
 
 | Instance(s) | Priority |
 | -------- | -------- |
-| 0 | 16384 |
+| 0 | 32768 |
 
 ### Spanning Tree Device Configuration
 
 ```eos
 !
 spanning-tree mode mstp
-spanning-tree mst 0 priority 16384
+spanning-tree mst 0 priority 32768
 ```
 
 ## Internal VLAN Allocation Policy
@@ -51,7 +112,7 @@ spanning-tree mst 0 priority 16384
 ### Internal VLAN Allocation Policy Summary
 
 | Policy Allocation | Range Beginning | Range Ending |
-| ----------------- | --------------- | ------------ |
+| ------------------| --------------- | ------------ |
 | ascending | 1006 | 1199 |
 
 ### Internal VLAN Allocation Policy Device Configuration
@@ -59,6 +120,58 @@ spanning-tree mst 0 priority 16384
 ```eos
 !
 vlan internal order ascending range 1006 1199
+```
+
+## Interfaces
+
+### Ethernet Interfaces
+
+#### Ethernet Interfaces Summary
+
+##### L2
+
+| Interface | Description | Mode | VLANs | Native VLAN | Trunk Group | Channel-Group |
+| --------- | ----------- | ---- | ----- | ----------- | ----------- | ------------- |
+| Ethernet49 | L2_INOFFICE1_LEAF01A_Ethernet2 | *trunk | *none | *- | *- | 49 |
+| Ethernet50 | L2_INOFFICE1_LEAF01B_Ethernet2 | *trunk | *none | *- | *- | 49 |
+
+*Inherited from Port-Channel Interface
+
+#### Ethernet Interfaces Device Configuration
+
+```eos
+!
+interface Ethernet49
+   description L2_INOFFICE1_LEAF01A_Ethernet2
+   shutdown
+   channel-group 49 mode active
+!
+interface Ethernet50
+   description L2_INOFFICE1_LEAF01B_Ethernet2
+   shutdown
+   channel-group 49 mode active
+```
+
+### Port-Channel Interfaces
+
+#### Port-Channel Interfaces Summary
+
+##### L2
+
+| Interface | Description | Mode | VLANs | Native VLAN | Trunk Group | LACP Fallback Timeout | LACP Fallback Mode | MLAG ID | EVPN ESI |
+| --------- | ----------- | ---- | ----- | ----------- | ------------| --------------------- | ------------------ | ------- | -------- |
+| Port-Channel49 | L2_INOFFICE1_LEAF01_Port-Channel2 | trunk | none | - | - | - | - | - | - |
+
+#### Port-Channel Interfaces Device Configuration
+
+```eos
+!
+interface Port-Channel49
+   description L2_INOFFICE1_LEAF01_Port-Channel2
+   no shutdown
+   switchport trunk allowed vlan none
+   switchport mode trunk
+   switchport
 ```
 
 ## Routing

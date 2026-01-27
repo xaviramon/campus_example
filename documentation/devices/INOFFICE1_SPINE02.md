@@ -186,6 +186,10 @@ vlan 4094
 
 | Interface | Description | Mode | VLANs | Native VLAN | Trunk Group | Channel-Group |
 | --------- | ----------- | ---- | ----- | ----------- | ----------- | ------------- |
+| Ethernet1 | L2_INOFFICE1_LEAF01A_Ethernet52 | *trunk | *none | *- | *- | 1 |
+| Ethernet2 | L2_INOFFICE1_LEAF01B_Ethernet52 | *trunk | *none | *- | *- | 1 |
+| Ethernet3 | L2_INOFFICE1_LEAF02A_Ethernet52 | *trunk | *none | *- | *- | 3 |
+| Ethernet4 | L2_INOFFICE1_LEAF02B_Ethernet52 | *trunk | *none | *- | *- | 3 |
 | Ethernet47 | L2_INOFFICE1_INTERNET_LEAF01_Ethernet50 | *trunk | *none | *- | *- | 47 |
 | Ethernet48 | L2_INOFFICE1_INTERNET_LEAF02_Ethernet50 | *trunk | *none | *- | *- | 48 |
 | Ethernet49 | MLAG_INOFFICE1_SPINE01_Ethernet49 | *trunk | *- | *- | *MLAG | 49 |
@@ -196,6 +200,26 @@ vlan 4094
 #### Ethernet Interfaces Device Configuration
 
 ```eos
+!
+interface Ethernet1
+   description L2_INOFFICE1_LEAF01A_Ethernet52
+   shutdown
+   channel-group 1 mode active
+!
+interface Ethernet2
+   description L2_INOFFICE1_LEAF01B_Ethernet52
+   shutdown
+   channel-group 1 mode active
+!
+interface Ethernet3
+   description L2_INOFFICE1_LEAF02A_Ethernet52
+   shutdown
+   channel-group 3 mode active
+!
+interface Ethernet4
+   description L2_INOFFICE1_LEAF02B_Ethernet52
+   shutdown
+   channel-group 3 mode active
 !
 interface Ethernet47
    description L2_INOFFICE1_INTERNET_LEAF01_Ethernet50
@@ -226,6 +250,8 @@ interface Ethernet50
 
 | Interface | Description | Mode | VLANs | Native VLAN | Trunk Group | LACP Fallback Timeout | LACP Fallback Mode | MLAG ID | EVPN ESI |
 | --------- | ----------- | ---- | ----- | ----------- | ------------| --------------------- | ------------------ | ------- | -------- |
+| Port-Channel1 | L2_INOFFICE1_LEAF01_Port-Channel51 | trunk | none | - | - | - | - | 1 | - |
+| Port-Channel3 | L2_INOFFICE1_LEAF02_Port-Channel51 | trunk | none | - | - | - | - | 3 | - |
 | Port-Channel47 | L2_INOFFICE1_INTERNET_LEAF01_Port-Channel49 | trunk | none | - | - | - | - | 47 | - |
 | Port-Channel48 | L2_INOFFICE1_INTERNET_LEAF02_Port-Channel49 | trunk | none | - | - | - | - | 48 | - |
 | Port-Channel49 | MLAG_INOFFICE1_SPINE01_Port-Channel49 | trunk | - | - | MLAG | - | - | - | - |
@@ -233,6 +259,22 @@ interface Ethernet50
 #### Port-Channel Interfaces Device Configuration
 
 ```eos
+!
+interface Port-Channel1
+   description L2_INOFFICE1_LEAF01_Port-Channel51
+   no shutdown
+   switchport trunk allowed vlan none
+   switchport mode trunk
+   switchport
+   mlag 1
+!
+interface Port-Channel3
+   description L2_INOFFICE1_LEAF02_Port-Channel51
+   no shutdown
+   switchport trunk allowed vlan none
+   switchport mode trunk
+   switchport
+   mlag 3
 !
 interface Port-Channel47
    description L2_INOFFICE1_INTERNET_LEAF01_Port-Channel49

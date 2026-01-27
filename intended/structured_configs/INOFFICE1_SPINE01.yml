@@ -22,6 +22,42 @@ ethernet_interfaces:
   peer: INOFFICE1_SPINE02
   peer_interface: Ethernet50
   peer_type: mlag_peer
+- name: Ethernet1
+  description: L2_INOFFICE1_LEAF01A_Ethernet51
+  shutdown: true
+  channel_group:
+    id: 1
+    mode: active
+  peer: INOFFICE1_LEAF01A
+  peer_interface: Ethernet51
+  peer_type: distribution_leaf
+- name: Ethernet2
+  description: L2_INOFFICE1_LEAF01B_Ethernet51
+  shutdown: true
+  channel_group:
+    id: 1
+    mode: active
+  peer: INOFFICE1_LEAF01B
+  peer_interface: Ethernet51
+  peer_type: distribution_leaf
+- name: Ethernet3
+  description: L2_INOFFICE1_LEAF02A_Ethernet51
+  shutdown: true
+  channel_group:
+    id: 3
+    mode: active
+  peer: INOFFICE1_LEAF02A
+  peer_interface: Ethernet51
+  peer_type: distribution_leaf
+- name: Ethernet4
+  description: L2_INOFFICE1_LEAF02B_Ethernet51
+  shutdown: true
+  channel_group:
+    id: 3
+    mode: active
+  peer: INOFFICE1_LEAF02B
+  peer_interface: Ethernet51
+  peer_type: distribution_leaf
 - name: Ethernet47
   description: L2_INOFFICE1_INTERNET_LEAF01_Ethernet49
   shutdown: true
@@ -30,7 +66,7 @@ ethernet_interfaces:
     mode: active
   peer: INOFFICE1_INTERNET_LEAF01
   peer_interface: Ethernet49
-  peer_type: l2leaf
+  peer_type: internet_leaves
 - name: Ethernet48
   description: L2_INOFFICE1_INTERNET_LEAF02_Ethernet49
   shutdown: true
@@ -39,7 +75,7 @@ ethernet_interfaces:
     mode: active
   peer: INOFFICE1_INTERNET_LEAF02
   peer_interface: Ethernet49
-  peer_type: l2leaf
+  peer_type: internet_leaves
 hostname: INOFFICE1_SPINE01
 ip_igmp_snooping:
   globally_enabled: true
@@ -84,6 +120,24 @@ port_channel_interfaces:
     trunk:
       groups:
       - MLAG
+- name: Port-Channel1
+  description: L2_INOFFICE1_LEAF01_Port-Channel51
+  shutdown: false
+  mlag: 1
+  switchport:
+    enabled: true
+    mode: trunk
+    trunk:
+      allowed_vlan: none
+- name: Port-Channel3
+  description: L2_INOFFICE1_LEAF02_Port-Channel51
+  shutdown: false
+  mlag: 3
+  switchport:
+    enabled: true
+    mode: trunk
+    trunk:
+      allowed_vlan: none
 - name: Port-Channel47
   description: L2_INOFFICE1_INTERNET_LEAF01_Port-Channel49
   shutdown: false

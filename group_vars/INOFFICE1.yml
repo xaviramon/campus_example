@@ -3,7 +3,7 @@ dc_name: INDIA
 pod_name: OFFICE1
 
 # Spine Switches
-spines:
+l3spine:
   defaults:
     platform: cEOSLab
     spanning_tree_mode: mstp
@@ -24,81 +24,84 @@ spines:
           id: 2
 
 # Leaf Switches
-# distribution_leaf:
-#   defaults:
-#     platform: cEOSLab
-#     mlag_peer_ipv4_pool: 192.168.0.0/24
-#     spanning_tree_mode: mstp
-#     spanning_tree_priority: 16384
-#     mlag_interfaces: [Ethernet49, Ethernet50]
-#     uplink_switches: [INOFFICE1_SPINE01, INOFFICE1_SPINE02]
-#     uplink_interfaces: [Ethernet51, Ethernet52]
-#   node_groups:
-#     - group: INOFFICE1_LEAF01
-#       nodes:
-#         - name: INOFFICE1_LEAF01A
-#           mgmt_ip: 172.16.100.103/24
-#           uplink_switch_interfaces: [Ethernet1, Ethernet1]
-#           id: 1
-#         - name: INOFFICE1_LEAF01B
-#           mgmt_ip: 172.16.100.104/24
-#           uplink_switch_interfaces: [Ethernet2, Ethernet2]
-#           id: 2
-#     - group: INOFFICE1_LEAF02
-#       nodes:
-#         - name: INOFFICE1_LEAF02A
-#           mgmt_ip: 172.16.100.105/24
-#           uplink_switch_interfaces: [Ethernet3, Ethernet3]
-#           id: 3
-#         - name: INOFFICE1_LEAF02B
-#           mgmt_ip: 172.16.100.106/24
-#           uplink_switch_interfaces: [Ethernet4, Ethernet4]
-#           id: 4
-
-
-# l2subleaf:
-#   defaults:
-#     platform: cEOSLab
-#     spanning_tree_mode: mstp
-#     spanning_tree_priority: 16384
-#     mlag: false
-#     uplink_switches: [INOFFICE1_LEAF01A, INOFFICE1_LEAF01B]
-#     uplink_interfaces: [Ethernet49, Ethernet50]
-#   node_groups:
-#     - group: INOFFICE1_SUBLEAF01
-#       nodes:
-#         - name: INOFFICE1_SUBLEAF01C
-#           mgmt_ip: 172.16.100.108/24
-#           uplink_switch_interfaces: [Ethernet1, Ethernet1]
-#         - name: INOFFICE1_SUBLEAF01D
-#           mgmt_ip: 172.16.100.109/24
-#           uplink_switch_interfaces: [Ethernet2, Ethernet2]
-#     - group: INOFFICE1_SUBLEAF02
-#       nodes:
-#         - name: INOFFICE1_SUBLEAF02C
-#           mgmt_ip: 172.16.100.110/24
-#           uplink_switch_interfaces: [Ethernet1, Ethernet1]
-#         - name: INOFFICE1_SUBLEAF02D
-#           mgmt_ip: 172.16.100.111/24
-#           uplink_switch_interfaces: [Ethernet2, Ethernet2]
-
-internet_leaf:
+distribution_leaf:
   defaults:
     platform: cEOSLab
+    mlag_peer_ipv4_pool: 192.168.0.0/24
+    spanning_tree_mode: mstp
+    spanning_tree_priority: 16384
+    mlag_interfaces: [Ethernet49, Ethernet50]
+    uplink_switches: [INOFFICE1_SPINE01, INOFFICE1_SPINE02]
+    uplink_interfaces: [Ethernet51, Ethernet52]
+  node_groups:
+    - group: INOFFICE1_LEAF01
+      nodes:
+        - name: INOFFICE1_LEAF01A
+          id: 1
+          mgmt_ip: 172.16.100.103/24
+          uplink_switch_interfaces: [Ethernet1, Ethernet1]
+        - name: INOFFICE1_LEAF01B
+          id: 2
+          mgmt_ip: 172.16.100.104/24
+          uplink_switch_interfaces: [Ethernet2, Ethernet2]
+    - group: INOFFICE1_LEAF02
+      nodes:
+        - name: INOFFICE1_LEAF02A
+          id: 3
+          mgmt_ip: 172.16.100.105/24
+          uplink_switch_interfaces: [Ethernet3, Ethernet3]
+        - name: INOFFICE1_LEAF02B
+          id: 4
+          mgmt_ip: 172.16.100.106/24
+          uplink_switch_interfaces: [Ethernet4, Ethernet4]
+
+internet_leaves:
+  defaults:
+    platform: cEOSLab
+    mlag_peer_ipv4_pool: 192.168.0.0/24
     spanning_tree_mode: mstp
     spanning_tree_priority: 16384
     mlag: false
     uplink_switches: [INOFFICE1_SPINE01, INOFFICE1_SPINE02]
     uplink_interfaces: [Ethernet49, Ethernet50]
-    # uplink_switch_interfaces: [Ethernet47, Ethernet47]
   node_groups:
     - group: INOFFICE1_INTERNET_LEAVES
       nodes:
         - name: INOFFICE1_INTERNET_LEAF01
+          id: 5
           mgmt_ip: 172.16.100.120/24
           uplink_switch_interfaces: [Ethernet47, Ethernet47]
-          id: 1
         - name: INOFFICE1_INTERNET_LEAF02
+          id: 6
           mgmt_ip: 172.16.100.121/24
           uplink_switch_interfaces: [Ethernet48, Ethernet48]
-          id: 2
+
+
+l2subleaf:
+  defaults:
+    platform: cEOSLab
+    spanning_tree_mode: mstp
+    spanning_tree_priority: 32768
+    mlag: false
+    uplink_interfaces: [Ethernet49, Ethernet50]
+  node_groups:
+    - group: INOFFICE1_SUBLEAF01
+      uplink_switches: [INOFFICE1_LEAF01A, INOFFICE1_LEAF01B]
+      nodes:
+        - name: INOFFICE1_SUBLEAF01C
+          mgmt_ip: 172.16.100.108/24
+          uplink_switch_interfaces: [Ethernet1, Ethernet1]
+        - name: INOFFICE1_SUBLEAF01D
+          mgmt_ip: 172.16.100.109/24
+          uplink_switch_interfaces: [Ethernet2, Ethernet2]
+    - group: INOFFICE1_SUBLEAF02
+      uplink_switches: [INOFFICE1_LEAF02A, INOFFICE1_LEAF02B]
+      nodes:
+        - name: INOFFICE1_SUBLEAF02C
+          mgmt_ip: 172.16.100.110/24
+          uplink_switch_interfaces: [Ethernet1, Ethernet1]
+        - name: INOFFICE1_SUBLEAF02D
+          mgmt_ip: 172.16.100.111/24
+          uplink_switch_interfaces: [Ethernet2, Ethernet2]
+
+

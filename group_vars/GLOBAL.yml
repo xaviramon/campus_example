@@ -5,8 +5,8 @@ fabric_name: GLOBAL # it has to match the inventory group as mentioned here: htt
 #   node_id:
 #     algorithm: "pool_manager"
 
-node_type_keys:
-  - key: spines
+custom_node_type_keys:
+  - key: l3spine
     type: l3spine
     connected_endpoints: true
     mlag_support: true
@@ -16,20 +16,8 @@ node_type_keys:
     default_overlay_routing_protocol: none
     default_underlay_routing_protocol: none
     cv_tags_topology_type: spine
-  # - key: l2subleaf
-  #   type: l2leaf
-  #   connected_endpoints: true
-  #   default_evpn_role: none
-  #   mlag_support: false
-  #   network_services:
-  #     l2: true
-  #     l3: false
-  #   vtep: false
-  #   underlay_router: false
-  #   uplink_type: port-channel
-  #   cv_tags_topology_type: leaf
-  - key: internet_leaf
-    type: l2leaf
+  - key: internet_leaves
+    type: internet_leaves
     connected_endpoints: true
     default_evpn_role: none
     mlag_support: false
@@ -40,15 +28,27 @@ node_type_keys:
     underlay_router: false
     uplink_type: port-channel
     cv_tags_topology_type: leaf
-  # - key: distribution_leaf
-  #   type: l2leaf
-  #   connected_endpoints: true
-  #   default_evpn_role: none
-  #   mlag_support: true
-  #   network_services:
-  #     l2: true
-  #     l3: false
-  #   vtep: false
-  #   underlay_router: false
-  #   uplink_type: port-channel
-  #   cv_tags_topology_type: leaf
+  - key: l2subleaf
+    type: l2subleaf
+    connected_endpoints: true
+    default_evpn_role: none
+    mlag_support: false
+    network_services:
+      l2: true
+      l3: false
+    vtep: false
+    underlay_router: false
+    uplink_type: port-channel
+    cv_tags_topology_type: leaf
+  - key: distribution_leaf
+    type: distribution_leaf
+    connected_endpoints: true
+    default_evpn_role: none
+    mlag_support: true
+    network_services:
+      l2: true
+      l3: false
+    vtep: false
+    underlay_router: false
+    uplink_type: port-channel
+    cv_tags_topology_type: leaf
