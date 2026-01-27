@@ -1,0 +1,133 @@
+aaa_root:
+  disabled: true
+config_end: true
+enable_password:
+  disabled: true
+ethernet_interfaces:
+- name: Ethernet49
+  description: MLAG_INOFFICE1_SPINE02_Ethernet49
+  shutdown: false
+  channel_group:
+    id: 49
+    mode: active
+  peer: INOFFICE1_SPINE02
+  peer_interface: Ethernet49
+  peer_type: mlag_peer
+- name: Ethernet50
+  description: MLAG_INOFFICE1_SPINE02_Ethernet50
+  shutdown: false
+  channel_group:
+    id: 49
+    mode: active
+  peer: INOFFICE1_SPINE02
+  peer_interface: Ethernet50
+  peer_type: mlag_peer
+- name: Ethernet47
+  description: L2_INOFFICE1_INTERNET_LEAF01_Ethernet49
+  shutdown: true
+  channel_group:
+    id: 47
+    mode: active
+  peer: INOFFICE1_INTERNET_LEAF01
+  peer_interface: Ethernet49
+  peer_type: l2leaf
+- name: Ethernet48
+  description: L2_INOFFICE1_INTERNET_LEAF02_Ethernet49
+  shutdown: true
+  channel_group:
+    id: 48
+    mode: active
+  peer: INOFFICE1_INTERNET_LEAF02
+  peer_interface: Ethernet49
+  peer_type: l2leaf
+hostname: INOFFICE1_SPINE01
+ip_igmp_snooping:
+  globally_enabled: true
+ip_routing: true
+ip_virtual_router_mac_address: 00:1c:73:00:dc:01
+loopback_interfaces:
+- name: Loopback0
+  description: ROUTER_ID
+  shutdown: false
+  ip_address: 172.16.1.1/32
+management_api_http:
+  enable_https: true
+  enable_vrfs:
+  - name: MGMT
+management_interfaces:
+- name: Management0
+  description: OOB_MANAGEMENT
+  shutdown: false
+  vrf: MGMT
+  ip_address: 172.16.100.101/24
+  type: oob
+metadata:
+  is_deployed: false
+  platform: cEOSLab
+  pod_name: OFFICE1
+  dc_name: INDIA
+  fabric_name: GLOBAL
+mlag_configuration:
+  domain_id: INOFFICE1_SPINES
+  local_interface: Vlan4094
+  peer_address: 192.168.0.1
+  peer_link: Port-Channel49
+  reload_delay_mlag: '300'
+  reload_delay_non_mlag: '330'
+port_channel_interfaces:
+- name: Port-Channel49
+  description: MLAG_INOFFICE1_SPINE02_Port-Channel49
+  shutdown: false
+  switchport:
+    enabled: true
+    mode: trunk
+    trunk:
+      groups:
+      - MLAG
+- name: Port-Channel47
+  description: L2_INOFFICE1_INTERNET_LEAF01_Port-Channel49
+  shutdown: false
+  mlag: 47
+  switchport:
+    enabled: true
+    mode: trunk
+    trunk:
+      allowed_vlan: none
+- name: Port-Channel48
+  description: L2_INOFFICE1_INTERNET_LEAF02_Port-Channel49
+  shutdown: false
+  mlag: 48
+  switchport:
+    enabled: true
+    mode: trunk
+    trunk:
+      allowed_vlan: none
+service_routing_protocols_model: multi-agent
+spanning_tree:
+  mode: mstp
+  mst_instances:
+  - id: '0'
+    priority: 4096
+  no_spanning_tree_vlan: 4093-4094
+transceiver_qsfp_default_mode_4x10: true
+vlan_interfaces:
+- name: Vlan4094
+  description: MLAG
+  shutdown: false
+  ip_address: 192.168.0.0/31
+  mtu: 9214
+  no_autostate: true
+vlan_internal_order:
+  allocation: ascending
+  range:
+    beginning: 1006
+    ending: 1199
+vlans:
+- id: 4094
+  name: MLAG
+  trunk_groups:
+  - MLAG
+  tenant: system
+vrfs:
+- name: MGMT
+  ip_routing: false

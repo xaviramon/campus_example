@@ -1,0 +1,31 @@
+aaa_root:
+  disabled: true
+config_end: true
+enable_password:
+  disabled: true
+hostname: INOFFICE1_SUBLEAF01D
+ip_igmp_snooping:
+  globally_enabled: true
+metadata:
+  is_deployed: false
+  platform: cEOSLab
+  pod_name: OFFICE1
+  dc_name: INDIA
+  fabric_name: GLOBAL
+  validate_hardware:
+    enabled: false
+service_routing_protocols_model: multi-agent
+spanning_tree:
+  mode: mstp
+  mst_instances:
+  - id: '0'
+    priority: 16384
+transceiver_qsfp_default_mode_4x10: true
+vlan_internal_order:
+  allocation: ascending
+  range:
+    beginning: 1006
+    ending: 1199
+vrfs:
+- name: MGMT
+  ip_routing: false

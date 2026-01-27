@@ -1,12 +1,10 @@
 ---
 - name: Build Switch configuration
-  hosts: [EMEA]
+  hosts: [ all ]
   connection: local
   gather_facts: false
   collections:
     - arista.avd
-  vars: 
-    root_dir: '{{ playbook_dir }}'
 
 
   tasks:

@@ -2,177 +2,176 @@ all:
   children:
     GLOBAL:
       children:
-        AMER:
-          children:
-            USOFFICE1:
-              children:
-                USOFFICE1_SPINES:
-                  hosts:
-                    USOFFICE1_SPINE01:
-                      is_deployed: False
-                    USOFFICE1_SPINE02:
-                      is_deployed: False
-                USOFFICE1_LEAVES:
-                  children:
-                    USOFFICE1_LEAF01:
-                      hosts:
-                        USOFFICE1_LEAF01A:
-                          is_deployed: False
-                        USOFFICE1_LEAF01B:
-                          is_deployed: False
-                    USOFFICE1_SUBLEAF01:
-                      hosts:
-                        USOFFICE1_LEAF01C:
-                          is_deployed: False
-                        USOFFICE1_LEAF01D:
-                          is_deployed: False
-                    USOFFICE1_LEAF02:
-                      hosts:
-                        USOFFICE1_LEAF02A:
-                          is_deployed: False
-                        USOFFICE1_LEAF02B:
-                          is_deployed: False
-                    USOFFICE1_SUBLEAF02:
-                      hosts:
-                        USOFFICE1_LEAF02C:
-                          is_deployed: False
-                        USOFFICE1_LEAF02D:
-                          is_deployed: False
-                USOFFICE1_INTERNET_LEAVES:
-                  hosts:
-                    USOFFICE1_INTERNET_LEAF01:
-                      is_deployed: False
-                    USOFFICE1_INTERNET_LEAF02:
-                      is_deployed: False
-                USOFFICE1_MPLS_LEAVES:
-                  hosts:
-                    USOFFICE1_MPLS_LEAF01:
-                      is_deployed: False
-                    USOFFICE1_MPLS_LEAF02:
-                      is_deployed: False
-            USOFFICE2:
-              children:
-                USOFFICE2_SPINES:
-                  hosts:
-                    USOFFICE2_SPINE01:
-                      is_deployed: False
-                    USOFFICE2_SPINE02:
-                      is_deployed: False
-                USOFFICE2_LEAVES:
-                  children:
-                    USOFFICE2_LEAF01:
-                      hosts:
-                        USOFFICE2_LEAF01A:
-                          is_deployed: False
-                        USOFFICE2_LEAF01B:
-                          is_deployed: False
-                    USOFFICE2_SUBLEAF01:
-                      hosts:
-                        USOFFICE2_LEAF01C:
-                          is_deployed: False
-                        USOFFICE2_LEAF01D:
-                          is_deployed: False
-                    USOFFICE2_LEAF02:
-                      hosts:
-                        USOFFICE2_LEAF02A:
-                          is_deployed: False
-                        USOFFICE2_LEAF02B:
-                          is_deployed: False
-                    USOFFICE2_SUBLEAF02:
-                      hosts:
-                        USOFFICE2_LEAF02C:
-                          is_deployed: False
-                        USOFFICE2_LEAF02D:
-                          is_deployed: False
-                USOFFICE2_INTERNET_LEAVES:
-                  hosts:
-                    USOFFICE2_INTERNET_LEAF01:
-                      is_deployed: False
-                    USOFFICE2_INTERNET_LEAF02:
-                      is_deployed: False
-
-        EMEA:
-          children:
-            UKOFFICE1:
-              children:
-                UKOFFICE1_SPINES:
-                  hosts:
-                    UKOFFICE1_SPINE01:
-                      is_deployed: False
-                    UKOFFICE1_SPINE02:
-                      is_deployed: False
-                UKOFFICE1_LEAVES:
-                  children:
-                    UKOFFICE1_LEAF01:
-                      hosts:
-                        UKOFFICE1_LEAF01A:
-                          is_deployed: False
-                        UKOFFICE1_LEAF01B:
-                          is_deployed: False
-                    UKOFFICE1_SUBLEAF01:
-                      hosts:
-                        UKOFFICE1_LEAF01C:
-                          is_deployed: False
-                        UKOFFICE1_LEAF01D:
-                          is_deployed: False
-                    UKOFFICE1_LEAF02:
-                      hosts:
-                        UKOFFICE1_LEAF02A:
-                          is_deployed: False
-                        UKOFFICE1_LEAF02B:
-                          is_deployed: False
-                    UKOFFICE1_SUBLEAF02:
-                      hosts:
-                        UKOFFICE1_LEAF02C:
-                          is_deployed: False
-                        UKOFFICE1_LEAF02D:
-                          is_deployed: False
-                UKOFFICE1_INTERNET_LEAVES:
-                  hosts:
-                    UKOFFICE1_INTERNET_LEAF01:
-                      is_deployed: False
-                    UKOFFICE1_INTERNET_LEAF02:
-                      is_deployed: False
-            UKOFFICE2:
-              children:
-                UKOFFICE2_SPINES:
-                  hosts:
-                    UKOFFICE2_SPINE01:
-                      is_deployed: False
-                    UKOFFICE2_SPINE02:
-                      is_deployed: False
-                UKOFFICE2_LEAVES:
-                  children:
-                    UKOFFICE2_LEAF01:
-                      hosts:
-                        UKOFFICE2_LEAF01A:
-                          is_deployed: False
-                        UKOFFICE2_LEAF01B:
-                          is_deployed: False
-                    UKOFFICE2_SUBLEAF01:
-                      hosts:
-                        UKOFFICE2_LEAF01C:
-                          is_deployed: False
-                        UKOFFICE2_LEAF01D:
-                          is_deployed: False
-                    UKOFFICE2_LEAF02:
-                      hosts:
-                        UKOFFICE2_LEAF02A:
-                          is_deployed: False
-                        UKOFFICE2_LEAF02B:
-                          is_deployed: False
-                    UKOFFICE2_SUBLEAF02:
-                      hosts:
-                        UKOFFICE2_LEAF02C:
-                          is_deployed: False
-                        UKOFFICE2_LEAF02D:
-                          is_deployed: False
-                UKOFFICE2_INTERNET_LEAVES:
-                  hosts:
-                    UKOFFICE2_INTERNET_LEAF01:
-                      is_deployed: False
-                    UKOFFICE2_INTERNET_LEAF02:
-                      is_deployed: False
+        # AMER:
+        #   children:
+        #     USOFFICE1:
+        #       children:
+        #         USOFFICE1_SPINES:
+        #           hosts:
+        #             USOFFICE1_SPINE01:
+        #               is_deployed: False
+        #             USOFFICE1_SPINE02:
+        #               is_deployed: False
+        #         USOFFICE1_LEAVES:
+        #           children:
+        #             USOFFICE1_LEAF01:
+        #               hosts:
+        #                 USOFFICE1_LEAF01A:
+        #                   is_deployed: False
+        #                 USOFFICE1_LEAF01B:
+        #                   is_deployed: False
+        #             USOFFICE1_SUBLEAF01:
+        #               hosts:
+        #                 USOFFICE1_LEAF01C:
+        #                   is_deployed: False
+        #                 USOFFICE1_LEAF01D:
+        #                   is_deployed: False
+        #             USOFFICE1_LEAF02:
+        #               hosts:
+        #                 USOFFICE1_LEAF02A:
+        #                   is_deployed: False
+        #                 USOFFICE1_LEAF02B:
+        #                   is_deployed: False
+        #             USOFFICE1_SUBLEAF02:
+        #               hosts:
+        #                 USOFFICE1_LEAF02C:
+        #                   is_deployed: False
+        #                 USOFFICE1_LEAF02D:
+        #                   is_deployed: False
+        #         USOFFICE1_INTERNET_LEAVES:
+        #           hosts:
+        #             USOFFICE1_INTERNET_LEAF01:
+        #               is_deployed: False
+        #             USOFFICE1_INTERNET_LEAF02:
+        #               is_deployed: False
+        #         USOFFICE1_MPLS_LEAVES:
+        #           hosts:
+        #             USOFFICE1_MPLS_LEAF01:
+        #               is_deployed: False
+        #             USOFFICE1_MPLS_LEAF02:
+        #               is_deployed: False
+        #     USOFFICE2:
+        #       children:
+        #         USOFFICE2_SPINES:
+        #           hosts:
+        #             USOFFICE2_SPINE01:
+        #               is_deployed: False
+        #             USOFFICE2_SPINE02:
+        #               is_deployed: False
+        #         USOFFICE2_LEAVES:
+        #           children:
+        #             USOFFICE2_LEAF01:
+        #               hosts:
+        #                 USOFFICE2_LEAF01A:
+        #                   is_deployed: False
+        #                 USOFFICE2_LEAF01B:
+        #                   is_deployed: False
+        #             USOFFICE2_SUBLEAF01:
+        #               hosts:
+        #                 USOFFICE2_LEAF01C:
+        #                   is_deployed: False
+        #                 USOFFICE2_LEAF01D:
+        #                   is_deployed: False
+        #             USOFFICE2_LEAF02:
+        #               hosts:
+        #                 USOFFICE2_LEAF02A:
+        #                   is_deployed: False
+        #                 USOFFICE2_LEAF02B:
+        #                   is_deployed: False
+        #             USOFFICE2_SUBLEAF02:
+        #               hosts:
+        #                 USOFFICE2_LEAF02C:
+        #                   is_deployed: False
+        #                 USOFFICE2_LEAF02D:
+        #                   is_deployed: False
+        #         USOFFICE2_INTERNET_LEAVES:
+        #           hosts:
+        #             USOFFICE2_INTERNET_LEAF01:
+        #               is_deployed: False
+        #             USOFFICE2_INTERNET_LEAF02:
+        #               is_deployed: False
+        # EMEA:
+        #   children:
+        #     UKOFFICE1:
+        #       children:
+        #         UKOFFICE1_SPINES:
+        #           hosts:
+        #             UKOFFICE1_SPINE01:
+        #               is_deployed: False
+        #             UKOFFICE1_SPINE02:
+        #               is_deployed: False
+        #         UKOFFICE1_LEAVES:
+        #           children:
+        #             UKOFFICE1_LEAF01:
+        #               hosts:
+        #                 UKOFFICE1_LEAF01A:
+        #                   is_deployed: False
+        #                 UKOFFICE1_LEAF01B:
+        #                   is_deployed: False
+        #             UKOFFICE1_SUBLEAF01:
+        #               hosts:
+        #                 UKOFFICE1_LEAF01C:
+        #                   is_deployed: False
+        #                 UKOFFICE1_LEAF01D:
+        #                   is_deployed: False
+        #             UKOFFICE1_LEAF02:
+        #               hosts:
+        #                 UKOFFICE1_LEAF02A:
+        #                   is_deployed: False
+        #                 UKOFFICE1_LEAF02B:
+        #                   is_deployed: False
+        #             UKOFFICE1_SUBLEAF02:
+        #               hosts:
+        #                 UKOFFICE1_LEAF02C:
+        #                   is_deployed: False
+        #                 UKOFFICE1_LEAF02D:
+        #                   is_deployed: False
+        #         UKOFFICE1_INTERNET_LEAVES:
+        #           hosts:
+        #             UKOFFICE1_INTERNET_LEAF01:
+        #               is_deployed: False
+        #             UKOFFICE1_INTERNET_LEAF02:
+        #               is_deployed: False
+        #     UKOFFICE2:
+        #       children:
+        #         UKOFFICE2_SPINES:
+        #           hosts:
+        #             UKOFFICE2_SPINE01:
+        #               is_deployed: False
+        #             UKOFFICE2_SPINE02:
+        #               is_deployed: False
+        #         UKOFFICE2_LEAVES:
+        #           children:
+        #             UKOFFICE2_LEAF01:
+        #               hosts:
+        #                 UKOFFICE2_LEAF01A:
+        #                   is_deployed: False
+        #                 UKOFFICE2_LEAF01B:
+        #                   is_deployed: False
+        #             UKOFFICE2_SUBLEAF01:
+        #               hosts:
+        #                 UKOFFICE2_LEAF01C:
+        #                   is_deployed: False
+        #                 UKOFFICE2_LEAF01D:
+        #                   is_deployed: False
+        #             UKOFFICE2_LEAF02:
+        #               hosts:
+        #                 UKOFFICE2_LEAF02A:
+        #                   is_deployed: False
+        #                 UKOFFICE2_LEAF02B:
+        #                   is_deployed: False
+        #             UKOFFICE2_SUBLEAF02:
+        #               hosts:
+        #                 UKOFFICE2_LEAF02C:
+        #                   is_deployed: False
+        #                 UKOFFICE2_LEAF02D:
+        #                   is_deployed: False
+        #         UKOFFICE2_INTERNET_LEAVES:
+        #           hosts:
+        #             UKOFFICE2_INTERNET_LEAF01:
+        #               is_deployed: False
+        #             UKOFFICE2_INTERNET_LEAF02:
+        #               is_deployed: False
         APAC:
           children:
             INOFFICE1:
@@ -183,75 +182,75 @@ all:
                       is_deployed: False
                     INOFFICE1_SPINE02:
                       is_deployed: False
-                INOFFICE1_LEAVES:
-                  children:
-                    INOFFICE1_LEAF01:
-                      hosts:
-                        INOFFICE1_LEAF01A:
-                          is_deployed: False
-                        INOFFICE1_LEAF01B:
-                          is_deployed: False
-                    INOFFICE1_SUBLEAF01:
-                      hosts:
-                        INOFFICE1_LEAF01C:
-                          is_deployed: False
-                        INOFFICE1_LEAF01D:
-                          is_deployed: False
-                    INOFFICE1_LEAF02:
-                      hosts:
-                        INOFFICE1_LEAF02A:
-                          is_deployed: False
-                        INOFFICE1_LEAF02B:
-                          is_deployed: False
-                    INOFFICE1_SUBLEAF02:
-                      hosts:
-                        INOFFICE1_LEAF02C:
-                          is_deployed: False
-                        INOFFICE1_LEAF02D:
-                          is_deployed: False
+                # INOFFICE1_LEAVES:
+                #   children:
+                #     INOFFICE1_LEAF01:
+                #       hosts:
+                #         INOFFICE1_LEAF01A:
+                #           is_deployed: False
+                #         INOFFICE1_LEAF01B:
+                #           is_deployed: False
+                #     # INOFFICE1_SUBLEAF01:
+                #     #   hosts:
+                #     #     INOFFICE1_SUBLEAF01C:
+                #     #       is_deployed: False
+                #     #     INOFFICE1_SUBLEAF01D:
+                #     #       is_deployed: False
+                #     INOFFICE1_LEAF02:
+                #       hosts:
+                #         INOFFICE1_LEAF02A:
+                #           is_deployed: False
+                #         INOFFICE1_LEAF02B:
+                #           is_deployed: False
+                    # INOFFICE1_SUBLEAF02:
+                    #   hosts:
+                    #     INOFFICE1_SUBLEAF02C:
+                    #       is_deployed: False
+                    #     INOFFICE1_SUBLEAF02D:
+                    #       is_deployed: False
                 INOFFICE1_INTERNET_LEAVES:
                   hosts:
                     INOFFICE1_INTERNET_LEAF01:
                       is_deployed: False
                     INOFFICE1_INTERNET_LEAF02:
                       is_deployed: False
-            INOFFICE2:
-              children:
-                INOFFICE2_SPINES:
-                  hosts:
-                    INOFFICE2_SPINE01:
-                      is_deployed: False
-                    INOFFICE2_SPINE02:
-                      is_deployed: False
-                INOFFICE2_LEAVES:
-                  children:
-                    INOFFICE2_LEAF01:
-                      hosts:
-                        INOFFICE2_LEAF01A:
-                          is_deployed: False
-                        INOFFICE2_LEAF01B:
-                          is_deployed: False
-                    INOFFICE2_SUBLEAF01:
-                      hosts:
-                        INOFFICE2_LEAF01C:
-                          is_deployed: False
-                        INOFFICE2_LEAF01D:
-                          is_deployed: False
-                    INOFFICE2_LEAF02:
-                      hosts:
-                        INOFFICE2_LEAF02A:
-                          is_deployed: False
-                        INOFFICE2_LEAF02B:
-                          is_deployed: False
-                    INOFFICE2_SUBLEAF02:
-                      hosts:
-                        INOFFICE2_LEAF02C:
-                          is_deployed: False
-                        INOFFICE2_LEAF02D:
-                          is_deployed: False
-                INOFFICE2_INTERNET_LEAVES:
-                  hosts:
-                    INOFFICE2_INTERNET_LEAF01:
-                      is_deployed: False
-                    INOFFICE2_INTERNET_LEAF02:
-                      is_deployed: False
+            # INOFFICE2:
+            #   children:
+            #     INOFFICE2_SPINES:
+            #       hosts:
+            #         INOFFICE2_SPINE01:
+            #           is_deployed: False
+            #         INOFFICE2_SPINE02:
+            #           is_deployed: False
+            #     INOFFICE2_LEAVES:
+            #       children:
+            #         INOFFICE2_LEAF01:
+            #           hosts:
+            #             INOFFICE2_LEAF01A:
+            #               is_deployed: False
+            #             INOFFICE2_LEAF01B:
+            #               is_deployed: False
+            #         INOFFICE2_SUBLEAF01:
+            #           hosts:
+            #             INOFFICE2_LEAF01C:
+            #               is_deployed: False
+            #             INOFFICE2_LEAF01D:
+            #               is_deployed: False
+            #         INOFFICE2_LEAF02:
+            #           hosts:
+            #             INOFFICE2_LEAF02A:
+            #               is_deployed: False
+            #             INOFFICE2_LEAF02B:
+            #               is_deployed: False
+            #         INOFFICE2_SUBLEAF02:
+            #           hosts:
+            #             INOFFICE2_LEAF02C:
+            #               is_deployed: False
+            #             INOFFICE2_LEAF02D:
+            #               is_deployed: False
+            #     INOFFICE2_INTERNET_LEAVES:
+            #       hosts:
+            #         INOFFICE2_INTERNET_LEAF01:
+            #           is_deployed: False
+            #         INOFFICE2_INTERNET_LEAF02:
+            #           is_deployed: False

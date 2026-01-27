@@ -1,0 +1,68 @@
+aaa_root:
+  disabled: true
+config_end: true
+enable_password:
+  disabled: true
+ethernet_interfaces:
+- name: Ethernet49
+  description: L2_INOFFICE1_SPINE01_Ethernet48
+  shutdown: true
+  channel_group:
+    id: 49
+    mode: active
+  peer: INOFFICE1_SPINE01
+  peer_interface: Ethernet48
+  peer_type: l3spine
+- name: Ethernet50
+  description: L2_INOFFICE1_SPINE02_Ethernet48
+  shutdown: true
+  channel_group:
+    id: 49
+    mode: active
+  peer: INOFFICE1_SPINE02
+  peer_interface: Ethernet48
+  peer_type: l3spine
+hostname: INOFFICE1_INTERNET_LEAF02
+ip_igmp_snooping:
+  globally_enabled: true
+management_api_http:
+  enable_https: true
+  enable_vrfs:
+  - name: MGMT
+management_interfaces:
+- name: Management0
+  description: OOB_MANAGEMENT
+  shutdown: false
+  vrf: MGMT
+  ip_address: 172.16.100.121/24
+  type: oob
+metadata:
+  is_deployed: false
+  platform: cEOSLab
+  pod_name: OFFICE1
+  dc_name: INDIA
+  fabric_name: GLOBAL
+port_channel_interfaces:
+- name: Port-Channel49
+  description: L2_INOFFICE1_SPINES_Port-Channel48
+  shutdown: false
+  switchport:
+    enabled: true
+    mode: trunk
+    trunk:
+      allowed_vlan: none
+service_routing_protocols_model: multi-agent
+spanning_tree:
+  mode: mstp
+  mst_instances:
+  - id: '0'
+    priority: 16384
+transceiver_qsfp_default_mode_4x10: true
+vlan_internal_order:
+  allocation: ascending
+  range:
+    beginning: 1006
+    ending: 1199
+vrfs:
+- name: MGMT
+  ip_routing: false

@@ -18,6 +18,10 @@ clean: ## Remove generated files
 build: ## Generate files
 	ansible-playbook ./playbooks/generate_config.yml -i inventory.yml --skip-tags validate -f 32 --vault-password-file ./vault-password.txt
 
+.PHONY: build-apac
+build-apac: ## Generate files
+	ansible-playbook ./playbooks/generate_config.yml -i inventory.yml --limit APAC --skip-tags validate -f 32 --vault-password-file ./vault-password.txt
+
 .PHONY: build-preview-debug
 build-preview-debug: ## Generate files without passwords but with debug
 	ansible-playbook ./playbooks/generate_config.yml -i inventory.yml --skip-tags validate --tags debug -f 32 --vault-password-file ./vault-password.txt
