@@ -10,54 +10,60 @@ ethernet_interfaces:
   channel_group:
     id: 49
     mode: active
-  peer: INOFFICE1_LEAF02B
-  peer_interface: Ethernet49
-  peer_type: mlag_peer
+  metadata:
+    peer: INOFFICE1_LEAF02B
+    peer_interface: Ethernet49
+    peer_type: mlag_peer
 - name: Ethernet50
   description: MLAG_INOFFICE1_LEAF02B_Ethernet50
   shutdown: false
   channel_group:
     id: 49
     mode: active
-  peer: INOFFICE1_LEAF02B
-  peer_interface: Ethernet50
-  peer_type: mlag_peer
+  metadata:
+    peer: INOFFICE1_LEAF02B
+    peer_interface: Ethernet50
+    peer_type: mlag_peer
 - name: Ethernet1
   description: L2_INOFFICE1_SUBLEAF02C_Ethernet49
   shutdown: true
   channel_group:
     id: 1
     mode: active
-  peer: INOFFICE1_SUBLEAF02C
-  peer_interface: Ethernet49
-  peer_type: l2subleaf
+  metadata:
+    peer: INOFFICE1_SUBLEAF02C
+    peer_interface: Ethernet49
+    peer_type: l2subleaf
 - name: Ethernet2
   description: L2_INOFFICE1_SUBLEAF02D_Ethernet49
   shutdown: true
   channel_group:
     id: 2
     mode: active
-  peer: INOFFICE1_SUBLEAF02D
-  peer_interface: Ethernet49
-  peer_type: l2subleaf
+  metadata:
+    peer: INOFFICE1_SUBLEAF02D
+    peer_interface: Ethernet49
+    peer_type: l2subleaf
 - name: Ethernet51
   description: L2_INOFFICE1_SPINE01_Ethernet3
   shutdown: true
   channel_group:
     id: 51
     mode: active
-  peer: INOFFICE1_SPINE01
-  peer_interface: Ethernet3
-  peer_type: l3spine
+  metadata:
+    peer: INOFFICE1_SPINE01
+    peer_interface: Ethernet3
+    peer_type: l3spine
 - name: Ethernet52
   description: L2_INOFFICE1_SPINE02_Ethernet3
   shutdown: true
   channel_group:
     id: 51
     mode: active
-  peer: INOFFICE1_SPINE02
-  peer_interface: Ethernet3
-  peer_type: l3spine
+  metadata:
+    peer: INOFFICE1_SPINE02
+    peer_interface: Ethernet3
+    peer_type: l3spine
 hostname: INOFFICE1_LEAF02A
 ip_igmp_snooping:
   globally_enabled: true
@@ -78,6 +84,8 @@ metadata:
   pod_name: OFFICE1
   dc_name: INDIA
   fabric_name: GLOBAL
+  validate_hardware:
+    enabled: false
 mlag_configuration:
   domain_id: INOFFICE1_LEAF02
   local_interface: Vlan4094
@@ -147,7 +155,8 @@ vlans:
   name: MLAG
   trunk_groups:
   - MLAG
-  tenant: system
+  metadata:
+    tenant: system
 vrfs:
 - name: MGMT
   ip_routing: false

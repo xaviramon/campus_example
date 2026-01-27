@@ -52,3 +52,7 @@ custom_node_type_keys:
     underlay_router: false
     uplink_type: port-channel
     cv_tags_topology_type: leaf
+
+management_eapi:
+  enabled: true
+  enable_https: true

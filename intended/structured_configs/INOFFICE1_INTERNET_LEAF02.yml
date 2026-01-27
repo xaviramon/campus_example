@@ -10,18 +10,20 @@ ethernet_interfaces:
   channel_group:
     id: 49
     mode: active
-  peer: INOFFICE1_SPINE01
-  peer_interface: Ethernet48
-  peer_type: l3spine
+  metadata:
+    peer: INOFFICE1_SPINE01
+    peer_interface: Ethernet48
+    peer_type: l3spine
 - name: Ethernet50
   description: L2_INOFFICE1_SPINE02_Ethernet48
   shutdown: true
   channel_group:
     id: 49
     mode: active
-  peer: INOFFICE1_SPINE02
-  peer_interface: Ethernet48
-  peer_type: l3spine
+  metadata:
+    peer: INOFFICE1_SPINE02
+    peer_interface: Ethernet48
+    peer_type: l3spine
 hostname: INOFFICE1_INTERNET_LEAF02
 ip_igmp_snooping:
   globally_enabled: true
@@ -42,6 +44,8 @@ metadata:
   pod_name: OFFICE1
   dc_name: INDIA
   fabric_name: GLOBAL
+  validate_hardware:
+    enabled: false
 port_channel_interfaces:
 - name: Port-Channel49
   description: L2_INOFFICE1_SPINES_Port-Channel48

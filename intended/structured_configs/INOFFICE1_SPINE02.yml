@@ -10,72 +10,80 @@ ethernet_interfaces:
   channel_group:
     id: 49
     mode: active
-  peer: INOFFICE1_SPINE01
-  peer_interface: Ethernet49
-  peer_type: mlag_peer
+  metadata:
+    peer: INOFFICE1_SPINE01
+    peer_interface: Ethernet49
+    peer_type: mlag_peer
 - name: Ethernet50
   description: MLAG_INOFFICE1_SPINE01_Ethernet50
   shutdown: false
   channel_group:
     id: 49
     mode: active
-  peer: INOFFICE1_SPINE01
-  peer_interface: Ethernet50
-  peer_type: mlag_peer
+  metadata:
+    peer: INOFFICE1_SPINE01
+    peer_interface: Ethernet50
+    peer_type: mlag_peer
 - name: Ethernet1
   description: L2_INOFFICE1_LEAF01A_Ethernet52
   shutdown: true
   channel_group:
     id: 1
     mode: active
-  peer: INOFFICE1_LEAF01A
-  peer_interface: Ethernet52
-  peer_type: distribution_leaf
+  metadata:
+    peer: INOFFICE1_LEAF01A
+    peer_interface: Ethernet52
+    peer_type: distribution_leaf
 - name: Ethernet2
   description: L2_INOFFICE1_LEAF01B_Ethernet52
   shutdown: true
   channel_group:
     id: 1
     mode: active
-  peer: INOFFICE1_LEAF01B
-  peer_interface: Ethernet52
-  peer_type: distribution_leaf
+  metadata:
+    peer: INOFFICE1_LEAF01B
+    peer_interface: Ethernet52
+    peer_type: distribution_leaf
 - name: Ethernet3
   description: L2_INOFFICE1_LEAF02A_Ethernet52
   shutdown: true
   channel_group:
     id: 3
     mode: active
-  peer: INOFFICE1_LEAF02A
-  peer_interface: Ethernet52
-  peer_type: distribution_leaf
+  metadata:
+    peer: INOFFICE1_LEAF02A
+    peer_interface: Ethernet52
+    peer_type: distribution_leaf
 - name: Ethernet4
   description: L2_INOFFICE1_LEAF02B_Ethernet52
   shutdown: true
   channel_group:
     id: 3
     mode: active
-  peer: INOFFICE1_LEAF02B
-  peer_interface: Ethernet52
-  peer_type: distribution_leaf
+  metadata:
+    peer: INOFFICE1_LEAF02B
+    peer_interface: Ethernet52
+    peer_type: distribution_leaf
 - name: Ethernet47
   description: L2_INOFFICE1_INTERNET_LEAF01_Ethernet50
   shutdown: true
   channel_group:
     id: 47
     mode: active
-  peer: INOFFICE1_INTERNET_LEAF01
-  peer_interface: Ethernet50
-  peer_type: internet_leaves
+  metadata:
+    peer: INOFFICE1_INTERNET_LEAF01
+    peer_interface: Ethernet50
+    peer_type: internet_leaves
 - name: Ethernet48
   description: L2_INOFFICE1_INTERNET_LEAF02_Ethernet50
   shutdown: true
   channel_group:
     id: 48
     mode: active
-  peer: INOFFICE1_INTERNET_LEAF02
-  peer_interface: Ethernet50
-  peer_type: internet_leaves
+  metadata:
+    peer: INOFFICE1_INTERNET_LEAF02
+    peer_interface: Ethernet50
+    peer_type: internet_leaves
 hostname: INOFFICE1_SPINE02
 ip_igmp_snooping:
   globally_enabled: true
@@ -103,6 +111,8 @@ metadata:
   pod_name: OFFICE1
   dc_name: INDIA
   fabric_name: GLOBAL
+  validate_hardware:
+    enabled: false
 mlag_configuration:
   domain_id: INOFFICE1_SPINES
   local_interface: Vlan4094
@@ -181,7 +191,8 @@ vlans:
   name: MLAG
   trunk_groups:
   - MLAG
-  tenant: system
+  metadata:
+    tenant: system
 vrfs:
 - name: MGMT
   ip_routing: false

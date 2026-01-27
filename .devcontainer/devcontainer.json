@@ -1,6 +1,6 @@
 {
     "name": "AVD Universal",
-    "image": "ghcr.io/aristanetworks/avd/universal:python3.13-avd-v5.7.2",
+    "image": "ghcr.io/aristanetworks/avd/universal:python3.13-avd-v6.0.0-dev6",
     "onCreateCommand": "pip3 install -r requirements.txt",
     "containerEnv": {
         "ansible_vault_pass": "ansible_vault_pass"

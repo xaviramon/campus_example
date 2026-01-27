@@ -40,7 +40,7 @@
 ## Fabric Topology
 
 | Type | Node | Node Interface | Peer Type | Peer Node | Peer Interface |
-| ---- | ---- | -------------- | --------- | ----------| -------------- |
+| ---- | ---- | -------------- | --------- | --------- | -------------- |
 | internet_leaves | INOFFICE1_INTERNET_LEAF01 | Ethernet49 | l3spine | INOFFICE1_SPINE01 | Ethernet47 |
 | internet_leaves | INOFFICE1_INTERNET_LEAF01 | Ethernet50 | l3spine | INOFFICE1_SPINE02 | Ethernet47 |
 | internet_leaves | INOFFICE1_INTERNET_LEAF02 | Ethernet49 | l3spine | INOFFICE1_SPINE01 | Ethernet48 |
