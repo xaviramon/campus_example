@@ -1,9 +1,9 @@
 ---
 fabric_name: GLOBAL # it has to match the inventory group as mentioned here: https://avd.arista.com/devel/ansible_collections/arista/avd/roles/eos_designs/docs/data-models.html?h=fabric_name#fabric-topology-hierarchy
 
-# fabric_numbering:
-#   node_id:
-#     algorithm: "pool_manager"
+fabric_numbering:
+  node_id:
+    algorithm: "pool_manager"
 
 custom_node_type_keys:
   - key: l3spine
