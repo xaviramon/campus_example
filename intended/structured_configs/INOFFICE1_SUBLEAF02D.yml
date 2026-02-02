@@ -54,7 +54,7 @@ port_channel_interfaces:
     enabled: true
     mode: trunk
     trunk:
-      allowed_vlan: none
+      allowed_vlan: '100'
 service_routing_protocols_model: multi-agent
 spanning_tree:
   mode: mstp
@@ -67,6 +67,11 @@ vlan_internal_order:
   range:
     beginning: 1006
     ending: 1199
+vlans:
+- id: 100
+  name: TEST_INOFFICE1
+  metadata:
+    tenant: INOFFICE1
 vrfs:
 - name: MGMT
   ip_routing: false

@@ -165,11 +165,15 @@ vlan internal order ascending range 1006 1199
 
 | VLAN ID | Name | Trunk Groups |
 | ------- | ---- | ------------ |
+| 100 | TEST_INOFFICE1 | - |
 | 4094 | MLAG | MLAG |
 
 ### VLANs Device Configuration
 
 ```eos
+!
+vlan 100
+   name TEST_INOFFICE1
 !
 vlan 4094
    name MLAG
@@ -186,12 +190,13 @@ vlan 4094
 
 | Interface | Description | Mode | VLANs | Native VLAN | Trunk Group | Channel-Group |
 | --------- | ----------- | ---- | ----- | ----------- | ----------- | ------------- |
-| Ethernet1 | L2_INOFFICE1_LEAF01A_Ethernet51 | *trunk | *none | *- | *- | 1 |
-| Ethernet2 | L2_INOFFICE1_LEAF01B_Ethernet51 | *trunk | *none | *- | *- | 1 |
-| Ethernet3 | L2_INOFFICE1_LEAF02A_Ethernet51 | *trunk | *none | *- | *- | 3 |
-| Ethernet4 | L2_INOFFICE1_LEAF02B_Ethernet51 | *trunk | *none | *- | *- | 3 |
-| Ethernet47 | L2_INOFFICE1_INTERNET_LEAF01_Ethernet49 | *trunk | *none | *- | *- | 47 |
-| Ethernet48 | L2_INOFFICE1_INTERNET_LEAF02_Ethernet49 | *trunk | *none | *- | *- | 48 |
+| Ethernet1 | L2_INOFFICE1_LEAF01A_Ethernet51 | *trunk | *100 | *- | *- | 1 |
+| Ethernet2 | L2_INOFFICE1_LEAF01B_Ethernet51 | *trunk | *100 | *- | *- | 1 |
+| Ethernet3 | L2_INOFFICE1_LEAF02A_Ethernet51 | *trunk | *100 | *- | *- | 3 |
+| Ethernet4 | L2_INOFFICE1_LEAF02B_Ethernet51 | *trunk | *100 | *- | *- | 3 |
+| Ethernet10 | SERVER_INOFFICE1_SPINE_Eth10_FW01A | trunk | - | - | - | - |
+| Ethernet47 | L2_INOFFICE1_INTERNET_LEAF01_Ethernet49 | *trunk | *100 | *- | *- | 47 |
+| Ethernet48 | L2_INOFFICE1_INTERNET_LEAF02_Ethernet49 | *trunk | *100 | *- | *- | 48 |
 | Ethernet49 | MLAG_INOFFICE1_SPINE02_Ethernet49 | *trunk | *- | *- | *MLAG | 49 |
 | Ethernet50 | MLAG_INOFFICE1_SPINE02_Ethernet50 | *trunk | *- | *- | *MLAG | 49 |
 
@@ -220,6 +225,14 @@ interface Ethernet4
    description L2_INOFFICE1_LEAF02B_Ethernet51
    shutdown
    channel-group 3 mode active
+!
+interface Ethernet10
+   description SERVER_INOFFICE1_SPINE_Eth10_FW01A
+   no shutdown
+   switchport mode trunk
+   switchport
+   spanning-tree portfast
+   spanning-tree bpduguard enable
 !
 interface Ethernet47
    description L2_INOFFICE1_INTERNET_LEAF01_Ethernet49
@@ -250,10 +263,10 @@ interface Ethernet50
 
 | Interface | Description | Mode | VLANs | Native VLAN | Trunk Group | LACP Fallback Timeout | LACP Fallback Mode | MLAG ID | EVPN ESI |
 | --------- | ----------- | ---- | ----- | ----------- | ----------- | --------------------- | ------------------ | ------- | -------- |
-| Port-Channel1 | L2_INOFFICE1_LEAF01_Port-Channel51 | trunk | none | - | - | - | - | 1 | - |
-| Port-Channel3 | L2_INOFFICE1_LEAF02_Port-Channel51 | trunk | none | - | - | - | - | 3 | - |
-| Port-Channel47 | L2_INOFFICE1_INTERNET_LEAF01_Port-Channel49 | trunk | none | - | - | - | - | 47 | - |
-| Port-Channel48 | L2_INOFFICE1_INTERNET_LEAF02_Port-Channel49 | trunk | none | - | - | - | - | 48 | - |
+| Port-Channel1 | L2_INOFFICE1_LEAF01_Port-Channel51 | trunk | 100 | - | - | - | - | 1 | - |
+| Port-Channel3 | L2_INOFFICE1_LEAF02_Port-Channel51 | trunk | 100 | - | - | - | - | 3 | - |
+| Port-Channel47 | L2_INOFFICE1_INTERNET_LEAF01_Port-Channel49 | trunk | 100 | - | - | - | - | 47 | - |
+| Port-Channel48 | L2_INOFFICE1_INTERNET_LEAF02_Port-Channel49 | trunk | 100 | - | - | - | - | 48 | - |
 | Port-Channel49 | MLAG_INOFFICE1_SPINE02_Port-Channel49 | trunk | - | - | MLAG | - | - | - | - |
 
 #### Port-Channel Interfaces Device Configuration
@@ -263,7 +276,7 @@ interface Ethernet50
 interface Port-Channel1
    description L2_INOFFICE1_LEAF01_Port-Channel51
    no shutdown
-   switchport trunk allowed vlan none
+   switchport trunk allowed vlan 100
    switchport mode trunk
    switchport
    mlag 1
@@ -271,7 +284,7 @@ interface Port-Channel1
 interface Port-Channel3
    description L2_INOFFICE1_LEAF02_Port-Channel51
    no shutdown
-   switchport trunk allowed vlan none
+   switchport trunk allowed vlan 100
    switchport mode trunk
    switchport
    mlag 3
@@ -279,7 +292,7 @@ interface Port-Channel3
 interface Port-Channel47
    description L2_INOFFICE1_INTERNET_LEAF01_Port-Channel49
    no shutdown
-   switchport trunk allowed vlan none
+   switchport trunk allowed vlan 100
    switchport mode trunk
    switchport
    mlag 47
@@ -287,7 +300,7 @@ interface Port-Channel47
 interface Port-Channel48
    description L2_INOFFICE1_INTERNET_LEAF02_Port-Channel49
    no shutdown
-   switchport trunk allowed vlan none
+   switchport trunk allowed vlan 100
    switchport mode trunk
    switchport
    mlag 48

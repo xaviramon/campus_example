@@ -111,7 +111,7 @@ port_channel_interfaces:
     enabled: true
     mode: trunk
     trunk:
-      allowed_vlan: none
+      allowed_vlan: '100'
 - name: Port-Channel2
   description: L2_INOFFICE1_SUBLEAF02D_Port-Channel49
   shutdown: false
@@ -120,7 +120,7 @@ port_channel_interfaces:
     enabled: true
     mode: trunk
     trunk:
-      allowed_vlan: none
+      allowed_vlan: '100'
 - name: Port-Channel51
   description: L2_INOFFICE1_SPINES_Port-Channel3
   shutdown: false
@@ -129,7 +129,7 @@ port_channel_interfaces:
     enabled: true
     mode: trunk
     trunk:
-      allowed_vlan: none
+      allowed_vlan: '100'
 service_routing_protocols_model: multi-agent
 spanning_tree:
   mode: mstp
@@ -157,6 +157,10 @@ vlans:
   - MLAG
   metadata:
     tenant: system
+- id: 100
+  name: TEST_INOFFICE1
+  metadata:
+    tenant: INOFFICE1
 vrfs:
 - name: MGMT
   ip_routing: false

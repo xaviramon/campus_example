@@ -163,11 +163,15 @@ vlan internal order ascending range 1006 1199
 
 | VLAN ID | Name | Trunk Groups |
 | ------- | ---- | ------------ |
+| 100 | TEST_INOFFICE1 | - |
 | 4094 | MLAG | MLAG |
 
 ### VLANs Device Configuration
 
 ```eos
+!
+vlan 100
+   name TEST_INOFFICE1
 !
 vlan 4094
    name MLAG
@@ -184,12 +188,12 @@ vlan 4094
 
 | Interface | Description | Mode | VLANs | Native VLAN | Trunk Group | Channel-Group |
 | --------- | ----------- | ---- | ----- | ----------- | ----------- | ------------- |
-| Ethernet1 | L2_INOFFICE1_SUBLEAF02C_Ethernet49 | *trunk | *none | *- | *- | 1 |
-| Ethernet2 | L2_INOFFICE1_SUBLEAF02D_Ethernet49 | *trunk | *none | *- | *- | 2 |
+| Ethernet1 | L2_INOFFICE1_SUBLEAF02C_Ethernet49 | *trunk | *100 | *- | *- | 1 |
+| Ethernet2 | L2_INOFFICE1_SUBLEAF02D_Ethernet49 | *trunk | *100 | *- | *- | 2 |
 | Ethernet49 | MLAG_INOFFICE1_LEAF02B_Ethernet49 | *trunk | *- | *- | *MLAG | 49 |
 | Ethernet50 | MLAG_INOFFICE1_LEAF02B_Ethernet50 | *trunk | *- | *- | *MLAG | 49 |
-| Ethernet51 | L2_INOFFICE1_SPINE01_Ethernet3 | *trunk | *none | *- | *- | 51 |
-| Ethernet52 | L2_INOFFICE1_SPINE02_Ethernet3 | *trunk | *none | *- | *- | 51 |
+| Ethernet51 | L2_INOFFICE1_SPINE01_Ethernet3 | *trunk | *100 | *- | *- | 51 |
+| Ethernet52 | L2_INOFFICE1_SPINE02_Ethernet3 | *trunk | *100 | *- | *- | 51 |
 
 *Inherited from Port-Channel Interface
 
@@ -236,10 +240,10 @@ interface Ethernet52
 
 | Interface | Description | Mode | VLANs | Native VLAN | Trunk Group | LACP Fallback Timeout | LACP Fallback Mode | MLAG ID | EVPN ESI |
 | --------- | ----------- | ---- | ----- | ----------- | ----------- | --------------------- | ------------------ | ------- | -------- |
-| Port-Channel1 | L2_INOFFICE1_SUBLEAF02C_Port-Channel49 | trunk | none | - | - | - | - | 1 | - |
-| Port-Channel2 | L2_INOFFICE1_SUBLEAF02D_Port-Channel49 | trunk | none | - | - | - | - | 2 | - |
+| Port-Channel1 | L2_INOFFICE1_SUBLEAF02C_Port-Channel49 | trunk | 100 | - | - | - | - | 1 | - |
+| Port-Channel2 | L2_INOFFICE1_SUBLEAF02D_Port-Channel49 | trunk | 100 | - | - | - | - | 2 | - |
 | Port-Channel49 | MLAG_INOFFICE1_LEAF02B_Port-Channel49 | trunk | - | - | MLAG | - | - | - | - |
-| Port-Channel51 | L2_INOFFICE1_SPINES_Port-Channel3 | trunk | none | - | - | - | - | 51 | - |
+| Port-Channel51 | L2_INOFFICE1_SPINES_Port-Channel3 | trunk | 100 | - | - | - | - | 51 | - |
 
 #### Port-Channel Interfaces Device Configuration
 
@@ -248,7 +252,7 @@ interface Ethernet52
 interface Port-Channel1
    description L2_INOFFICE1_SUBLEAF02C_Port-Channel49
    no shutdown
-   switchport trunk allowed vlan none
+   switchport trunk allowed vlan 100
    switchport mode trunk
    switchport
    mlag 1
@@ -256,7 +260,7 @@ interface Port-Channel1
 interface Port-Channel2
    description L2_INOFFICE1_SUBLEAF02D_Port-Channel49
    no shutdown
-   switchport trunk allowed vlan none
+   switchport trunk allowed vlan 100
    switchport mode trunk
    switchport
    mlag 2
@@ -271,7 +275,7 @@ interface Port-Channel49
 interface Port-Channel51
    description L2_INOFFICE1_SPINES_Port-Channel3
    no shutdown
-   switchport trunk allowed vlan none
+   switchport trunk allowed vlan 100
    switchport mode trunk
    switchport
    mlag 51

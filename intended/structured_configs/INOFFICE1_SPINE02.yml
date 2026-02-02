@@ -84,6 +84,20 @@ ethernet_interfaces:
     peer: INOFFICE1_INTERNET_LEAF02
     peer_interface: Ethernet50
     peer_type: internet_leaves
+- name: Ethernet10
+  description: SERVER_INOFFICE1_SPINE_Eth10_FW01B
+  shutdown: false
+  spanning_tree_bpduguard: enabled
+  spanning_tree_portfast: edge
+  metadata:
+    peer: INOFFICE1_SPINE_Eth10
+    peer_interface: FW01B
+    peer_type: server
+    peer_key: INOFFICE1_SPINE
+    port_profile: PP_TEST
+  switchport:
+    enabled: true
+    mode: trunk
 hostname: INOFFICE1_SPINE02
 ip_igmp_snooping:
   globally_enabled: true
@@ -138,7 +152,7 @@ port_channel_interfaces:
     enabled: true
     mode: trunk
     trunk:
-      allowed_vlan: none
+      allowed_vlan: '100'
 - name: Port-Channel3
   description: L2_INOFFICE1_LEAF02_Port-Channel51
   shutdown: false
@@ -147,7 +161,7 @@ port_channel_interfaces:
     enabled: true
     mode: trunk
     trunk:
-      allowed_vlan: none
+      allowed_vlan: '100'
 - name: Port-Channel47
   description: L2_INOFFICE1_INTERNET_LEAF01_Port-Channel49
   shutdown: false
@@ -156,7 +170,7 @@ port_channel_interfaces:
     enabled: true
     mode: trunk
     trunk:
-      allowed_vlan: none
+      allowed_vlan: '100'
 - name: Port-Channel48
   description: L2_INOFFICE1_INTERNET_LEAF02_Port-Channel49
   shutdown: false
@@ -165,7 +179,7 @@ port_channel_interfaces:
     enabled: true
     mode: trunk
     trunk:
-      allowed_vlan: none
+      allowed_vlan: '100'
 service_routing_protocols_model: multi-agent
 spanning_tree:
   mode: mstp
@@ -193,6 +207,10 @@ vlans:
   - MLAG
   metadata:
     tenant: system
+- id: 100
+  name: TEST_INOFFICE1
+  metadata:
+    tenant: INOFFICE1
 vrfs:
 - name: MGMT
   ip_routing: false
