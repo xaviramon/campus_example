@@ -36,3 +36,5 @@ port_profiles:
     spanning_tree_portfast: "edge"
     spanning_tree_bpduguard: "enabled"
     mode: trunk
+    port_channel:
+      mode: active

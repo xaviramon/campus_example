@@ -194,7 +194,7 @@ vlan 4094
 | Ethernet2 | L2_INOFFICE1_LEAF01B_Ethernet51 | *trunk | *100 | *- | *- | 1 |
 | Ethernet3 | L2_INOFFICE1_LEAF02A_Ethernet51 | *trunk | *100 | *- | *- | 3 |
 | Ethernet4 | L2_INOFFICE1_LEAF02B_Ethernet51 | *trunk | *100 | *- | *- | 3 |
-| Ethernet10 | SERVER_INOFFICE1_SPINE_Eth10_FW01A | trunk | - | - | - | - |
+| Ethernet10 | SERVER_INOFFICE1_SPINE_Eth10_FW01A | *trunk | *- | *- | *- | 10 |
 | Ethernet47 | L2_INOFFICE1_INTERNET_LEAF01_Ethernet49 | *trunk | *100 | *- | *- | 47 |
 | Ethernet48 | L2_INOFFICE1_INTERNET_LEAF02_Ethernet49 | *trunk | *100 | *- | *- | 48 |
 | Ethernet49 | MLAG_INOFFICE1_SPINE02_Ethernet49 | *trunk | *- | *- | *MLAG | 49 |
@@ -229,10 +229,7 @@ interface Ethernet4
 interface Ethernet10
    description SERVER_INOFFICE1_SPINE_Eth10_FW01A
    no shutdown
-   switchport mode trunk
-   switchport
-   spanning-tree portfast
-   spanning-tree bpduguard enable
+   channel-group 10 mode active
 !
 interface Ethernet47
    description L2_INOFFICE1_INTERNET_LEAF01_Ethernet49
@@ -265,6 +262,7 @@ interface Ethernet50
 | --------- | ----------- | ---- | ----- | ----------- | ----------- | --------------------- | ------------------ | ------- | -------- |
 | Port-Channel1 | L2_INOFFICE1_LEAF01_Port-Channel51 | trunk | 100 | - | - | - | - | 1 | - |
 | Port-Channel3 | L2_INOFFICE1_LEAF02_Port-Channel51 | trunk | 100 | - | - | - | - | 3 | - |
+| Port-Channel10 | SERVER_INOFFICE1_SPINE_Eth10 | trunk | - | - | - | - | - | 10 | - |
 | Port-Channel47 | L2_INOFFICE1_INTERNET_LEAF01_Port-Channel49 | trunk | 100 | - | - | - | - | 47 | - |
 | Port-Channel48 | L2_INOFFICE1_INTERNET_LEAF02_Port-Channel49 | trunk | 100 | - | - | - | - | 48 | - |
 | Port-Channel49 | MLAG_INOFFICE1_SPINE02_Port-Channel49 | trunk | - | - | MLAG | - | - | - | - |
@@ -288,6 +286,15 @@ interface Port-Channel3
    switchport mode trunk
    switchport
    mlag 3
+!
+interface Port-Channel10
+   description SERVER_INOFFICE1_SPINE_Eth10
+   no shutdown
+   switchport mode trunk
+   switchport
+   mlag 10
+   spanning-tree portfast
+   spanning-tree bpduguard enable
 !
 interface Port-Channel47
    description L2_INOFFICE1_INTERNET_LEAF01_Port-Channel49

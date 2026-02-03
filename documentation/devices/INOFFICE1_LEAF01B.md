@@ -190,7 +190,7 @@ vlan 4094
 | --------- | ----------- | ---- | ----- | ----------- | ----------- | ------------- |
 | Ethernet1 | L2_INOFFICE1_SUBLEAF01C_Ethernet50 | *trunk | *100 | *- | *- | 1 |
 | Ethernet2 | L2_INOFFICE1_SUBLEAF01D_Ethernet50 | *trunk | *100 | *- | *- | 2 |
-| Ethernet10 | SERVER_INOFFICE1_LEAF01_Eth10_LB01B | trunk | - | - | - | - |
+| Ethernet10 | SERVER_INOFFICE1_LEAF01_Eth10_LB01B | *trunk | *- | *- | *- | 10 |
 | Ethernet49 | MLAG_INOFFICE1_LEAF01A_Ethernet49 | *trunk | *- | *- | *MLAG | 49 |
 | Ethernet50 | MLAG_INOFFICE1_LEAF01A_Ethernet50 | *trunk | *- | *- | *MLAG | 49 |
 | Ethernet51 | L2_INOFFICE1_SPINE01_Ethernet2 | *trunk | *100 | *- | *- | 51 |
@@ -215,10 +215,7 @@ interface Ethernet2
 interface Ethernet10
    description SERVER_INOFFICE1_LEAF01_Eth10_LB01B
    no shutdown
-   switchport mode trunk
-   switchport
-   spanning-tree portfast
-   spanning-tree bpduguard enable
+   channel-group 10 mode active
 !
 interface Ethernet49
    description MLAG_INOFFICE1_LEAF01A_Ethernet49
@@ -251,6 +248,7 @@ interface Ethernet52
 | --------- | ----------- | ---- | ----- | ----------- | ----------- | --------------------- | ------------------ | ------- | -------- |
 | Port-Channel1 | L2_INOFFICE1_SUBLEAF01C_Port-Channel49 | trunk | 100 | - | - | - | - | 1 | - |
 | Port-Channel2 | L2_INOFFICE1_SUBLEAF01D_Port-Channel49 | trunk | 100 | - | - | - | - | 2 | - |
+| Port-Channel10 | SERVER_INOFFICE1_LEAF01_Eth10 | trunk | - | - | - | - | - | 10 | - |
 | Port-Channel49 | MLAG_INOFFICE1_LEAF01A_Port-Channel49 | trunk | - | - | MLAG | - | - | - | - |
 | Port-Channel51 | L2_INOFFICE1_SPINES_Port-Channel1 | trunk | 100 | - | - | - | - | 51 | - |
 
@@ -273,6 +271,15 @@ interface Port-Channel2
    switchport mode trunk
    switchport
    mlag 2
+!
+interface Port-Channel10
+   description SERVER_INOFFICE1_LEAF01_Eth10
+   no shutdown
+   switchport mode trunk
+   switchport
+   mlag 10
+   spanning-tree portfast
+   spanning-tree bpduguard enable
 !
 interface Port-Channel49
    description MLAG_INOFFICE1_LEAF01A_Port-Channel49

@@ -87,17 +87,15 @@ ethernet_interfaces:
 - name: Ethernet10
   description: SERVER_INOFFICE1_SPINE_Eth10_FW01B
   shutdown: false
-  spanning_tree_bpduguard: enabled
-  spanning_tree_portfast: edge
+  channel_group:
+    id: 10
+    mode: active
   metadata:
     peer: INOFFICE1_SPINE_Eth10
     peer_interface: FW01B
     peer_type: server
     peer_key: INOFFICE1_SPINE
     port_profile: PP_TEST
-  switchport:
-    enabled: true
-    mode: trunk
 hostname: INOFFICE1_SPINE02
 ip_igmp_snooping:
   globally_enabled: true
@@ -180,6 +178,15 @@ port_channel_interfaces:
     mode: trunk
     trunk:
       allowed_vlan: '100'
+- name: Port-Channel10
+  description: SERVER_INOFFICE1_SPINE_Eth10
+  shutdown: false
+  mlag: 10
+  spanning_tree_bpduguard: enabled
+  spanning_tree_portfast: edge
+  switchport:
+    enabled: true
+    mode: trunk
 service_routing_protocols_model: multi-agent
 spanning_tree:
   mode: mstp

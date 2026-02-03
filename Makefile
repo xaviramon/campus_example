@@ -77,3 +77,7 @@ create-host_vars: ## Generate hostvar files
 .PHONY: create-group_vars
 create-group_vars: ## Generate groupvar files
 	mkdir -p group_vars; for group in `ansible-inventory --list -i inventory.yml | jq -r 'keys | unique | .[] | select(. | startswith("_") | not) | select(. | startswith("CONNECTED") | not) | select(. | startswith("TENANT") | not)'`; do if [ ! -f group_vars/$$group.yml ]; then echo "---" > group_vars/$$group.yml; fi; done
+
+.PHONY: rename-connected_endpoints
+rename-connected_endpoints: ## Rename connected_endpoints groupvar file to CONNECTED_ENDPOINTS
+	rename 's/^INOFFICE1/INOFFICE2/' *

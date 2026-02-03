@@ -1,0 +1,40 @@
+---
+connected_endpoints_keys:
+  - key: INOFFICE2_SPINE
+    type: server
+  - key: INOFFICE2_SPINE01
+    type: server
+  - key: INOFFICE2_SPINE02
+    type: server
+  - key: INOFFICE2_LEAF01
+    type: server
+  - key: INOFFICE2_LEAF01A
+    type: server
+  - key: INOFFICE2_LEAF01B
+    type: server
+  - key: INOFFICE2_LEAF02
+    type: server
+  - key: INOFFICE2_LEAF02A
+    type: server
+  - key: INOFFICE2_LEAF02B
+    type: server
+  - key: INOFFICE2_SUBLEAF01C
+    type: server
+  - key: INOFFICE2_SUBLEAF01D
+    type: server
+  - key: INOFFICE2_SUBLEAF02C
+    type: server
+  - key: INOFFICE2_SUBLEAF02D
+    type: server
+  - key: INOFFICE2_INTERNET_LEAF01
+    type: server
+  - key: INOFFICE2_INTERNET_LEAF02
+    type: server
+
+port_profiles:
+  - profile: PP_TEST
+    spanning_tree_portfast: "edge"
+    spanning_tree_bpduguard: "enabled"
+    mode: trunk
+    port_channel:
+      mode: active

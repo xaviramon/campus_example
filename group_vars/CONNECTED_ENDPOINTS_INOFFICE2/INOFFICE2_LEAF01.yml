@@ -1,0 +1,14 @@
+---
+INOFFICE2_LEAF01:
+- name: INOFFICE2_LEAF01_Eth10
+  adapters:
+  - endpoint_ports:
+    - LB01A
+    - LB01B
+    switches:
+    - INOFFICE2_LEAF01A
+    - INOFFICE2_LEAF01B
+    switch_ports:
+    - Ethernet10
+    - Ethernet10
+    profile: PP_TEST

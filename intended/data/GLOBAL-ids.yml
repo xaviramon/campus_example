@@ -17,3 +17,19 @@ node_id_pools:
   fabric_name=GLOBAL/dc_name=INDIA/pod_name=OFFICE1/type=l3spine:
     hostname=INOFFICE1_SPINE01: 1
     hostname=INOFFICE1_SPINE02: 2
+  fabric_name=GLOBAL/dc_name=INDIA/pod_name=OFFICE2/type=distribution_leaf:
+    hostname=INOFFICE2_LEAF01A: 1
+    hostname=INOFFICE2_LEAF01B: 2
+    hostname=INOFFICE2_LEAF02A: 3
+    hostname=INOFFICE2_LEAF02B: 4
+  fabric_name=GLOBAL/dc_name=INDIA/pod_name=OFFICE2/type=internet_leaves:
+    hostname=INOFFICE2_INTERNET_LEAF01: 1
+    hostname=INOFFICE2_INTERNET_LEAF02: 2
+  fabric_name=GLOBAL/dc_name=INDIA/pod_name=OFFICE2/type=l2subleaf:
+    hostname=INOFFICE2_SUBLEAF01C: 1
+    hostname=INOFFICE2_SUBLEAF01D: 2
+    hostname=INOFFICE2_SUBLEAF02C: 3
+    hostname=INOFFICE2_SUBLEAF02D: 4
+  fabric_name=GLOBAL/dc_name=INDIA/pod_name=OFFICE2/type=l3spine:
+    hostname=INOFFICE2_SPINE01: 1
+    hostname=INOFFICE2_SPINE02: 2
