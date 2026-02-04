@@ -22,6 +22,14 @@ build: ## Generate files
 build-apac: ## Generate files
 	ansible-playbook ./playbooks/generate_config.yml -i inventory.yml --limit APAC --skip-tags validate -f 32 --vault-password-file ./vault-password.txt
 
+.PHONY: build-emea
+build-emea: ## Generate files
+	ansible-playbook ./playbooks/generate_config.yml -i inventory.yml --limit EMEA --skip-tags validate -f 32 --vault-password-file ./vault-password.txt
+
+.PHONY: build-amer
+build-amer: ## Generate files
+	ansible-playbook ./playbooks/generate_config.yml -i inventory.yml --limit AMER --skip-tags validate -f 32 --vault-password-file ./vault-password.txt
+
 .PHONY: build-preview-debug
 build-preview-debug: ## Generate files without passwords but with debug
 	ansible-playbook ./playbooks/generate_config.yml -i inventory.yml --skip-tags validate --tags debug -f 32 --vault-password-file ./vault-password.txt
@@ -81,3 +89,8 @@ create-group_vars: ## Generate groupvar files
 .PHONY: rename-connected_endpoints
 rename-connected_endpoints: ## Rename connected_endpoints groupvar file to CONNECTED_ENDPOINTS
 	rename 's/^INOFFICE1/INOFFICE2/' *
+.PHONY: rename-group_vars
+rename-group_vars: ## Rename group_vars groupvar files
+	cd group_vars; rename -c "^(EXOFFICE1)([\w]*)(.yml)$\" "$(OFFICE)\(2)\(3)"; sed 's/EXOFFICE1/$(OFFICE)/g' $(OFFICE).yml > tmp; cat tmp > $(OFFICE).yml; rm tmp
+	cd group_vars; cp -r CONNECTED_ENDPOINTS_EXOFFICE1 CONNECTED_ENDPOINTS_$(OFFICE); cd CONNECTED_ENDPOINTS_$(OFFICE); rename "^(EXOFFICE1)([\w]*)(.yml)$\" "$(OFFICE)\(2)\(3)"; for file in *; do sed 's/EXOFFICE1/$(OFFICE)/g' $$file > tmp; cat tmp > $$file; rm tmp; done
+	cd group_vars; cp -r TENANT_NETWORKS_EXOFFICE1 TENANT_NETWORKS_$(OFFICE); cd TENANT_NETWORKS_$(OFFICE); rename "^(EXOFFICE1)([\w]*)(.yml)$\" "$(OFFICE)\(2)\(3)"; for file in *; do sed 's/EXOFFICE1/$(OFFICE)/g' $$file > tmp; cat tmp > $$file; rm tmp; done
