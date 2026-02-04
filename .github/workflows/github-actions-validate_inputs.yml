@@ -13,5 +13,5 @@ jobs:
         with:
           yamllint_file_or_dir: 'group_vars/ playbooks/ inventory.yml host_vars/'
           yamllint_config_filepath: '.yamllint'
-          yamllint_strict: false
+          yamllint_strict: true
           yamllint_comment: false
