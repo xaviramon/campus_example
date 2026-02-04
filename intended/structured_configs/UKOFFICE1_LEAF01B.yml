@@ -93,15 +93,15 @@ management_interfaces:
 metadata:
   is_deployed: false
   platform: cEOSLab
-  pod_name: OFFICE1
-  dc_name: EXAMPLE
+  pod_name: UKOFFICE1
+  dc_name: EMEA
   fabric_name: GLOBAL
   validate_hardware:
     enabled: false
 mlag_configuration:
   domain_id: UKOFFICE1_LEAF01
   local_interface: Vlan4094
-  peer_address: 192.168.0.8
+  peer_address: 192.168.0.0
   peer_link: Port-Channel49
   reload_delay_mlag: '300'
   reload_delay_non_mlag: '330'
@@ -163,7 +163,7 @@ vlan_interfaces:
 - name: Vlan4094
   description: MLAG
   shutdown: false
-  ip_address: 192.168.0.9/31
+  ip_address: 192.168.0.1/31
   mtu: 9214
   no_autostate: true
 vlan_internal_order:

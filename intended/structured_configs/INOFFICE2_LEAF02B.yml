@@ -81,8 +81,8 @@ management_interfaces:
 metadata:
   is_deployed: false
   platform: cEOSLab
-  pod_name: OFFICE2
-  dc_name: INDIA
+  pod_name: INOFFICE2
+  dc_name: APAC
   fabric_name: GLOBAL
   validate_hardware:
     enabled: false

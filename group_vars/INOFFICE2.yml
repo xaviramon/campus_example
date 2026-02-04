@@ -1,6 +1,6 @@
 ---
-dc_name: INDIA
-pod_name: OFFICE2
+dc_name: APAC
+pod_name: INOFFICE2
 
 # Spine Switches
 l3spine:

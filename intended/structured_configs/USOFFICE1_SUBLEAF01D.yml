@@ -1,0 +1,77 @@
+aaa_root:
+  disabled: true
+config_end: true
+enable_password:
+  disabled: true
+ethernet_interfaces:
+- name: Ethernet49
+  description: L2_USOFFICE1_LEAF01A_Ethernet2
+  shutdown: true
+  channel_group:
+    id: 49
+    mode: active
+  metadata:
+    peer: USOFFICE1_LEAF01A
+    peer_interface: Ethernet2
+    peer_type: distribution_leaf
+- name: Ethernet50
+  description: L2_USOFFICE1_LEAF01B_Ethernet2
+  shutdown: true
+  channel_group:
+    id: 49
+    mode: active
+  metadata:
+    peer: USOFFICE1_LEAF01B
+    peer_interface: Ethernet2
+    peer_type: distribution_leaf
+hostname: USOFFICE1_SUBLEAF01D
+ip_igmp_snooping:
+  globally_enabled: true
+management_api_http:
+  enable_https: true
+  enable_vrfs:
+  - name: MGMT
+management_interfaces:
+- name: Management0
+  description: OOB_MANAGEMENT
+  shutdown: false
+  vrf: MGMT
+  ip_address: 172.16.100.109/24
+  type: oob
+metadata:
+  is_deployed: false
+  platform: cEOSLab
+  pod_name: USOFFICE1
+  dc_name: AMER
+  fabric_name: GLOBAL
+  validate_hardware:
+    enabled: false
+port_channel_interfaces:
+- name: Port-Channel49
+  description: L2_USOFFICE1_LEAF01_Port-Channel2
+  shutdown: false
+  switchport:
+    enabled: true
+    mode: trunk
+    trunk:
+      allowed_vlan: '3000'
+service_routing_protocols_model: multi-agent
+spanning_tree:
+  mode: mstp
+  mst_instances:
+  - id: '0'
+    priority: 32768
+transceiver_qsfp_default_mode_4x10: true
+vlan_internal_order:
+  allocation: ascending
+  range:
+    beginning: 1006
+    ending: 1199
+vlans:
+- id: 3000
+  name: TEST_USOFFICE1
+  metadata:
+    tenant: USOFFICE1
+vrfs:
+- name: MGMT
+  ip_routing: false

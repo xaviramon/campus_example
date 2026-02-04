@@ -100,7 +100,7 @@ Enable password has been disabled
 
 | Domain-id | Local-interface | Peer-address | Peer-link |
 | --------- | --------------- | ------------ | --------- |
-| UKOFFICE1_LEAF02 | Vlan4094 | 192.168.0.13 | Port-Channel49 |
+| UKOFFICE1_LEAF02 | Vlan4094 | 192.168.0.5 | Port-Channel49 |
 
 Dual primary detection is disabled.
 
@@ -111,7 +111,7 @@ Dual primary detection is disabled.
 mlag configuration
    domain-id UKOFFICE1_LEAF02
    local-interface Vlan4094
-   peer-address 192.168.0.13
+   peer-address 192.168.0.5
    peer-link Port-Channel49
    reload-delay mlag 300
    reload-delay non-mlag 330
@@ -293,7 +293,7 @@ interface Port-Channel51
 
 | Interface | VRF | IP Address | IP Address Virtual | IP Router Virtual Address | ACL In | ACL Out |
 | --------- | --- | ---------- | ------------------ | ------------------------- | ------ | ------- |
-| Vlan4094 | default | 192.168.0.12/31 | - | - | - | - |
+| Vlan4094 | default | 192.168.0.4/31 | - | - | - | - |
 
 #### VLAN Interfaces Device Configuration
 
@@ -304,7 +304,7 @@ interface Vlan4094
    no shutdown
    mtu 9214
    no autostate
-   ip address 192.168.0.12/31
+   ip address 192.168.0.4/31
 ```
 
 ## Routing

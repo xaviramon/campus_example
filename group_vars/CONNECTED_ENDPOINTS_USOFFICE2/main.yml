@@ -1,0 +1,40 @@
+---
+connected_endpoints_keys:
+  - key: USOFFICE2_SPINE
+    type: server
+  - key: USOFFICE2_SPINE01
+    type: server
+  - key: USOFFICE2_SPINE02
+    type: server
+  - key: USOFFICE2_LEAF01
+    type: server
+  - key: USOFFICE2_LEAF01A
+    type: server
+  - key: USOFFICE2_LEAF01B
+    type: server
+  - key: USOFFICE2_LEAF02
+    type: server
+  - key: USOFFICE2_LEAF02A
+    type: server
+  - key: USOFFICE2_LEAF02B
+    type: server
+  - key: USOFFICE2_SUBLEAF01C
+    type: server
+  - key: USOFFICE2_SUBLEAF01D
+    type: server
+  - key: USOFFICE2_SUBLEAF02C
+    type: server
+  - key: USOFFICE2_SUBLEAF02D
+    type: server
+  - key: USOFFICE2_INTERNET_LEAF01
+    type: server
+  - key: USOFFICE2_INTERNET_LEAF02
+    type: server
+
+port_profiles:
+  - profile: PP_TEST
+    spanning_tree_portfast: "edge"
+    spanning_tree_bpduguard: "enabled"
+    mode: trunk
+    port_channel:
+      mode: active

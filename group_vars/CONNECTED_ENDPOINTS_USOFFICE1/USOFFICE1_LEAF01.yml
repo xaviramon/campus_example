@@ -1,0 +1,14 @@
+---
+USOFFICE1_LEAF01:
+- name: USOFFICE1_LEAF01_Eth10
+  adapters:
+  - endpoint_ports:
+    - LB01A
+    - LB01B
+    switches:
+    - USOFFICE1_LEAF01A
+    - USOFFICE1_LEAF01B
+    switch_ports:
+    - Ethernet10
+    - Ethernet10
+    profile: PP_TEST

@@ -93,8 +93,8 @@ management_interfaces:
 metadata:
   is_deployed: false
   platform: cEOSLab
-  pod_name: OFFICE1
-  dc_name: EXAMPLE
+  pod_name: OFFICE2
+  dc_name: EMEA
   fabric_name: GLOBAL
   validate_hardware:
     enabled: false
