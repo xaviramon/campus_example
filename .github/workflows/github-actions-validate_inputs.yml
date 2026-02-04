@@ -15,3 +15,15 @@ jobs:
           yamllint_config_filepath: '.yamllint'
           yamllint_strict: true
           yamllint_comment: false
+  avd-run:
+    name: 'AVD'
+    runs-on: ubuntu-latest
+    steps:
+      - name: 'Install Ansible'
+        run: apt install ansible
+      - name: 'Install AVD'
+        run: ansible-galaxy collection install arista.avd:6.0.0-dev6
+      - name: 'Checkout'
+        uses: actions/checkout@v5
+      - name: 'Generate AVD configs'
+        run: make build
