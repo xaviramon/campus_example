@@ -24,7 +24,7 @@ jobs:
           pip install ansible-core==2.19.5
       - name: 'Install AVD'
         run: | 
-          pip install "pyavd[ansible]==6.0.0-dev6
+          pip install "pyavd[ansible]==6.0.0-dev6"
           ansible-galaxy collection install arista.avd:6.0.0-dev6
       - name: 'Checkout'
         uses: actions/checkout@v5
