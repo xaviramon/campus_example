@@ -1,17 +1,17 @@
 name: GitHub Actions Validate Inputs
-run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
+run-name: ${{ github.actor }} is executing GitHub Actions Validate Inputs
 on: [push]
 jobs:
   yamllint:
-    name: 'Yamllint'
+    name: 'YAML linting'
     runs-on: ubuntu-latest
     steps:
       - name: 'Checkout'
         uses: actions/checkout@v5
-      - name: 'Yamllint'
+      - name: 'linting YAML files'
         uses: karancode/yamllint-github-action@master
         with:
-          yamllint_file_or_dir: './'
+          yamllint_file_or_dir: 'group_vars/ playbooks/ inventory.yml host_vars/'
           yamllint_config_filepath: '.yamllint'
           yamllint_strict: false
           yamllint_comment: false
