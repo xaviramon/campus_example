@@ -17,6 +17,7 @@ jobs:
           yamllint_comment: false
   avd-run:
     name: 'AVD'
+    needs: yamllint
     runs-on: ubuntu-latest
     steps:
       - name: "Install Ansible"
