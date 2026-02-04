@@ -20,7 +20,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: "Install Ansible"
-        uses: alex-oleshkevich/setup-ansible@VERSION 
+        uses: alex-oleshkevich/setup-ansible@v1.0.1 
         with:
           version: "2.19.5"
       - name: 'Install AVD'
