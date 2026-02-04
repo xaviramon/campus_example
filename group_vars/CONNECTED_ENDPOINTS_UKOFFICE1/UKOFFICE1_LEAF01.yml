@@ -1,0 +1,14 @@
+---
+UKOFFICE1_LEAF01:
+- name: UKOFFICE1_LEAF01_Eth10
+  adapters:
+  - endpoint_ports:
+    - LB01A
+    - LB01B
+    switches:
+    - UKOFFICE1_LEAF01A
+    - UKOFFICE1_LEAF01B
+    switch_ports:
+    - Ethernet10
+    - Ethernet10
+    profile: PP_TEST

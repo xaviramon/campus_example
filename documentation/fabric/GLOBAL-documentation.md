@@ -41,6 +41,30 @@
 | OFFICE2 | l2subleaf | INOFFICE2_SUBLEAF01D | 172.16.100.109/24 | cEOSLab | Not Available | - |
 | OFFICE2 | l2subleaf | INOFFICE2_SUBLEAF02C | 172.16.100.110/24 | cEOSLab | Not Available | - |
 | OFFICE2 | l2subleaf | INOFFICE2_SUBLEAF02D | 172.16.100.111/24 | cEOSLab | Not Available | - |
+| OFFICE1 | internet_leaves | UKOFFICE1_INTERNET_LEAF01 | 172.16.100.120/24 | cEOSLab | Not Available | - |
+| OFFICE1 | internet_leaves | UKOFFICE1_INTERNET_LEAF02 | 172.16.100.121/24 | cEOSLab | Not Available | - |
+| OFFICE1 | distribution_leaf | UKOFFICE1_LEAF01A | 172.16.100.103/24 | cEOSLab | Not Available | - |
+| OFFICE1 | distribution_leaf | UKOFFICE1_LEAF01B | 172.16.100.104/24 | cEOSLab | Not Available | - |
+| OFFICE1 | distribution_leaf | UKOFFICE1_LEAF02A | 172.16.100.105/24 | cEOSLab | Not Available | - |
+| OFFICE1 | distribution_leaf | UKOFFICE1_LEAF02B | 172.16.100.106/24 | cEOSLab | Not Available | - |
+| OFFICE1 | l3spine | UKOFFICE1_SPINE01 | 172.16.100.101/24 | cEOSLab | Not Available | - |
+| OFFICE1 | l3spine | UKOFFICE1_SPINE02 | 172.16.100.102/24 | cEOSLab | Not Available | - |
+| OFFICE1 | l2subleaf | UKOFFICE1_SUBLEAF01C | 172.16.100.108/24 | cEOSLab | Not Available | - |
+| OFFICE1 | l2subleaf | UKOFFICE1_SUBLEAF01D | 172.16.100.109/24 | cEOSLab | Not Available | - |
+| OFFICE1 | l2subleaf | UKOFFICE1_SUBLEAF02C | 172.16.100.110/24 | cEOSLab | Not Available | - |
+| OFFICE1 | l2subleaf | UKOFFICE1_SUBLEAF02D | 172.16.100.111/24 | cEOSLab | Not Available | - |
+| OFFICE1 | internet_leaves | UKOFFICE2_INTERNET_LEAF01 | 172.16.100.120/24 | cEOSLab | Not Available | - |
+| OFFICE1 | internet_leaves | UKOFFICE2_INTERNET_LEAF02 | 172.16.100.121/24 | cEOSLab | Not Available | - |
+| OFFICE1 | distribution_leaf | UKOFFICE2_LEAF01A | 172.16.100.103/24 | cEOSLab | Not Available | - |
+| OFFICE1 | distribution_leaf | UKOFFICE2_LEAF01B | 172.16.100.104/24 | cEOSLab | Not Available | - |
+| OFFICE1 | distribution_leaf | UKOFFICE2_LEAF02A | 172.16.100.105/24 | cEOSLab | Not Available | - |
+| OFFICE1 | distribution_leaf | UKOFFICE2_LEAF02B | 172.16.100.106/24 | cEOSLab | Not Available | - |
+| OFFICE1 | l3spine | UKOFFICE2_SPINE01 | 172.16.100.101/24 | cEOSLab | Not Available | - |
+| OFFICE1 | l3spine | UKOFFICE2_SPINE02 | 172.16.100.102/24 | cEOSLab | Not Available | - |
+| OFFICE1 | l2subleaf | UKOFFICE2_SUBLEAF01C | 172.16.100.108/24 | cEOSLab | Not Available | - |
+| OFFICE1 | l2subleaf | UKOFFICE2_SUBLEAF01D | 172.16.100.109/24 | cEOSLab | Not Available | - |
+| OFFICE1 | l2subleaf | UKOFFICE2_SUBLEAF02C | 172.16.100.110/24 | cEOSLab | Not Available | - |
+| OFFICE1 | l2subleaf | UKOFFICE2_SUBLEAF02D | 172.16.100.111/24 | cEOSLab | Not Available | - |
 
 > Provision status is based on Ansible inventory declaration and do not represent real status from CloudVision.
 
@@ -105,6 +129,58 @@
 | distribution_leaf | INOFFICE2_LEAF02B | Ethernet52 | l3spine | INOFFICE2_SPINE02 | Ethernet4 |
 | l3spine | INOFFICE2_SPINE01 | Ethernet49 | mlag_peer | INOFFICE2_SPINE02 | Ethernet49 |
 | l3spine | INOFFICE2_SPINE01 | Ethernet50 | mlag_peer | INOFFICE2_SPINE02 | Ethernet50 |
+| internet_leaves | UKOFFICE1_INTERNET_LEAF01 | Ethernet49 | l3spine | UKOFFICE1_SPINE01 | Ethernet47 |
+| internet_leaves | UKOFFICE1_INTERNET_LEAF01 | Ethernet50 | l3spine | UKOFFICE1_SPINE02 | Ethernet47 |
+| internet_leaves | UKOFFICE1_INTERNET_LEAF02 | Ethernet49 | l3spine | UKOFFICE1_SPINE01 | Ethernet48 |
+| internet_leaves | UKOFFICE1_INTERNET_LEAF02 | Ethernet50 | l3spine | UKOFFICE1_SPINE02 | Ethernet48 |
+| distribution_leaf | UKOFFICE1_LEAF01A | Ethernet1 | l2subleaf | UKOFFICE1_SUBLEAF01C | Ethernet49 |
+| distribution_leaf | UKOFFICE1_LEAF01A | Ethernet2 | l2subleaf | UKOFFICE1_SUBLEAF01D | Ethernet49 |
+| distribution_leaf | UKOFFICE1_LEAF01A | Ethernet49 | mlag_peer | UKOFFICE1_LEAF01B | Ethernet49 |
+| distribution_leaf | UKOFFICE1_LEAF01A | Ethernet50 | mlag_peer | UKOFFICE1_LEAF01B | Ethernet50 |
+| distribution_leaf | UKOFFICE1_LEAF01A | Ethernet51 | l3spine | UKOFFICE1_SPINE01 | Ethernet1 |
+| distribution_leaf | UKOFFICE1_LEAF01A | Ethernet52 | l3spine | UKOFFICE1_SPINE02 | Ethernet1 |
+| distribution_leaf | UKOFFICE1_LEAF01B | Ethernet1 | l2subleaf | UKOFFICE1_SUBLEAF01C | Ethernet50 |
+| distribution_leaf | UKOFFICE1_LEAF01B | Ethernet2 | l2subleaf | UKOFFICE1_SUBLEAF01D | Ethernet50 |
+| distribution_leaf | UKOFFICE1_LEAF01B | Ethernet51 | l3spine | UKOFFICE1_SPINE01 | Ethernet2 |
+| distribution_leaf | UKOFFICE1_LEAF01B | Ethernet52 | l3spine | UKOFFICE1_SPINE02 | Ethernet2 |
+| distribution_leaf | UKOFFICE1_LEAF02A | Ethernet1 | l2subleaf | UKOFFICE1_SUBLEAF02C | Ethernet49 |
+| distribution_leaf | UKOFFICE1_LEAF02A | Ethernet2 | l2subleaf | UKOFFICE1_SUBLEAF02D | Ethernet49 |
+| distribution_leaf | UKOFFICE1_LEAF02A | Ethernet49 | mlag_peer | UKOFFICE1_LEAF02B | Ethernet49 |
+| distribution_leaf | UKOFFICE1_LEAF02A | Ethernet50 | mlag_peer | UKOFFICE1_LEAF02B | Ethernet50 |
+| distribution_leaf | UKOFFICE1_LEAF02A | Ethernet51 | l3spine | UKOFFICE1_SPINE01 | Ethernet3 |
+| distribution_leaf | UKOFFICE1_LEAF02A | Ethernet52 | l3spine | UKOFFICE1_SPINE02 | Ethernet3 |
+| distribution_leaf | UKOFFICE1_LEAF02B | Ethernet1 | l2subleaf | UKOFFICE1_SUBLEAF02C | Ethernet50 |
+| distribution_leaf | UKOFFICE1_LEAF02B | Ethernet2 | l2subleaf | UKOFFICE1_SUBLEAF02D | Ethernet50 |
+| distribution_leaf | UKOFFICE1_LEAF02B | Ethernet51 | l3spine | UKOFFICE1_SPINE01 | Ethernet4 |
+| distribution_leaf | UKOFFICE1_LEAF02B | Ethernet52 | l3spine | UKOFFICE1_SPINE02 | Ethernet4 |
+| l3spine | UKOFFICE1_SPINE01 | Ethernet49 | mlag_peer | UKOFFICE1_SPINE02 | Ethernet49 |
+| l3spine | UKOFFICE1_SPINE01 | Ethernet50 | mlag_peer | UKOFFICE1_SPINE02 | Ethernet50 |
+| internet_leaves | UKOFFICE2_INTERNET_LEAF01 | Ethernet49 | l3spine | UKOFFICE2_SPINE01 | Ethernet47 |
+| internet_leaves | UKOFFICE2_INTERNET_LEAF01 | Ethernet50 | l3spine | UKOFFICE2_SPINE02 | Ethernet47 |
+| internet_leaves | UKOFFICE2_INTERNET_LEAF02 | Ethernet49 | l3spine | UKOFFICE2_SPINE01 | Ethernet48 |
+| internet_leaves | UKOFFICE2_INTERNET_LEAF02 | Ethernet50 | l3spine | UKOFFICE2_SPINE02 | Ethernet48 |
+| distribution_leaf | UKOFFICE2_LEAF01A | Ethernet1 | l2subleaf | UKOFFICE2_SUBLEAF01C | Ethernet49 |
+| distribution_leaf | UKOFFICE2_LEAF01A | Ethernet2 | l2subleaf | UKOFFICE2_SUBLEAF01D | Ethernet49 |
+| distribution_leaf | UKOFFICE2_LEAF01A | Ethernet49 | mlag_peer | UKOFFICE2_LEAF01B | Ethernet49 |
+| distribution_leaf | UKOFFICE2_LEAF01A | Ethernet50 | mlag_peer | UKOFFICE2_LEAF01B | Ethernet50 |
+| distribution_leaf | UKOFFICE2_LEAF01A | Ethernet51 | l3spine | UKOFFICE2_SPINE01 | Ethernet1 |
+| distribution_leaf | UKOFFICE2_LEAF01A | Ethernet52 | l3spine | UKOFFICE2_SPINE02 | Ethernet1 |
+| distribution_leaf | UKOFFICE2_LEAF01B | Ethernet1 | l2subleaf | UKOFFICE2_SUBLEAF01C | Ethernet50 |
+| distribution_leaf | UKOFFICE2_LEAF01B | Ethernet2 | l2subleaf | UKOFFICE2_SUBLEAF01D | Ethernet50 |
+| distribution_leaf | UKOFFICE2_LEAF01B | Ethernet51 | l3spine | UKOFFICE2_SPINE01 | Ethernet2 |
+| distribution_leaf | UKOFFICE2_LEAF01B | Ethernet52 | l3spine | UKOFFICE2_SPINE02 | Ethernet2 |
+| distribution_leaf | UKOFFICE2_LEAF02A | Ethernet1 | l2subleaf | UKOFFICE2_SUBLEAF02C | Ethernet49 |
+| distribution_leaf | UKOFFICE2_LEAF02A | Ethernet2 | l2subleaf | UKOFFICE2_SUBLEAF02D | Ethernet49 |
+| distribution_leaf | UKOFFICE2_LEAF02A | Ethernet49 | mlag_peer | UKOFFICE2_LEAF02B | Ethernet49 |
+| distribution_leaf | UKOFFICE2_LEAF02A | Ethernet50 | mlag_peer | UKOFFICE2_LEAF02B | Ethernet50 |
+| distribution_leaf | UKOFFICE2_LEAF02A | Ethernet51 | l3spine | UKOFFICE2_SPINE01 | Ethernet3 |
+| distribution_leaf | UKOFFICE2_LEAF02A | Ethernet52 | l3spine | UKOFFICE2_SPINE02 | Ethernet3 |
+| distribution_leaf | UKOFFICE2_LEAF02B | Ethernet1 | l2subleaf | UKOFFICE2_SUBLEAF02C | Ethernet50 |
+| distribution_leaf | UKOFFICE2_LEAF02B | Ethernet2 | l2subleaf | UKOFFICE2_SUBLEAF02D | Ethernet50 |
+| distribution_leaf | UKOFFICE2_LEAF02B | Ethernet51 | l3spine | UKOFFICE2_SPINE01 | Ethernet4 |
+| distribution_leaf | UKOFFICE2_LEAF02B | Ethernet52 | l3spine | UKOFFICE2_SPINE02 | Ethernet4 |
+| l3spine | UKOFFICE2_SPINE01 | Ethernet49 | mlag_peer | UKOFFICE2_SPINE02 | Ethernet49 |
+| l3spine | UKOFFICE2_SPINE01 | Ethernet50 | mlag_peer | UKOFFICE2_SPINE02 | Ethernet50 |
 
 ## Fabric IP Allocation
 
@@ -122,7 +198,7 @@
 
 | Loopback Pool | Available Addresses | Assigned addresses | Assigned Address % |
 | ------------- | ------------------- | ------------------ | ------------------ |
-| 172.16.1.0/24 | 256 | 4 | 1.57 % |
+| 172.16.1.0/24 | 256 | 8 | 3.13 % |
 
 ### Loopback0 Interfaces Node Allocation
 
@@ -132,6 +208,10 @@
 | OFFICE1 | INOFFICE1_SPINE02 | 172.16.1.2/32 |
 | OFFICE2 | INOFFICE2_SPINE01 | 172.16.1.1/32 |
 | OFFICE2 | INOFFICE2_SPINE02 | 172.16.1.2/32 |
+| OFFICE1 | UKOFFICE1_SPINE01 | 172.16.1.3/32 |
+| OFFICE1 | UKOFFICE1_SPINE02 | 172.16.1.4/32 |
+| OFFICE1 | UKOFFICE2_SPINE01 | 172.16.1.1/32 |
+| OFFICE1 | UKOFFICE2_SPINE02 | 172.16.1.2/32 |
 
 ### VTEP Loopback VXLAN Tunnel Source Interfaces (VTEPs Only)
 

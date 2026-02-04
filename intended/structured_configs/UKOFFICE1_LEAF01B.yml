@@ -1,0 +1,187 @@
+aaa_root:
+  disabled: true
+config_end: true
+enable_password:
+  disabled: true
+ethernet_interfaces:
+- name: Ethernet49
+  description: MLAG_UKOFFICE1_LEAF01A_Ethernet49
+  shutdown: false
+  channel_group:
+    id: 49
+    mode: active
+  metadata:
+    peer: UKOFFICE1_LEAF01A
+    peer_interface: Ethernet49
+    peer_type: mlag_peer
+- name: Ethernet50
+  description: MLAG_UKOFFICE1_LEAF01A_Ethernet50
+  shutdown: false
+  channel_group:
+    id: 49
+    mode: active
+  metadata:
+    peer: UKOFFICE1_LEAF01A
+    peer_interface: Ethernet50
+    peer_type: mlag_peer
+- name: Ethernet1
+  description: L2_UKOFFICE1_SUBLEAF01C_Ethernet50
+  shutdown: true
+  channel_group:
+    id: 1
+    mode: active
+  metadata:
+    peer: UKOFFICE1_SUBLEAF01C
+    peer_interface: Ethernet50
+    peer_type: l2subleaf
+- name: Ethernet2
+  description: L2_UKOFFICE1_SUBLEAF01D_Ethernet50
+  shutdown: true
+  channel_group:
+    id: 2
+    mode: active
+  metadata:
+    peer: UKOFFICE1_SUBLEAF01D
+    peer_interface: Ethernet50
+    peer_type: l2subleaf
+- name: Ethernet51
+  description: L2_UKOFFICE1_SPINE01_Ethernet2
+  shutdown: true
+  channel_group:
+    id: 51
+    mode: active
+  metadata:
+    peer: UKOFFICE1_SPINE01
+    peer_interface: Ethernet2
+    peer_type: l3spine
+- name: Ethernet52
+  description: L2_UKOFFICE1_SPINE02_Ethernet2
+  shutdown: true
+  channel_group:
+    id: 51
+    mode: active
+  metadata:
+    peer: UKOFFICE1_SPINE02
+    peer_interface: Ethernet2
+    peer_type: l3spine
+- name: Ethernet10
+  description: SERVER_UKOFFICE1_LEAF01_Eth10_LB01B
+  shutdown: false
+  channel_group:
+    id: 10
+    mode: active
+  metadata:
+    peer: UKOFFICE1_LEAF01_Eth10
+    peer_interface: LB01B
+    peer_type: server
+    peer_key: UKOFFICE1_LEAF01
+    port_profile: PP_TEST
+hostname: UKOFFICE1_LEAF01B
+ip_igmp_snooping:
+  globally_enabled: true
+management_api_http:
+  enable_https: true
+  enable_vrfs:
+  - name: MGMT
+management_interfaces:
+- name: Management0
+  description: OOB_MANAGEMENT
+  shutdown: false
+  vrf: MGMT
+  ip_address: 172.16.100.104/24
+  type: oob
+metadata:
+  is_deployed: false
+  platform: cEOSLab
+  pod_name: OFFICE1
+  dc_name: EXAMPLE
+  fabric_name: GLOBAL
+  validate_hardware:
+    enabled: false
+mlag_configuration:
+  domain_id: UKOFFICE1_LEAF01
+  local_interface: Vlan4094
+  peer_address: 192.168.0.8
+  peer_link: Port-Channel49
+  reload_delay_mlag: '300'
+  reload_delay_non_mlag: '330'
+port_channel_interfaces:
+- name: Port-Channel49
+  description: MLAG_UKOFFICE1_LEAF01A_Port-Channel49
+  shutdown: false
+  switchport:
+    enabled: true
+    mode: trunk
+    trunk:
+      groups:
+      - MLAG
+- name: Port-Channel1
+  description: L2_UKOFFICE1_SUBLEAF01C_Port-Channel49
+  shutdown: false
+  mlag: 1
+  switchport:
+    enabled: true
+    mode: trunk
+    trunk:
+      allowed_vlan: '2000'
+- name: Port-Channel2
+  description: L2_UKOFFICE1_SUBLEAF01D_Port-Channel49
+  shutdown: false
+  mlag: 2
+  switchport:
+    enabled: true
+    mode: trunk
+    trunk:
+      allowed_vlan: '2000'
+- name: Port-Channel51
+  description: L2_UKOFFICE1_SPINES_Port-Channel1
+  shutdown: false
+  mlag: 51
+  switchport:
+    enabled: true
+    mode: trunk
+    trunk:
+      allowed_vlan: '2000'
+- name: Port-Channel10
+  description: SERVER_UKOFFICE1_LEAF01_Eth10
+  shutdown: false
+  mlag: 10
+  spanning_tree_bpduguard: enabled
+  spanning_tree_portfast: edge
+  switchport:
+    enabled: true
+    mode: trunk
+service_routing_protocols_model: multi-agent
+spanning_tree:
+  mode: mstp
+  mst_instances:
+  - id: '0'
+    priority: 16384
+  no_spanning_tree_vlan: '4094'
+transceiver_qsfp_default_mode_4x10: true
+vlan_interfaces:
+- name: Vlan4094
+  description: MLAG
+  shutdown: false
+  ip_address: 192.168.0.9/31
+  mtu: 9214
+  no_autostate: true
+vlan_internal_order:
+  allocation: ascending
+  range:
+    beginning: 1006
+    ending: 1199
+vlans:
+- id: 4094
+  name: MLAG
+  trunk_groups:
+  - MLAG
+  metadata:
+    tenant: system
+- id: 2000
+  name: TEST_UKOFFICE1
+  metadata:
+    tenant: UKOFFICE1
+vrfs:
+- name: MGMT
+  ip_routing: false

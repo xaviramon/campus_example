@@ -1,0 +1,99 @@
+---
+dc_name: EXAMPLE
+pod_name: OFFICE1
+
+# Spine Switches
+l3spine:
+  defaults:
+    platform: cEOSLab
+    spanning_tree_mode: mstp
+    spanning_tree_priority: 4096
+    loopback_ipv4_pool: 172.16.1.0/24
+    mlag_peer_ipv4_pool: 192.168.0.0/24
+    mlag_peer_l3_ipv4_pool: 10.1.1.0/24
+    virtual_router_mac_address: 00:1c:73:00:dc:01
+    mlag_interfaces: [Ethernet49, Ethernet50]
+  node_groups:
+    - group: UKOFFICE1_SPINES
+      nodes:
+        - name: UKOFFICE1_SPINE01
+          mgmt_ip: 172.16.100.101/24
+        - name: UKOFFICE1_SPINE02
+          mgmt_ip: 172.16.100.102/24
+
+# Leaf Switches
+distribution_leaf:
+  defaults:
+    platform: cEOSLab
+    mlag_peer_ipv4_pool: 192.168.0.0/24
+    spanning_tree_mode: mstp
+    spanning_tree_priority: 16384
+    mlag_interfaces: [Ethernet49, Ethernet50]
+    uplink_switches: [UKOFFICE1_SPINE01, UKOFFICE1_SPINE02]
+    uplink_interfaces: [Ethernet51, Ethernet52]
+  node_groups:
+    - group: UKOFFICE1_LEAF01
+      nodes:
+        - name: UKOFFICE1_LEAF01A
+          mgmt_ip: 172.16.100.103/24
+          uplink_switch_interfaces: [Ethernet1, Ethernet1]
+        - name: UKOFFICE1_LEAF01B
+          mgmt_ip: 172.16.100.104/24
+          uplink_switch_interfaces: [Ethernet2, Ethernet2]
+    - group: UKOFFICE1_LEAF02
+      nodes:
+        - name: UKOFFICE1_LEAF02A
+          mgmt_ip: 172.16.100.105/24
+          uplink_switch_interfaces: [Ethernet3, Ethernet3]
+        - name: UKOFFICE1_LEAF02B
+          mgmt_ip: 172.16.100.106/24
+          uplink_switch_interfaces: [Ethernet4, Ethernet4]
+
+internet_leaves:
+  defaults:
+    platform: cEOSLab
+    mlag_peer_ipv4_pool: 192.168.0.0/24
+    spanning_tree_mode: mstp
+    spanning_tree_priority: 16384
+    mlag: false
+    uplink_switches: [UKOFFICE1_SPINE01, UKOFFICE1_SPINE02]
+    uplink_interfaces: [Ethernet49, Ethernet50]
+  node_groups:
+    - group: UKOFFICE1_INTERNET_LEAVES
+      nodes:
+        - name: UKOFFICE1_INTERNET_LEAF01
+          mgmt_ip: 172.16.100.120/24
+          uplink_switch_interfaces: [Ethernet47, Ethernet47]
+        - name: UKOFFICE1_INTERNET_LEAF02
+          mgmt_ip: 172.16.100.121/24
+          uplink_switch_interfaces: [Ethernet48, Ethernet48]
+
+
+l2subleaf:
+  defaults:
+    platform: cEOSLab
+    spanning_tree_mode: mstp
+    spanning_tree_priority: 32768
+    mlag: false
+    uplink_interfaces: [Ethernet49, Ethernet50]
+  node_groups:
+    - group: UKOFFICE1_SUBLEAF01
+      uplink_switches: [UKOFFICE1_LEAF01A, UKOFFICE1_LEAF01B]
+      nodes:
+        - name: UKOFFICE1_SUBLEAF01C
+          mgmt_ip: 172.16.100.108/24
+          uplink_switch_interfaces: [Ethernet1, Ethernet1]
+        - name: UKOFFICE1_SUBLEAF01D
+          mgmt_ip: 172.16.100.109/24
+          uplink_switch_interfaces: [Ethernet2, Ethernet2]
+    - group: UKOFFICE1_SUBLEAF02
+      uplink_switches: [UKOFFICE1_LEAF02A, UKOFFICE1_LEAF02B]
+      nodes:
+        - name: UKOFFICE1_SUBLEAF02C
+          mgmt_ip: 172.16.100.110/24
+          uplink_switch_interfaces: [Ethernet1, Ethernet1]
+        - name: UKOFFICE1_SUBLEAF02D
+          mgmt_ip: 172.16.100.111/24
+          uplink_switch_interfaces: [Ethernet2, Ethernet2]
+
+

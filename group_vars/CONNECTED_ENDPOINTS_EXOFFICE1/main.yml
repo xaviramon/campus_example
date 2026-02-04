@@ -1,0 +1,40 @@
+---
+connected_endpoints_keys:
+  - key: EXOFFICE1_SPINE
+    type: server
+  - key: EXOFFICE1_SPINE01
+    type: server
+  - key: EXOFFICE1_SPINE02
+    type: server
+  - key: EXOFFICE1_LEAF01
+    type: server
+  - key: EXOFFICE1_LEAF01A
+    type: server
+  - key: EXOFFICE1_LEAF01B
+    type: server
+  - key: EXOFFICE1_LEAF02
+    type: server
+  - key: EXOFFICE1_LEAF02A
+    type: server
+  - key: EXOFFICE1_LEAF02B
+    type: server
+  - key: EXOFFICE1_SUBLEAF01C
+    type: server
+  - key: EXOFFICE1_SUBLEAF01D
+    type: server
+  - key: EXOFFICE1_SUBLEAF02C
+    type: server
+  - key: EXOFFICE1_SUBLEAF02D
+    type: server
+  - key: EXOFFICE1_INTERNET_LEAF01
+    type: server
+  - key: EXOFFICE1_INTERNET_LEAF02
+    type: server
+
+port_profiles:
+  - profile: PP_TEST
+    spanning_tree_portfast: "edge"
+    spanning_tree_bpduguard: "enabled"
+    mode: trunk
+    port_channel:
+      mode: active
