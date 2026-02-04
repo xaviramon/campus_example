@@ -19,9 +19,12 @@ jobs:
     name: 'AVD'
     runs-on: ubuntu-latest
     steps:
-      - name: 'Install Ansible'
-        run: ansible --version
+      - name: "Install Ansible"
+        uses: alex-oleshkevich/setup-ansible@VERSION 
+        with:
+          version: "2.19.5"
       - name: 'Install AVD'
+        run: pip install "pyavd[ansible]==6.0.0-dev6"
         run: ansible-galaxy collection install arista.avd:6.0.0-dev6
       - name: 'Checkout'
         uses: actions/checkout@v5
