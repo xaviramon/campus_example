@@ -10,40 +10,40 @@ push: ## Push to remote repositories
 	git push
 
 .PHONY: clean
-clean: ## Remove generated files
+clean: ## Remove intended and documentation folders
 	rm -rf ./intended/* && \
 	rm -rf ./documentation/*
 
 .PHONY: build
-build: ## Generate files
+build: ## Generate configurations and documentation for all regions
 	ansible-playbook ./playbooks/generate_config.yml -i inventory.yml --skip-tags validate -f 32 --vault-password-file ./vault-password.txt
 
 .PHONY: build-apac
-build-apac: ## Generate files
+build-apac: ## Generate configurations and documentation for APAC region
 	ansible-playbook ./playbooks/generate_config.yml -i inventory.yml --limit APAC --skip-tags validate -f 32 --vault-password-file ./vault-password.txt
 
 .PHONY: build-emea
-build-emea: ## Generate files
+build-emea: ## Generate configurations and documentation for EMEA region
 	ansible-playbook ./playbooks/generate_config.yml -i inventory.yml --limit EMEA --skip-tags validate -f 32 --vault-password-file ./vault-password.txt
 
 .PHONY: build-amer
-build-amer: ## Generate files
+build-amer: ## Generate configurations and documentation for AMER region
 	ansible-playbook ./playbooks/generate_config.yml -i inventory.yml --limit AMER --skip-tags validate -f 32 --vault-password-file ./vault-password.txt
 
 .PHONY: build-preview-debug
-build-preview-debug: ## Generate files without passwords but with debug
+build-preview-debug: ## Generate configurations and documentation with debug
 	ansible-playbook ./playbooks/generate_config.yml -i inventory.yml --skip-tags validate --tags debug -f 32 --vault-password-file ./vault-password.txt
 
 .PHONY: build-nodocs
-build-nodocs: ## Generate files without documentation
+build-nodocs: ## Generate configurations without documentation
 	ansible-playbook ./playbooks/generate_config.yml -i inventory.yml --skip-tags validate,documentation -f 32 --vault-password-file ./vault-password.txt
 
 .PHONY: deploy
-deploy: ## Deploy configs using new role
+deploy: ## Deploy configs to CVaaS - WIP
 	ansible-playbook ./playbooks/generate_and_eapi_deploy.yml -i inventory.yml -f 32 --vault-password-file ./vault-password.txt
 
-.PHONY: deploy-ignore-branch
-deploy-ignore-branch: ## Deploy configs using new role
+.PHONY: deploy-send-branch
+deploy-send-branch: ## Deploy configs to CVaaS and the workspace description includes the branch name
 	ansible-playbook ./playbooks/push_configs_new.yml -i inventory.yml -f 32 --vault-password-file ./vault-password.txt --extra-vars '{"cv_workspace_description":"Deploy using branch: $(ACTUAL_BRANCH)"}'
 
 .PHONY: deploy-debug
@@ -79,18 +79,11 @@ prepare-pr: ## Remove generated configuration and documentation before creating 
 	git commit -m "Prepare Pull Request - Deleted configuration and documentation to avoid conflicts"
 
 .PHONY: create-host_vars
-create-host_vars: ## Generate hostvar files
+create-host_vars: ## Generate hostvar files based on the Ansible inventory
 	mkdir -p host_vars; for host in `ansible all -i inventory.yml --list-hosts | sed '1d'`; do echo "---" > host_vars/$$host.yml; done
 
 .PHONY: create-group_vars
-create-group_vars: ## Generate groupvar files
-	mkdir -p group_vars; for group in `ansible-inventory --list -i inventory.yml | jq -r 'keys | unique | .[] | select(. | startswith("_") | not) | select(. | startswith("CONNECTED") | not) | select(. | startswith("TENANT") | not)'`; do if [ ! -f group_vars/$$group.yml ]; then echo "---" > group_vars/$$group.yml; fi; done
-
-.PHONY: rename-connected_endpoints
-rename-connected_endpoints: ## Rename connected_endpoints groupvar file to CONNECTED_ENDPOINTS
-	rename 's/^INOFFICE1/INOFFICE2/' *
-.PHONY: rename-group_vars
-rename-group_vars: ## Rename group_vars groupvar files
+create-group_vars: ## Generate groupvar files based on the EXOFFICE1 template (Example Office1). Execution: make create-group_vars OFFICE=<Name of the office>
 	cd group_vars; rename -c "^(EXOFFICE1)([\w]*)(.yml)$\" "$(OFFICE)\(2)\(3)"; sed 's/EXOFFICE1/$(OFFICE)/g' $(OFFICE).yml > tmp; cat tmp > $(OFFICE).yml; rm tmp
 	cd group_vars; cp -r CONNECTED_ENDPOINTS_EXOFFICE1 CONNECTED_ENDPOINTS_$(OFFICE); cd CONNECTED_ENDPOINTS_$(OFFICE); rename "^(EXOFFICE1)([\w]*)(.yml)$\" "$(OFFICE)\(2)\(3)"; for file in *; do sed 's/EXOFFICE1/$(OFFICE)/g' $$file > tmp; cat tmp > $$file; rm tmp; done
 	cd group_vars; cp -r TENANT_NETWORKS_EXOFFICE1 TENANT_NETWORKS_$(OFFICE); cd TENANT_NETWORKS_$(OFFICE); rename "^(EXOFFICE1)([\w]*)(.yml)$\" "$(OFFICE)\(2)\(3)"; for file in *; do sed 's/EXOFFICE1/$(OFFICE)/g' $$file > tmp; cat tmp > $$file; rm tmp; done
