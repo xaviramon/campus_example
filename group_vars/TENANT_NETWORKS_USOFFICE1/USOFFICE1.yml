@@ -5,4 +5,3 @@ USOFFICE1:
     l2vlans:
       - id: 3000
         name: TEST_USOFFICE1
-

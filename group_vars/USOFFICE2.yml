@@ -95,5 +95,3 @@ l2subleaf:
         - name: USOFFICE2_SUBLEAF02D
           mgmt_ip: 172.16.100.111/24
           uplink_switch_interfaces: [Ethernet2, Ethernet2]
-
-

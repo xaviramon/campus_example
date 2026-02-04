@@ -5,4 +5,3 @@ INOFFICE1:
     l2vlans:
       - id: 100
         name: TEST_INOFFICE1
-

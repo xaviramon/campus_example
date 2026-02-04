@@ -5,4 +5,3 @@ UKOFFICE1:
     l2vlans:
       - id: 2000
         name: TEST_UKOFFICE1
-

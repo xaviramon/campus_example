@@ -18,4 +18,3 @@
       tags: [ build, cli ]
       import_role:
         name: arista.avd.eos_cli_config_gen
-

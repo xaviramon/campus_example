@@ -5,4 +5,3 @@ EXOFFICE1:
     l2vlans:
       - id: 1000
         name: TEST_EXOFFICE1
-
