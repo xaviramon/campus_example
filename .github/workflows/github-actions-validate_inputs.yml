@@ -20,7 +20,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: 'Install Ansible'
-        run: apt install ansible
+        run: ansible --version
       - name: 'Install AVD'
         run: ansible-galaxy collection install arista.avd:6.0.0-dev6
       - name: 'Checkout'
