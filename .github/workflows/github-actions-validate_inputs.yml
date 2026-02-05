@@ -40,5 +40,4 @@ jobs:
     needs: avd-run
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5
       - uses: nickcharlton/diff-check@main
