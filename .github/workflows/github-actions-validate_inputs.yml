@@ -35,3 +35,10 @@ jobs:
         run: make build
       - name: 'Check files'
         run: ls -lha
+  validate-configs:
+    name: 'Configuration validation'
+    needs: avd-run
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: nickcharlton/diff-check@main
