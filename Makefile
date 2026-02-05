@@ -36,7 +36,7 @@ build-preview-debug: ## Generate configurations and documentation with debug
 
 .PHONY: build-nodocs
 build-nodocs: ## Generate configurations without documentation
-	ansible-playbook ./playbooks/generate_config.yml -i inventory.yml --skip-tags validate,documentation -f 32 --vault-password-file ./vault-password.txt
+	ansible-playbook ./playbooks/generate_config_no_docs.yml -i inventory.yml --skip-tags validate,documentation -f 32 --vault-password-file ./vault-password.txt
 
 .PHONY: deploy
 deploy: ## Deploy configs to CVaaS - WIP
