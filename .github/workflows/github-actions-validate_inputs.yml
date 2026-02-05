@@ -30,7 +30,7 @@ jobs:
       - name: 'Checkout'
         uses: actions/checkout@v5
       - name: 'Generate AVD configs'
-        run: make build
+        run: make build-nodocs
       - name: 'Validate generated configs are the same as uploaded'
         uses: nickcharlton/diff-check@main
 
