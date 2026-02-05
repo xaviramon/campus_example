@@ -31,5 +31,6 @@ jobs:
         uses: actions/checkout@v5
       - name: 'Generate AVD configs'
         run: make build
-      - uses: nickcharlton/diff-check@main
+      - name: 'Validate generated configs are the same as uploaded'
+        uses: nickcharlton/diff-check@main
 
