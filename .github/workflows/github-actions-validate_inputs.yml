@@ -29,5 +29,9 @@ jobs:
           ansible-galaxy collection install arista.avd:6.0.0-dev6
       - name: 'Checkout'
         uses: actions/checkout@v5
+      - name: 'Check files'
+        run: ls -lha
       - name: 'Generate AVD configs'
         run: make build
+      - name: 'Check files'
+        run: ls -lha
