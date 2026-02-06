@@ -1,6 +1,6 @@
 name: GitHub Actions Validate Inputs
 run-name: ${{ github.actor }} is executing GitHub Actions Validate Inputs
-on: [push]
+on: [pull_request]
 jobs:
   yamllint:
     name: 'YAML linting'
@@ -17,13 +17,19 @@ jobs:
           yamllint_comment: false
   avd-run:
     name: 'AVD'
+    needs: yamllint
     runs-on: ubuntu-latest
     steps:
-      - name: 'Install Ansible'
-        run: apt install ansible
+      - name: "Install Ansible"
+        run: |
+          pip install ansible-core==2.19.5
       - name: 'Install AVD'
-        run: ansible-galaxy collection install arista.avd:6.0.0-dev6
+        run: |
+          pip install "pyavd[ansible]==6.0.0-dev6"
+          ansible-galaxy collection install arista.avd:6.0.0-dev6
       - name: 'Checkout'
         uses: actions/checkout@v5
       - name: 'Generate AVD configs'
-        run: make build
+        run: make build-nodocs
+      - name: 'Validate generated configs are the same as uploaded'
+        uses: nickcharlton/diff-check@main
