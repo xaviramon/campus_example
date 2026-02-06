@@ -332,3 +332,15 @@ all:
         UKOFFICE2_LEAVES:
         UKOFFICE2_SUBLEAVES:
         UKOFFICE2_INTERNET_LEAVES:
+    CVaaS:
+      hosts:
+        cvaas:
+          ansible_host: www.cv-prod-euwest-2.arista.io
+          ansible_user: cvaas
+          ansible_password: "{{ cvaas_production_token }}"
+          ansible_connection: httpapi
+          ansible_httpapi_use_ssl: True
+          ansible_httpapi_validate_certs: True
+          ansible_network_os: eos
+          ansible_httpapi_port: 443
+          ansible_python_interpreter: $(which python3)
