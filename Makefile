@@ -40,7 +40,11 @@ build-nodocs: ## Generate configurations without documentation
 
 .PHONY: deploy
 deploy: ## Deploy configs to CVaaS - WIP
-	ansible-playbook ./playbooks/generate_and_eapi_deploy.yml -i inventory.yml -f 32 --vault-password-file ./vault-password.txt
+	ansible-playbook ./playbooks/deploy_configs_cvaas.yml -i inventory.yml -f 32 --vault-password-file ./vault-password.txt
+
+.PHONY: deploy-selectively
+deploy-selectively: ## Deploy configs using new role
+	ansible-playbook ./playbooks/deploy_configs_cvaas.yml -i inventory.yml -f 32 --vault-password-file ./vault-password.txt --extra-vars '{"cv_workspace_description":"Deployed selectively on $(location) using branch: $(ACTUAL_BRANCH)","cv_change_control_name":"Deployed selectively on $(location) using branch: $(ACTUAL_BRANCH)","cv_change_control_description":"Deployed selectively on $(location) using branch: $(ACTUAL_BRANCH)","my_playbook_hosts": $(location)}'
 
 .PHONY: deploy-send-branch
 deploy-send-branch: ## Deploy configs to CVaaS and the workspace description includes the branch name

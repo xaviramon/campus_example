@@ -1,0 +1,15 @@
+---
+- name: Push configs to CVaaS
+  hosts: '{{ my_playbook_hosts | default("GLOBAL") }}'
+  connection: local
+  gather_facts: false
+  tasks:
+    - name: Deploy configurations and tags to ClouVision
+      import_role:
+        name: arista.avd.cv_deploy
+      vars:
+        cv_server: www.cv-prod-euwest-2.arista.io
+        cv_token: "{{ cvaas_production_token }}"
+        cv_verify_certs: true
+        cv_skip_missing_devices: true
+
