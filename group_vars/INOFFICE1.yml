@@ -12,12 +12,12 @@ l3spine:
     mlag_peer_ipv4_pool: 192.168.0.0/24
     mlag_peer_l3_ipv4_pool: 10.1.1.0/24
     virtual_router_mac_address: 00:1c:73:00:dc:01
-    mlag_interfaces: [Ethernet49, Ethernet50  ]
+    mlag_interfaces: [Ethernet49, Ethernet50]
   node_groups:
     - group: INOFFICE1_SPINES
       nodes:
         - name: INOFFICE1_SPINE01
-          mgmt_ip: 172.16.100.101/24
+          mgmt_ip: 172.16.100.99/24
         - name: INOFFICE1_SPINE02
           mgmt_ip: 172.16.100.102/24
 
