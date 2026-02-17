@@ -30,6 +30,10 @@ build-emea: ## Generate configurations and documentation for EMEA region
 build-amer: ## Generate configurations and documentation for AMER region
 	ansible-playbook ./playbooks/generate_config.yml -i inventory.yml --limit AMER --skip-tags validate -f 32 --vault-password-file ./vault-password.txt
 
+.PHONY: build-office
+build-office: ## Generate configurations and documentation for AMER region
+	ansible-playbook ./playbooks/generate_config.yml -i inventory.yml --limit $(OFFICE) --skip-tags validate -f 32 --vault-password-file ./vault-password.txt
+
 .PHONY: build-preview-debug
 build-preview-debug: ## Generate configurations and documentation with debug
 	ansible-playbook ./playbooks/generate_config.yml -i inventory.yml --skip-tags validate --tags debug -f 32 --vault-password-file ./vault-password.txt
