@@ -33,6 +33,22 @@ node_id_pools:
   fabric_name=GLOBAL/dc_name=AMER/pod_name=USOFFICE2/type=l3spine:
     hostname=USOFFICE2_SPINE01: 1
     hostname=USOFFICE2_SPINE02: 2
+  fabric_name=GLOBAL/dc_name=AMER/pod_name=USOFFICE3/type=distribution_leaf:
+    hostname=USOFFICE3_LEAF01A: 1
+    hostname=USOFFICE3_LEAF01B: 2
+    hostname=USOFFICE3_LEAF02A: 3
+    hostname=USOFFICE3_LEAF02B: 4
+  fabric_name=GLOBAL/dc_name=AMER/pod_name=USOFFICE3/type=internet_leaves:
+    hostname=USOFFICE3_INTERNET_LEAF01: 1
+    hostname=USOFFICE3_INTERNET_LEAF02: 2
+  fabric_name=GLOBAL/dc_name=AMER/pod_name=USOFFICE3/type=l2subleaf:
+    hostname=USOFFICE3_SUBLEAF01C: 1
+    hostname=USOFFICE3_SUBLEAF01D: 2
+    hostname=USOFFICE3_SUBLEAF02C: 3
+    hostname=USOFFICE3_SUBLEAF02D: 4
+  fabric_name=GLOBAL/dc_name=AMER/pod_name=USOFFICE3/type=l3spine:
+    hostname=USOFFICE3_SPINE01: 1
+    hostname=USOFFICE3_SPINE02: 2
   fabric_name=GLOBAL/dc_name=APAC/pod_name=INOFFICE1/type=distribution_leaf:
     hostname=INOFFICE1_LEAF01A: 1
     hostname=INOFFICE1_LEAF01B: 2
