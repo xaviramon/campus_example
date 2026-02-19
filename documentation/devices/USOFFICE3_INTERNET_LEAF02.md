@@ -13,6 +13,9 @@
 - [Internal VLAN Allocation Policy](#internal-vlan-allocation-policy)
   - [Internal VLAN Allocation Policy Summary](#internal-vlan-allocation-policy-summary)
   - [Internal VLAN Allocation Policy Device Configuration](#internal-vlan-allocation-policy-device-configuration)
+- [VLANs](#vlans)
+  - [VLANs Summary](#vlans-summary)
+  - [VLANs Device Configuration](#vlans-device-configuration)
 - [Interfaces](#interfaces)
   - [Ethernet Interfaces](#ethernet-interfaces)
   - [Port-Channel Interfaces](#port-channel-interfaces)
@@ -122,6 +125,22 @@ spanning-tree mst 0 priority 16384
 vlan internal order ascending range 1006 1199
 ```
 
+## VLANs
+
+### VLANs Summary
+
+| VLAN ID | Name | Trunk Groups |
+| ------- | ---- | ------------ |
+| 1000 | TEST_USOFFICE3 | - |
+
+### VLANs Device Configuration
+
+```eos
+!
+vlan 1000
+   name TEST_USOFFICE3
+```
+
 ## Interfaces
 
 ### Ethernet Interfaces
@@ -132,8 +151,8 @@ vlan internal order ascending range 1006 1199
 
 | Interface | Description | Mode | VLANs | Native VLAN | Trunk Group | Channel-Group |
 | --------- | ----------- | ---- | ----- | ----------- | ----------- | ------------- |
-| Ethernet49 | L2_USOFFICE3_SPINE01_Ethernet48 | *trunk | *none | *- | *- | 49 |
-| Ethernet50 | L2_USOFFICE3_SPINE02_Ethernet48 | *trunk | *none | *- | *- | 49 |
+| Ethernet49 | L2_USOFFICE3_SPINE01_Ethernet48 | *trunk | *1000 | *- | *- | 49 |
+| Ethernet50 | L2_USOFFICE3_SPINE02_Ethernet48 | *trunk | *1000 | *- | *- | 49 |
 
 *Inherited from Port-Channel Interface
 
@@ -160,7 +179,7 @@ interface Ethernet50
 
 | Interface | Description | Mode | VLANs | Native VLAN | Trunk Group | LACP Fallback Timeout | LACP Fallback Mode | MLAG ID | EVPN ESI |
 | --------- | ----------- | ---- | ----- | ----------- | ----------- | --------------------- | ------------------ | ------- | -------- |
-| Port-Channel49 | L2_USOFFICE3_SPINES_Port-Channel48 | trunk | none | - | - | - | - | - | - |
+| Port-Channel49 | L2_USOFFICE3_SPINES_Port-Channel48 | trunk | 1000 | - | - | - | - | - | - |
 
 #### Port-Channel Interfaces Device Configuration
 
@@ -169,7 +188,7 @@ interface Ethernet50
 interface Port-Channel49
    description L2_USOFFICE3_SPINES_Port-Channel48
    no shutdown
-   switchport trunk allowed vlan none
+   switchport trunk allowed vlan 1000
    switchport mode trunk
    switchport
 ```

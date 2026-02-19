@@ -1,6 +1,6 @@
 ---
 - name: Build Switch configuration
-  hosts: [ all ]
+  hosts: [ GLOBAL ]
   connection: local
   gather_facts: false
   collections:

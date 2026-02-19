@@ -195,8 +195,8 @@ vlan 4094
 | Ethernet3 | L2_USOFFICE3_LEAF02A_Ethernet51 | *trunk | *1000 | *- | *- | 3 |
 | Ethernet4 | L2_USOFFICE3_LEAF02B_Ethernet51 | *trunk | *1000 | *- | *- | 3 |
 | Ethernet10 | SERVER_USOFFICE3_SPINE_Eth10_FW01A | *trunk | *- | *- | *- | 10 |
-| Ethernet47 | L2_USOFFICE3_INTERNET_LEAF01_Ethernet49 | *trunk | *none | *- | *- | 47 |
-| Ethernet48 | L2_USOFFICE3_INTERNET_LEAF02_Ethernet49 | *trunk | *none | *- | *- | 48 |
+| Ethernet47 | L2_USOFFICE3_INTERNET_LEAF01_Ethernet49 | *trunk | *1000 | *- | *- | 47 |
+| Ethernet48 | L2_USOFFICE3_INTERNET_LEAF02_Ethernet49 | *trunk | *1000 | *- | *- | 48 |
 | Ethernet49 | MLAG_USOFFICE3_SPINE02_Ethernet49 | *trunk | *- | *- | *MLAG | 49 |
 | Ethernet50 | MLAG_USOFFICE3_SPINE02_Ethernet50 | *trunk | *- | *- | *MLAG | 49 |
 
@@ -263,8 +263,8 @@ interface Ethernet50
 | Port-Channel1 | L2_USOFFICE3_LEAF01_Port-Channel51 | trunk | 1000 | - | - | - | - | 1 | - |
 | Port-Channel3 | L2_USOFFICE3_LEAF02_Port-Channel51 | trunk | 1000 | - | - | - | - | 3 | - |
 | Port-Channel10 | SERVER_USOFFICE3_SPINE_Eth10 | trunk | - | - | - | - | - | 10 | - |
-| Port-Channel47 | L2_USOFFICE3_INTERNET_LEAF01_Port-Channel49 | trunk | none | - | - | - | - | 47 | - |
-| Port-Channel48 | L2_USOFFICE3_INTERNET_LEAF02_Port-Channel49 | trunk | none | - | - | - | - | 48 | - |
+| Port-Channel47 | L2_USOFFICE3_INTERNET_LEAF01_Port-Channel49 | trunk | 1000 | - | - | - | - | 47 | - |
+| Port-Channel48 | L2_USOFFICE3_INTERNET_LEAF02_Port-Channel49 | trunk | 1000 | - | - | - | - | 48 | - |
 | Port-Channel49 | MLAG_USOFFICE3_SPINE02_Port-Channel49 | trunk | - | - | MLAG | - | - | - | - |
 
 #### Port-Channel Interfaces Device Configuration
@@ -299,7 +299,7 @@ interface Port-Channel10
 interface Port-Channel47
    description L2_USOFFICE3_INTERNET_LEAF01_Port-Channel49
    no shutdown
-   switchport trunk allowed vlan none
+   switchport trunk allowed vlan 1000
    switchport mode trunk
    switchport
    mlag 47
@@ -307,7 +307,7 @@ interface Port-Channel47
 interface Port-Channel48
    description L2_USOFFICE3_INTERNET_LEAF02_Port-Channel49
    no shutdown
-   switchport trunk allowed vlan none
+   switchport trunk allowed vlan 1000
    switchport mode trunk
    switchport
    mlag 48
