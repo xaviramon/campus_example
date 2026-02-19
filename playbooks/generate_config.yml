@@ -11,10 +11,12 @@
 
     - name: generate intented variables
       tags: [ build ]
-      import_role:
+      ansible.builtin.import_role:
         name: arista.avd.eos_designs
+      vars:
+        eos_designs_keep_tmp_files: "{{ debug | default(false) }}"
 
     - name: generate device intended config and documentation
       tags: [ build, cli ]
-      import_role:
+      ansible.builtin.import_role:
         name: arista.avd.eos_cli_config_gen

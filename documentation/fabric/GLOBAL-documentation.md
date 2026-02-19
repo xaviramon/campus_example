@@ -53,18 +53,18 @@
 | UKOFFICE1 | l2subleaf | UKOFFICE1_SUBLEAF01D | 172.16.100.109/24 | cEOSLab | Not Available | - |
 | UKOFFICE1 | l2subleaf | UKOFFICE1_SUBLEAF02C | 172.16.100.110/24 | cEOSLab | Not Available | - |
 | UKOFFICE1 | l2subleaf | UKOFFICE1_SUBLEAF02D | 172.16.100.111/24 | cEOSLab | Not Available | - |
-| OFFICE2 | internet_leaves | UKOFFICE2_INTERNET_LEAF01 | 172.16.100.120/24 | cEOSLab | Not Available | - |
-| OFFICE2 | internet_leaves | UKOFFICE2_INTERNET_LEAF02 | 172.16.100.121/24 | cEOSLab | Not Available | - |
-| OFFICE2 | distribution_leaf | UKOFFICE2_LEAF01A | 172.16.100.103/24 | cEOSLab | Not Available | - |
-| OFFICE2 | distribution_leaf | UKOFFICE2_LEAF01B | 172.16.100.104/24 | cEOSLab | Not Available | - |
-| OFFICE2 | distribution_leaf | UKOFFICE2_LEAF02A | 172.16.100.105/24 | cEOSLab | Not Available | - |
-| OFFICE2 | distribution_leaf | UKOFFICE2_LEAF02B | 172.16.100.106/24 | cEOSLab | Not Available | - |
-| OFFICE2 | l3spine | UKOFFICE2_SPINE01 | 172.16.100.101/24 | cEOSLab | Not Available | - |
-| OFFICE2 | l3spine | UKOFFICE2_SPINE02 | 172.16.100.102/24 | cEOSLab | Not Available | - |
-| OFFICE2 | l2subleaf | UKOFFICE2_SUBLEAF01C | 172.16.100.108/24 | cEOSLab | Not Available | - |
-| OFFICE2 | l2subleaf | UKOFFICE2_SUBLEAF01D | 172.16.100.109/24 | cEOSLab | Not Available | - |
-| OFFICE2 | l2subleaf | UKOFFICE2_SUBLEAF02C | 172.16.100.110/24 | cEOSLab | Not Available | - |
-| OFFICE2 | l2subleaf | UKOFFICE2_SUBLEAF02D | 172.16.100.111/24 | cEOSLab | Not Available | - |
+| UKOFFICE2 | internet_leaves | UKOFFICE2_INTERNET_LEAF01 | 172.16.100.120/24 | cEOSLab | Not Available | - |
+| UKOFFICE2 | internet_leaves | UKOFFICE2_INTERNET_LEAF02 | 172.16.100.121/24 | cEOSLab | Not Available | - |
+| UKOFFICE2 | distribution_leaf | UKOFFICE2_LEAF01A | 172.16.100.103/24 | cEOSLab | Not Available | - |
+| UKOFFICE2 | distribution_leaf | UKOFFICE2_LEAF01B | 172.16.100.104/24 | cEOSLab | Not Available | - |
+| UKOFFICE2 | distribution_leaf | UKOFFICE2_LEAF02A | 172.16.100.105/24 | cEOSLab | Not Available | - |
+| UKOFFICE2 | distribution_leaf | UKOFFICE2_LEAF02B | 172.16.100.106/24 | cEOSLab | Not Available | - |
+| UKOFFICE2 | l3spine | UKOFFICE2_SPINE01 | 172.16.100.101/24 | cEOSLab | Not Available | - |
+| UKOFFICE2 | l3spine | UKOFFICE2_SPINE02 | 172.16.100.102/24 | cEOSLab | Not Available | - |
+| UKOFFICE2 | l2subleaf | UKOFFICE2_SUBLEAF01C | 172.16.100.108/24 | cEOSLab | Not Available | - |
+| UKOFFICE2 | l2subleaf | UKOFFICE2_SUBLEAF01D | 172.16.100.109/24 | cEOSLab | Not Available | - |
+| UKOFFICE2 | l2subleaf | UKOFFICE2_SUBLEAF02C | 172.16.100.110/24 | cEOSLab | Not Available | - |
+| UKOFFICE2 | l2subleaf | UKOFFICE2_SUBLEAF02D | 172.16.100.111/24 | cEOSLab | Not Available | - |
 | USOFFICE1 | internet_leaves | USOFFICE1_INTERNET_LEAF01 | 172.16.100.120/24 | cEOSLab | Not Available | - |
 | USOFFICE1 | internet_leaves | USOFFICE1_INTERNET_LEAF02 | 172.16.100.121/24 | cEOSLab | Not Available | - |
 | USOFFICE1 | distribution_leaf | USOFFICE1_LEAF01A | 172.16.100.103/24 | cEOSLab | Not Available | - |
@@ -286,8 +286,8 @@
 | INOFFICE2 | INOFFICE2_SPINE02 | 172.16.1.2/32 |
 | UKOFFICE1 | UKOFFICE1_SPINE01 | 172.16.1.1/32 |
 | UKOFFICE1 | UKOFFICE1_SPINE02 | 172.16.1.2/32 |
-| OFFICE2 | UKOFFICE2_SPINE01 | 172.16.1.1/32 |
-| OFFICE2 | UKOFFICE2_SPINE02 | 172.16.1.2/32 |
+| UKOFFICE2 | UKOFFICE2_SPINE01 | 172.16.1.1/32 |
+| UKOFFICE2 | UKOFFICE2_SPINE02 | 172.16.1.2/32 |
 | USOFFICE1 | USOFFICE1_SPINE01 | 172.16.1.1/32 |
 | USOFFICE1 | USOFFICE1_SPINE02 | 172.16.1.2/32 |
 | USOFFICE2 | USOFFICE2_SPINE01 | 172.16.1.1/32 |
