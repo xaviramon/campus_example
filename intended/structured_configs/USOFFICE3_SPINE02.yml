@@ -168,7 +168,7 @@ port_channel_interfaces:
     enabled: true
     mode: trunk
     trunk:
-      allowed_vlan: none
+      allowed_vlan: '1000'
 - name: Port-Channel48
   description: L2_USOFFICE3_INTERNET_LEAF02_Port-Channel49
   shutdown: false
@@ -177,7 +177,7 @@ port_channel_interfaces:
     enabled: true
     mode: trunk
     trunk:
-      allowed_vlan: none
+      allowed_vlan: '1000'
 - name: Port-Channel10
   description: SERVER_USOFFICE3_SPINE_Eth10
   shutdown: false
