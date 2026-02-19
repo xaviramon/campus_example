@@ -1,0 +1,7 @@
+---
+USOFFICE3:
+  - name: USOFFICE3
+    mac_vrf_vni_base: 10000
+    l2vlans:
+      - id: 1000
+        name: TEST_USOFFICE3

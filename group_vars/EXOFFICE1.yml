@@ -1,6 +1,6 @@
 ---
-dc_name: EXAMPLE
-pod_name: OFFICE1
+dc_name: THEATER
+pod_name: EXOFFICE1
 
 # Spine Switches
 l3spine:
