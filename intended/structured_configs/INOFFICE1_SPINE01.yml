@@ -111,11 +111,11 @@ management_api_http:
   enable_vrfs:
   - name: MGMT
 management_interfaces:
-- name: Management0
+- name: Management1
   description: OOB_MANAGEMENT
   shutdown: false
   vrf: MGMT
-  ip_address: 172.16.100.101/24
+  ip_address: 172.16.100.99/24
   type: oob
 metadata:
   is_deployed: false
@@ -213,11 +213,13 @@ vlans:
   trunk_groups:
   - MLAG
   metadata:
-    tenant: system
+    tenants:
+    - system
 - id: 100
   name: TEST_INOFFICE1
   metadata:
-    tenant: INOFFICE1
+    tenants:
+    - INOFFICE1
 vrfs:
 - name: MGMT
   ip_routing: false

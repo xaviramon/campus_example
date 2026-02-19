@@ -1,6 +1,6 @@
 ---
 dc_name: EMEA
-pod_name: OFFICE2
+pod_name: UKOFFICE2
 
 # Spine Switches
 l3spine:

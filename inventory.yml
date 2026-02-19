@@ -9,85 +9,127 @@ all:
                 USOFFICE1_SPINES:
                   hosts:
                     USOFFICE1_SPINE01:
-                      is_deployed: False
+                      is_deployed: false
                     USOFFICE1_SPINE02:
-                      is_deployed: False
+                      is_deployed: false
                 USOFFICE1_LEAVES:
                   children:
                     USOFFICE1_LEAF01:
                       hosts:
                         USOFFICE1_LEAF01A:
-                          is_deployed: False
+                          is_deployed: false
                         USOFFICE1_LEAF01B:
-                          is_deployed: False
+                          is_deployed: false
                     USOFFICE1_LEAF02:
                       hosts:
                         USOFFICE1_LEAF02A:
-                          is_deployed: False
+                          is_deployed: false
                         USOFFICE1_LEAF02B:
-                          is_deployed: False
+                          is_deployed: false
                 USOFFICE1_SUBLEAVES:
                   children:
                     USOFFICE1_SUBLEAF01:
                       hosts:
                         USOFFICE1_SUBLEAF01C:
-                          is_deployed: False
+                          is_deployed: false
                         USOFFICE1_SUBLEAF01D:
-                          is_deployed: False
+                          is_deployed: false
                     USOFFICE1_SUBLEAF02:
                       hosts:
                         USOFFICE1_SUBLEAF02C:
-                          is_deployed: False
+                          is_deployed: false
                         USOFFICE1_SUBLEAF02D:
-                          is_deployed: False
+                          is_deployed: false
                 USOFFICE1_INTERNET_LEAVES:
                   hosts:
                     USOFFICE1_INTERNET_LEAF01:
-                      is_deployed: False
+                      is_deployed: false
                     USOFFICE1_INTERNET_LEAF02:
-                      is_deployed: False
+                      is_deployed: false
             USOFFICE2:
               children:
                 USOFFICE2_SPINES:
                   hosts:
                     USOFFICE2_SPINE01:
-                      is_deployed: False
+                      is_deployed: false
                     USOFFICE2_SPINE02:
-                      is_deployed: False
+                      is_deployed: false
                 USOFFICE2_LEAVES:
                   children:
                     USOFFICE2_LEAF01:
                       hosts:
                         USOFFICE2_LEAF01A:
-                          is_deployed: False
+                          is_deployed: false
                         USOFFICE2_LEAF01B:
-                          is_deployed: False
+                          is_deployed: false
                     USOFFICE2_LEAF02:
                       hosts:
                         USOFFICE2_LEAF02A:
-                          is_deployed: False
+                          is_deployed: false
                         USOFFICE2_LEAF02B:
-                          is_deployed: False
+                          is_deployed: false
                 USOFFICE2_SUBLEAVES:
                   children:
                     USOFFICE2_SUBLEAF01:
                       hosts:
                         USOFFICE2_SUBLEAF01C:
-                          is_deployed: False
+                          is_deployed: false
                         USOFFICE2_SUBLEAF01D:
-                          is_deployed: False
+                          is_deployed: false
                     USOFFICE2_SUBLEAF02:
                       hosts:
                         USOFFICE2_SUBLEAF02C:
-                          is_deployed: False
+                          is_deployed: false
                         USOFFICE2_SUBLEAF02D:
-                          is_deployed: False
+                          is_deployed: false
                 USOFFICE2_INTERNET_LEAVES:
                   hosts:
                     USOFFICE2_INTERNET_LEAF01:
-                      is_deployed: False
+                      is_deployed: false
                     USOFFICE2_INTERNET_LEAF02:
-                      is_deployed: False
+                      is_deployed: false
+            USOFFICE3:
+              children:
+                USOFFICE3_SPINES:
+                  hosts:
+                    USOFFICE3_SPINE01:
+                      is_deployed: false
+                    USOFFICE3_SPINE02:
+                      is_deployed: false
+                USOFFICE3_LEAVES:
+                  children:
+                    USOFFICE3_LEAF01:
+                      hosts:
+                        USOFFICE3_LEAF01A:
+                          is_deployed: false
+                        USOFFICE3_LEAF01B:
+                          is_deployed: false
+                    USOFFICE3_LEAF02:
+                      hosts:
+                        USOFFICE3_LEAF02A:
+                          is_deployed: false
+                        USOFFICE3_LEAF02B:
+                          is_deployed: false
+                USOFFICE3_SUBLEAVES:
+                  children:
+                    USOFFICE3_SUBLEAF01:
+                      hosts:
+                        USOFFICE3_SUBLEAF01C:
+                          is_deployed: false
+                        USOFFICE3_SUBLEAF01D:
+                          is_deployed: false
+                    USOFFICE3_SUBLEAF02:
+                      hosts:
+                        USOFFICE3_SUBLEAF02C:
+                          is_deployed: false
+                        USOFFICE3_SUBLEAF02D:
+                          is_deployed: false
+                USOFFICE3_INTERNET_LEAVES:
+                  hosts:
+                    USOFFICE3_INTERNET_LEAF01:
+                      is_deployed: false
+                    USOFFICE3_INTERNET_LEAF02:
+                      is_deployed: false
         EMEA:
           children:
             UKOFFICE1:
@@ -95,85 +137,85 @@ all:
                 UKOFFICE1_SPINES:
                   hosts:
                     UKOFFICE1_SPINE01:
-                      is_deployed: False
+                      is_deployed: false
                     UKOFFICE1_SPINE02:
-                      is_deployed: False
+                      is_deployed: false
                 UKOFFICE1_LEAVES:
                   children:
                     UKOFFICE1_LEAF01:
                       hosts:
                         UKOFFICE1_LEAF01A:
-                          is_deployed: False
+                          is_deployed: false
                         UKOFFICE1_LEAF01B:
-                          is_deployed: False
+                          is_deployed: false
                     UKOFFICE1_LEAF02:
                       hosts:
                         UKOFFICE1_LEAF02A:
-                          is_deployed: False
+                          is_deployed: false
                         UKOFFICE1_LEAF02B:
-                          is_deployed: False
+                          is_deployed: false
                 UKOFFICE1_SUBLEAVES:
                   children:
                     UKOFFICE1_SUBLEAF01:
                       hosts:
                         UKOFFICE1_SUBLEAF01C:
-                          is_deployed: False
+                          is_deployed: false
                         UKOFFICE1_SUBLEAF01D:
-                          is_deployed: False
+                          is_deployed: false
                     UKOFFICE1_SUBLEAF02:
                       hosts:
                         UKOFFICE1_SUBLEAF02C:
-                          is_deployed: False
+                          is_deployed: false
                         UKOFFICE1_SUBLEAF02D:
-                          is_deployed: False
+                          is_deployed: false
                 UKOFFICE1_INTERNET_LEAVES:
                   hosts:
                     UKOFFICE1_INTERNET_LEAF01:
-                      is_deployed: False
+                      is_deployed: false
                     UKOFFICE1_INTERNET_LEAF02:
-                      is_deployed: False
+                      is_deployed: false
             UKOFFICE2:
               children:
                 UKOFFICE2_SPINES:
                   hosts:
                     UKOFFICE2_SPINE01:
-                      is_deployed: False
+                      is_deployed: false
                     UKOFFICE2_SPINE02:
-                      is_deployed: False
+                      is_deployed: false
                 UKOFFICE2_LEAVES:
                   children:
                     UKOFFICE2_LEAF01:
                       hosts:
                         UKOFFICE2_LEAF01A:
-                          is_deployed: False
+                          is_deployed: false
                         UKOFFICE2_LEAF01B:
-                          is_deployed: False
+                          is_deployed: false
                     UKOFFICE2_LEAF02:
                       hosts:
                         UKOFFICE2_LEAF02A:
-                          is_deployed: False
+                          is_deployed: false
                         UKOFFICE2_LEAF02B:
-                          is_deployed: False
+                          is_deployed: false
                 UKOFFICE2_SUBLEAVES:
                   children:
                     UKOFFICE2_SUBLEAF01:
                       hosts:
                         UKOFFICE2_SUBLEAF01C:
-                          is_deployed: False
+                          is_deployed: false
                         UKOFFICE2_SUBLEAF01D:
-                          is_deployed: False
+                          is_deployed: false
                     UKOFFICE2_SUBLEAF02:
                       hosts:
                         UKOFFICE2_SUBLEAF02C:
-                          is_deployed: False
+                          is_deployed: false
                         UKOFFICE2_SUBLEAF02D:
-                          is_deployed: False
+                          is_deployed: false
                 UKOFFICE2_INTERNET_LEAVES:
                   hosts:
                     UKOFFICE2_INTERNET_LEAF01:
-                      is_deployed: False
+                      is_deployed: false
                     UKOFFICE2_INTERNET_LEAF02:
-                      is_deployed: False
+                      is_deployed: false
         APAC:
           children:
             INOFFICE1:
@@ -181,157 +223,167 @@ all:
                 INOFFICE1_SPINES:
                   hosts:
                     INOFFICE1_SPINE01:
-                      is_deployed: False
+                      is_deployed: false
                     INOFFICE1_SPINE02:
-                      is_deployed: False
+                      is_deployed: false
                 INOFFICE1_LEAVES:
                   children:
                     INOFFICE1_LEAF01:
                       hosts:
                         INOFFICE1_LEAF01A:
-                          is_deployed: False
+                          is_deployed: false
                         INOFFICE1_LEAF01B:
-                          is_deployed: False
+                          is_deployed: false
                     INOFFICE1_LEAF02:
                       hosts:
                         INOFFICE1_LEAF02A:
-                          is_deployed: False
+                          is_deployed: false
                         INOFFICE1_LEAF02B:
-                          is_deployed: False
+                          is_deployed: false
                 INOFFICE1_SUBLEAVES:
                   children:
                     INOFFICE1_SUBLEAF01:
                       hosts:
                         INOFFICE1_SUBLEAF01C:
-                          is_deployed: False
+                          is_deployed: false
                         INOFFICE1_SUBLEAF01D:
-                          is_deployed: False
+                          is_deployed: false
                     INOFFICE1_SUBLEAF02:
                       hosts:
                         INOFFICE1_SUBLEAF02C:
-                          is_deployed: False
+                          is_deployed: false
                         INOFFICE1_SUBLEAF02D:
-                          is_deployed: False
+                          is_deployed: false
                 INOFFICE1_INTERNET_LEAVES:
                   hosts:
                     INOFFICE1_INTERNET_LEAF01:
-                      is_deployed: False
+                      is_deployed: false
                     INOFFICE1_INTERNET_LEAF02:
-                      is_deployed: False
+                      is_deployed: false
             INOFFICE2:
               children:
                 INOFFICE2_SPINES:
                   hosts:
                     INOFFICE2_SPINE01:
-                      is_deployed: False
+                      is_deployed: false
                     INOFFICE2_SPINE02:
-                      is_deployed: False
+                      is_deployed: false
                 INOFFICE2_LEAVES:
                   children:
                     INOFFICE2_LEAF01:
                       hosts:
                         INOFFICE2_LEAF01A:
-                          is_deployed: False
+                          is_deployed: false
                         INOFFICE2_LEAF01B:
-                          is_deployed: False
+                          is_deployed: false
                     INOFFICE2_LEAF02:
                       hosts:
                         INOFFICE2_LEAF02A:
-                          is_deployed: False
+                          is_deployed: false
                         INOFFICE2_LEAF02B:
-                          is_deployed: False
+                          is_deployed: false
                 INOFFICE2_SUBLEAVES:
                   children:
                     INOFFICE2_SUBLEAF01:
                       hosts:
                         INOFFICE2_SUBLEAF01C:
-                          is_deployed: False
+                          is_deployed: false
                         INOFFICE2_SUBLEAF01D:
-                          is_deployed: False
+                          is_deployed: false
                     INOFFICE2_SUBLEAF02:
                       hosts:
                         INOFFICE2_SUBLEAF02C:
-                          is_deployed: False
+                          is_deployed: false
                         INOFFICE2_SUBLEAF02D:
-                          is_deployed: False
+                          is_deployed: false
                 INOFFICE2_INTERNET_LEAVES:
                   hosts:
                     INOFFICE2_INTERNET_LEAF01:
-                      is_deployed: False
+                      is_deployed: false
                     INOFFICE2_INTERNET_LEAF02:
-                      is_deployed: False
+                      is_deployed: false
     CONNECTED_ENDPOINTS_USOFFICE1:
       children:
-        USOFFICE1_SPINES:
-        USOFFICE1_LEAVES:
-        USOFFICE1_SUBLEAVES:
-        USOFFICE1_INTERNET_LEAVES:
+        USOFFICE1_SPINES: null
+        USOFFICE1_LEAVES: null
+        USOFFICE1_SUBLEAVES: null
+        USOFFICE1_INTERNET_LEAVES: null
     CONNECTED_ENDPOINTS_USOFFICE2:
       children:
-        USOFFICE2_SPINES:
-        USOFFICE2_LEAVES:
-        USOFFICE2_SUBLEAVES:
-        USOFFICE2_INTERNET_LEAVES:
+        USOFFICE2_SPINES: null
+        USOFFICE2_LEAVES: null
+        USOFFICE2_SUBLEAVES: null
+        USOFFICE2_INTERNET_LEAVES: null
     CONNECTED_ENDPOINTS_INOFFICE1:
       children:
-        INOFFICE1_SPINES:
-        INOFFICE1_LEAVES:
-        INOFFICE1_SUBLEAVES:
-        INOFFICE1_INTERNET_LEAVES:
+        INOFFICE1_SPINES: null
+        INOFFICE1_LEAVES: null
+        INOFFICE1_SUBLEAVES: null
+        INOFFICE1_INTERNET_LEAVES: null
     CONNECTED_ENDPOINTS_INOFFICE2:
       children:
-        INOFFICE2_SPINES:
-        INOFFICE2_LEAVES:
-        INOFFICE2_SUBLEAVES:
-        INOFFICE2_INTERNET_LEAVES:
+        INOFFICE2_SPINES: null
+        INOFFICE2_LEAVES: null
+        INOFFICE2_SUBLEAVES: null
+        INOFFICE2_INTERNET_LEAVES: null
     CONNECTED_ENDPOINTS_UKOFFICE1:
       children:
-        UKOFFICE1_SPINES:
-        UKOFFICE1_LEAVES:
-        UKOFFICE1_SUBLEAVES:
-        UKOFFICE1_INTERNET_LEAVES:
+        UKOFFICE1_SPINES: null
+        UKOFFICE1_LEAVES: null
+        UKOFFICE1_SUBLEAVES: null
+        UKOFFICE1_INTERNET_LEAVES: null
     CONNECTED_ENDPOINTS_UKOFFICE2:
       children:
-        UKOFFICE2_SPINES:
-        UKOFFICE2_LEAVES:
-        UKOFFICE2_SUBLEAVES:
-        UKOFFICE2_INTERNET_LEAVES:
+        UKOFFICE2_SPINES: null
+        UKOFFICE2_LEAVES: null
+        UKOFFICE2_SUBLEAVES: null
+        UKOFFICE2_INTERNET_LEAVES: null
     TENANT_NETWORKS_USOFFICE1:
       children:
-        USOFFICE1_SPINES:
-        USOFFICE1_LEAVES:
-        USOFFICE1_SUBLEAVES:
-        USOFFICE1_INTERNET_LEAVES:
+        USOFFICE1_SPINES: null
+        USOFFICE1_LEAVES: null
+        USOFFICE1_SUBLEAVES: null
+        USOFFICE1_INTERNET_LEAVES: null
     TENANT_NETWORKS_USOFFICE2:
       children:
-        USOFFICE2_SPINES:
-        USOFFICE2_LEAVES:
-        USOFFICE2_SUBLEAVES:
-        USOFFICE2_INTERNET_LEAVES:
+        USOFFICE2_SPINES: null
+        USOFFICE2_LEAVES: null
+        USOFFICE2_SUBLEAVES: null
+        USOFFICE2_INTERNET_LEAVES: null
     TENANT_NETWORKS_INOFFICE1:
       children:
-        INOFFICE1_SPINES:
-        INOFFICE1_LEAVES:
-        INOFFICE1_SUBLEAVES:
-        INOFFICE1_INTERNET_LEAVES:
+        INOFFICE1_SPINES: null
+        INOFFICE1_LEAVES: null
+        INOFFICE1_SUBLEAVES: null
+        INOFFICE1_INTERNET_LEAVES: null
     TENANT_NETWORKS_INOFFICE2:
       children:
-        INOFFICE2_SPINES:
-        INOFFICE2_LEAVES:
-        INOFFICE2_SUBLEAVES:
-        INOFFICE2_INTERNET_LEAVES:
+        INOFFICE2_SPINES: null
+        INOFFICE2_LEAVES: null
+        INOFFICE2_SUBLEAVES: null
+        INOFFICE2_INTERNET_LEAVES: null
     TENANT_NETWORKS_UKOFFICE1:
       children:
-        UKOFFICE1_SPINES:
-        UKOFFICE1_LEAVES:
-        UKOFFICE1_SUBLEAVES:
-        UKOFFICE1_INTERNET_LEAVES:
+        UKOFFICE1_SPINES: null
+        UKOFFICE1_LEAVES: null
+        UKOFFICE1_SUBLEAVES: null
+        UKOFFICE1_INTERNET_LEAVES: null
     TENANT_NETWORKS_UKOFFICE2:
       children:
         UKOFFICE2_SPINES:
         UKOFFICE2_LEAVES:
         UKOFFICE2_SUBLEAVES:
         UKOFFICE2_INTERNET_LEAVES:
+    CONNECTED_ENDPOINTS_USOFFICE3:
+      children:
+        USOFFICE3_SPINES: null
+        USOFFICE3_LEAVES: null
+        USOFFICE3_SUBLEAVES: null
+    TENANT_NETWORKS_USOFFICE3:
+      children:
+        USOFFICE3_SPINES: null
+        USOFFICE3_LEAVES: null
+        USOFFICE3_SUBLEAVES: null
     CVaaS:
       hosts:
         cvaas:
@@ -344,3 +396,7 @@ all:
           ansible_network_os: eos
           ansible_httpapi_port: 443
           ansible_python_interpreter: $(which python3)
+        UKOFFICE2_SPINES: null
+        UKOFFICE2_LEAVES: null
+        UKOFFICE2_SUBLEAVES: null
+        UKOFFICE2_INTERNET_LEAVES: null

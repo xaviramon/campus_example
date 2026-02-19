@@ -33,6 +33,22 @@ node_id_pools:
   fabric_name=GLOBAL/dc_name=AMER/pod_name=USOFFICE2/type=l3spine:
     hostname=USOFFICE2_SPINE01: 1
     hostname=USOFFICE2_SPINE02: 2
+  fabric_name=GLOBAL/dc_name=AMER/pod_name=USOFFICE3/type=distribution_leaf:
+    hostname=USOFFICE3_LEAF01A: 1
+    hostname=USOFFICE3_LEAF01B: 2
+    hostname=USOFFICE3_LEAF02A: 3
+    hostname=USOFFICE3_LEAF02B: 4
+  fabric_name=GLOBAL/dc_name=AMER/pod_name=USOFFICE3/type=internet_leaves:
+    hostname=USOFFICE3_INTERNET_LEAF01: 1
+    hostname=USOFFICE3_INTERNET_LEAF02: 2
+  fabric_name=GLOBAL/dc_name=AMER/pod_name=USOFFICE3/type=l2subleaf:
+    hostname=USOFFICE3_SUBLEAF01C: 1
+    hostname=USOFFICE3_SUBLEAF01D: 2
+    hostname=USOFFICE3_SUBLEAF02C: 3
+    hostname=USOFFICE3_SUBLEAF02D: 4
+  fabric_name=GLOBAL/dc_name=AMER/pod_name=USOFFICE3/type=l3spine:
+    hostname=USOFFICE3_SPINE01: 1
+    hostname=USOFFICE3_SPINE02: 2
   fabric_name=GLOBAL/dc_name=APAC/pod_name=INOFFICE1/type=distribution_leaf:
     hostname=INOFFICE1_LEAF01A: 1
     hostname=INOFFICE1_LEAF01B: 2
@@ -65,22 +81,6 @@ node_id_pools:
   fabric_name=GLOBAL/dc_name=APAC/pod_name=INOFFICE2/type=l3spine:
     hostname=INOFFICE2_SPINE01: 1
     hostname=INOFFICE2_SPINE02: 2
-  fabric_name=GLOBAL/dc_name=EMEA/pod_name=OFFICE2/type=distribution_leaf:
-    hostname=UKOFFICE2_LEAF01A: 1
-    hostname=UKOFFICE2_LEAF01B: 2
-    hostname=UKOFFICE2_LEAF02A: 3
-    hostname=UKOFFICE2_LEAF02B: 4
-  fabric_name=GLOBAL/dc_name=EMEA/pod_name=OFFICE2/type=internet_leaves:
-    hostname=UKOFFICE2_INTERNET_LEAF01: 1
-    hostname=UKOFFICE2_INTERNET_LEAF02: 2
-  fabric_name=GLOBAL/dc_name=EMEA/pod_name=OFFICE2/type=l2subleaf:
-    hostname=UKOFFICE2_SUBLEAF01C: 1
-    hostname=UKOFFICE2_SUBLEAF01D: 2
-    hostname=UKOFFICE2_SUBLEAF02C: 3
-    hostname=UKOFFICE2_SUBLEAF02D: 4
-  fabric_name=GLOBAL/dc_name=EMEA/pod_name=OFFICE2/type=l3spine:
-    hostname=UKOFFICE2_SPINE01: 1
-    hostname=UKOFFICE2_SPINE02: 2
   fabric_name=GLOBAL/dc_name=EMEA/pod_name=UKOFFICE1/type=distribution_leaf:
     hostname=UKOFFICE1_LEAF01A: 1
     hostname=UKOFFICE1_LEAF01B: 2
@@ -97,3 +97,19 @@ node_id_pools:
   fabric_name=GLOBAL/dc_name=EMEA/pod_name=UKOFFICE1/type=l3spine:
     hostname=UKOFFICE1_SPINE01: 1
     hostname=UKOFFICE1_SPINE02: 2
+  fabric_name=GLOBAL/dc_name=EMEA/pod_name=UKOFFICE2/type=distribution_leaf:
+    hostname=UKOFFICE2_LEAF01A: 1
+    hostname=UKOFFICE2_LEAF01B: 2
+    hostname=UKOFFICE2_LEAF02A: 3
+    hostname=UKOFFICE2_LEAF02B: 4
+  fabric_name=GLOBAL/dc_name=EMEA/pod_name=UKOFFICE2/type=internet_leaves:
+    hostname=UKOFFICE2_INTERNET_LEAF01: 1
+    hostname=UKOFFICE2_INTERNET_LEAF02: 2
+  fabric_name=GLOBAL/dc_name=EMEA/pod_name=UKOFFICE2/type=l2subleaf:
+    hostname=UKOFFICE2_SUBLEAF01C: 1
+    hostname=UKOFFICE2_SUBLEAF01D: 2
+    hostname=UKOFFICE2_SUBLEAF02C: 3
+    hostname=UKOFFICE2_SUBLEAF02D: 4
+  fabric_name=GLOBAL/dc_name=EMEA/pod_name=UKOFFICE2/type=l3spine:
+    hostname=UKOFFICE2_SPINE01: 1
+    hostname=UKOFFICE2_SPINE02: 2
