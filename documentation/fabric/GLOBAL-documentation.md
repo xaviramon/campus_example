@@ -23,7 +23,7 @@
 | INOFFICE1 | distribution_leaf | INOFFICE1_LEAF01B | 172.16.100.104/24 | cEOSLab | Not Available | - |
 | INOFFICE1 | distribution_leaf | INOFFICE1_LEAF02A | 172.16.100.105/24 | cEOSLab | Not Available | - |
 | INOFFICE1 | distribution_leaf | INOFFICE1_LEAF02B | 172.16.100.106/24 | cEOSLab | Not Available | - |
-| INOFFICE1 | l3spine | INOFFICE1_SPINE01 | 172.16.100.101/24 | cEOSLab | Not Available | - |
+| INOFFICE1 | l3spine | INOFFICE1_SPINE01 | 172.16.100.99/24 | cEOSLab | Not Available | - |
 | INOFFICE1 | l3spine | INOFFICE1_SPINE02 | 172.16.100.102/24 | cEOSLab | Not Available | - |
 | INOFFICE1 | l2subleaf | INOFFICE1_SUBLEAF01C | 172.16.100.108/24 | cEOSLab | Not Available | - |
 | INOFFICE1 | l2subleaf | INOFFICE1_SUBLEAF01D | 172.16.100.109/24 | cEOSLab | Not Available | - |
