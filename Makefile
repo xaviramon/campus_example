@@ -91,7 +91,10 @@ create-host_vars: ## Generate hostvar files based on the Ansible inventory
 	mkdir -p host_vars; for host in `ansible all -i inventory.yml --list-hosts | sed '1d'`; do echo "---" > host_vars/$$host.yml; done
 
 .PHONY: create-group_vars
-create-group_vars: ## Generate groupvar files based on the EXOFFICE1 template (Example Office1). Execution: make create-group_vars OFFICE=<Name of the office>
+create-group_vars: ## Generate groupvar files based on the EXOFFICE1 template (Example Office1). Execution: make create-group_vars OFFICE=<Name of the office> THEATER=<Region>
 	cd group_vars; rename -c "^(EXOFFICE1)([\w]*)(.yml)$\" "$(OFFICE)\(2)\(3)"; sed 's/EXOFFICE1/$(OFFICE)/g' $(OFFICE).yml > tmp; cat tmp > $(OFFICE).yml; rm tmp
 	cd group_vars; cp -r CONNECTED_ENDPOINTS_EXOFFICE1 CONNECTED_ENDPOINTS_$(OFFICE); cd CONNECTED_ENDPOINTS_$(OFFICE); rename "^(EXOFFICE1)([\w]*)(.yml)$\" "$(OFFICE)\(2)\(3)"; for file in *; do sed 's/EXOFFICE1/$(OFFICE)/g' $$file > tmp; cat tmp > $$file; rm tmp; done
 	cd group_vars; cp -r TENANT_NETWORKS_EXOFFICE1 TENANT_NETWORKS_$(OFFICE); cd TENANT_NETWORKS_$(OFFICE); rename "^(EXOFFICE1)([\w]*)(.yml)$\" "$(OFFICE)\(2)\(3)"; for file in *; do sed 's/EXOFFICE1/$(OFFICE)/g' $$file > tmp; cat tmp > $$file; rm tmp; done
+	yq -Yi '.all.children.GLOBAL.children.$(THEATER).children += {"$(OFFICE)":{"children":{"$(OFFICE)_SPINES":{"hosts":{"$(OFFICE)_SPINE01":{is_deployed: false},"$(OFFICE)_SPINE02":{is_deployed: false}}},"$(OFFICE)_LEAVES":{"children":{"$(OFFICE)_LEAF01":{"hosts":{"$(OFFICE)_LEAF01A":{"is_deployed": false},"$(OFFICE)_LEAF01B":{"is_deployed": false}}},"$(OFFICE)_LEAF02":{"hosts":{"$(OFFICE)_LEAF02A":{"is_deployed": false},"$(OFFICE)_LEAF02B":{"is_deployed": false}}}}},"$(OFFICE)_SUBLEAVES":{"children":{"$(OFFICE)_SUBLEAF01":{"hosts":{"$(OFFICE)_SUBLEAF01A":{"is_deployed": false},"$(OFFICE)_SUBLEAF01B":{"is_deployed": false}}},"$(OFFICE)_SUBLEAF02":{"hosts":{"$(OFFICE)_SUBLEAF02A":{"is_deployed": false},"$(OFFICE)_SUBLEAF02B":{"is_deployed": false}}}}}}}}' inventory.yml
+	yq -Yi '.all.children += {"CONNECTED_ENDPOINTS_$(OFFICE)":{"children":{"$(OFFICE)_SPINES":'null',"$(OFFICE)_LEAVES":'null',"$(OFFICE)_SUBLEAVES":'null'}}}' inventory.yml
+	yq -Yi '.all.children += {"TENANT_NETWORKS_$(OFFICE)":{"children":{"$(OFFICE)_SPINES":'null',"$(OFFICE)_LEAVES":'null',"$(OFFICE)_SUBLEAVES":'null'}}}' inventory.yml
