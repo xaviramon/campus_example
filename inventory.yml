@@ -370,20 +370,22 @@ all:
         UKOFFICE1_INTERNET_LEAVES: null
     TENANT_NETWORKS_UKOFFICE2:
       children:
-        UKOFFICE2_SPINES:
-        UKOFFICE2_LEAVES:
-        UKOFFICE2_SUBLEAVES:
-        UKOFFICE2_INTERNET_LEAVES:
+        UKOFFICE2_SPINES: null
+        UKOFFICE2_LEAVES: null
+        UKOFFICE2_SUBLEAVES: null
+        UKOFFICE2_INTERNET_LEAVES: null
     CONNECTED_ENDPOINTS_USOFFICE3:
       children:
         USOFFICE3_SPINES: null
         USOFFICE3_LEAVES: null
         USOFFICE3_SUBLEAVES: null
+        USOFFICE3_INTERNET_LEAVES: null
     TENANT_NETWORKS_USOFFICE3:
       children:
         USOFFICE3_SPINES: null
         USOFFICE3_LEAVES: null
         USOFFICE3_SUBLEAVES: null
+        USOFFICE3_INTERNET_LEAVES: null
     CVaaS:
       hosts:
         cvaas:
@@ -396,7 +398,3 @@ all:
           ansible_network_os: eos
           ansible_httpapi_port: 443
           ansible_python_interpreter: $(which python3)
-        UKOFFICE2_SPINES: null
-        UKOFFICE2_LEAVES: null
-        UKOFFICE2_SUBLEAVES: null
-        UKOFFICE2_INTERNET_LEAVES: null
