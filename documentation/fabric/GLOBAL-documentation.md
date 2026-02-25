@@ -227,8 +227,8 @@
 | distribution_leaf | USOFFICE1_LEAF01A | Ethernet50 | mlag_peer | USOFFICE1_LEAF01B | Ethernet50 |
 | distribution_leaf | USOFFICE1_LEAF01A | Ethernet51 | l3spine | USOFFICE1_SPINE01 | Ethernet1 |
 | distribution_leaf | USOFFICE1_LEAF01A | Ethernet52 | l3spine | USOFFICE1_SPINE02 | Ethernet1 |
-| distribution_leaf | USOFFICE1_LEAF01B | Ethernet1 | l2subleaf | USOFFICE1_SUBLEAF01C | Ethernet50 |
-| distribution_leaf | USOFFICE1_LEAF01B | Ethernet2 | l2subleaf | USOFFICE1_SUBLEAF01D | Ethernet50 |
+| distribution_leaf | USOFFICE1_LEAF01B | Ethernet1 | l2subleaf | USOFFICE1_SUBLEAF01C | Ethernet51 |
+| distribution_leaf | USOFFICE1_LEAF01B | Ethernet2 | l2subleaf | USOFFICE1_SUBLEAF01D | Ethernet51 |
 | distribution_leaf | USOFFICE1_LEAF01B | Ethernet51 | l3spine | USOFFICE1_SPINE01 | Ethernet2 |
 | distribution_leaf | USOFFICE1_LEAF01B | Ethernet52 | l3spine | USOFFICE1_SPINE02 | Ethernet2 |
 | distribution_leaf | USOFFICE1_LEAF02A | Ethernet1 | l2subleaf | USOFFICE1_SUBLEAF02C | Ethernet49 |
@@ -237,8 +237,8 @@
 | distribution_leaf | USOFFICE1_LEAF02A | Ethernet50 | mlag_peer | USOFFICE1_LEAF02B | Ethernet50 |
 | distribution_leaf | USOFFICE1_LEAF02A | Ethernet51 | l3spine | USOFFICE1_SPINE01 | Ethernet3 |
 | distribution_leaf | USOFFICE1_LEAF02A | Ethernet52 | l3spine | USOFFICE1_SPINE02 | Ethernet3 |
-| distribution_leaf | USOFFICE1_LEAF02B | Ethernet1 | l2subleaf | USOFFICE1_SUBLEAF02C | Ethernet50 |
-| distribution_leaf | USOFFICE1_LEAF02B | Ethernet2 | l2subleaf | USOFFICE1_SUBLEAF02D | Ethernet50 |
+| distribution_leaf | USOFFICE1_LEAF02B | Ethernet1 | l2subleaf | USOFFICE1_SUBLEAF02C | Ethernet51 |
+| distribution_leaf | USOFFICE1_LEAF02B | Ethernet2 | l2subleaf | USOFFICE1_SUBLEAF02D | Ethernet51 |
 | distribution_leaf | USOFFICE1_LEAF02B | Ethernet51 | l3spine | USOFFICE1_SPINE01 | Ethernet4 |
 | distribution_leaf | USOFFICE1_LEAF02B | Ethernet52 | l3spine | USOFFICE1_SPINE02 | Ethernet4 |
 | l3spine | USOFFICE1_SPINE01 | Ethernet49 | mlag_peer | USOFFICE1_SPINE02 | Ethernet49 |

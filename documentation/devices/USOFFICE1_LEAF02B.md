@@ -188,8 +188,8 @@ vlan 4094
 
 | Interface | Description | Mode | VLANs | Native VLAN | Trunk Group | Channel-Group |
 | --------- | ----------- | ---- | ----- | ----------- | ----------- | ------------- |
-| Ethernet1 | L2_USOFFICE1_SUBLEAF02C_Ethernet50 | *trunk | *3000 | *- | *- | 1 |
-| Ethernet2 | L2_USOFFICE1_SUBLEAF02D_Ethernet50 | *trunk | *3000 | *- | *- | 2 |
+| Ethernet1 | L2_USOFFICE1_SUBLEAF02C_Ethernet51 | *trunk | *3000 | *- | *- | 1 |
+| Ethernet2 | L2_USOFFICE1_SUBLEAF02D_Ethernet51 | *trunk | *3000 | *- | *- | 2 |
 | Ethernet49 | MLAG_USOFFICE1_LEAF02A_Ethernet49 | *trunk | *- | *- | *MLAG | 49 |
 | Ethernet50 | MLAG_USOFFICE1_LEAF02A_Ethernet50 | *trunk | *- | *- | *MLAG | 49 |
 | Ethernet51 | L2_USOFFICE1_SPINE01_Ethernet4 | *trunk | *3000 | *- | *- | 51 |
@@ -202,12 +202,12 @@ vlan 4094
 ```eos
 !
 interface Ethernet1
-   description L2_USOFFICE1_SUBLEAF02C_Ethernet50
+   description L2_USOFFICE1_SUBLEAF02C_Ethernet51
    shutdown
    channel-group 1 mode active
 !
 interface Ethernet2
-   description L2_USOFFICE1_SUBLEAF02D_Ethernet50
+   description L2_USOFFICE1_SUBLEAF02D_Ethernet51
    shutdown
    channel-group 2 mode active
 !

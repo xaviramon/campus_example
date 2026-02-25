@@ -14,7 +14,7 @@ ethernet_interfaces:
     peer: USOFFICE1_LEAF02A
     peer_interface: Ethernet1
     peer_type: distribution_leaf
-- name: Ethernet50
+- name: Ethernet51
   description: L2_USOFFICE1_LEAF02B_Ethernet1
   shutdown: true
   channel_group:

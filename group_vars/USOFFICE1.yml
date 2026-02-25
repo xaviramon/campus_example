@@ -75,7 +75,7 @@ l2subleaf:
     spanning_tree_mode: mstp
     spanning_tree_priority: 32768
     mlag: false
-    uplink_interfaces: [Ethernet49, Ethernet50]
+    uplink_interfaces: [Ethernet49, Ethernet51]
   node_groups:
     - group: USOFFICE1_SUBLEAF01
       uplink_switches: [USOFFICE1_LEAF01A, USOFFICE1_LEAF01B]
