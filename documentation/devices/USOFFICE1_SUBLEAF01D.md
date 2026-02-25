@@ -152,7 +152,7 @@ vlan 3000
 | Interface | Description | Mode | VLANs | Native VLAN | Trunk Group | Channel-Group |
 | --------- | ----------- | ---- | ----- | ----------- | ----------- | ------------- |
 | Ethernet49 | L2_USOFFICE1_LEAF01A_Ethernet2 | *trunk | *3000 | *- | *- | 49 |
-| Ethernet50 | L2_USOFFICE1_LEAF01B_Ethernet2 | *trunk | *3000 | *- | *- | 49 |
+| Ethernet51 | L2_USOFFICE1_LEAF01B_Ethernet2 | *trunk | *3000 | *- | *- | 49 |
 
 *Inherited from Port-Channel Interface
 
@@ -165,7 +165,7 @@ interface Ethernet49
    shutdown
    channel-group 49 mode active
 !
-interface Ethernet50
+interface Ethernet51
    description L2_USOFFICE1_LEAF01B_Ethernet2
    shutdown
    channel-group 49 mode active
