@@ -56,3 +56,17 @@ custom_node_type_keys:
 management_eapi:
   enabled: true
   enable_https: true
+
+default_node_types:
+  - node_type: l3spine
+    match_hostnames:
+      - ".*SPINE.*"
+  - node_type: internet_leaves
+    match_hostnames:
+      - ".*INTERNET.*"
+  - node_type: subleaf
+    match_hostnames:
+      - ".*SUBLEAF.*"
+  - node_type: leaf
+    match_hostnames:
+      - ".*LEAF.*"
