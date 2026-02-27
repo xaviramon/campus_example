@@ -33,7 +33,7 @@ ethernet_interfaces:
   metadata:
     peer: INOFFICE2_SUBLEAF01C
     peer_interface: Ethernet50
-    peer_type: l2subleaf
+    peer_type: subleaf
 - name: Ethernet2
   description: L2_INOFFICE2_SUBLEAF01D_Ethernet50
   shutdown: true
@@ -43,7 +43,7 @@ ethernet_interfaces:
   metadata:
     peer: INOFFICE2_SUBLEAF01D
     peer_interface: Ethernet50
-    peer_type: l2subleaf
+    peer_type: subleaf
 - name: Ethernet51
   description: L2_INOFFICE2_SPINE01_Ethernet2
   shutdown: true

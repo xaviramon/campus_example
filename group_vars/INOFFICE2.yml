@@ -22,7 +22,7 @@ l3spine:
           mgmt_ip: 172.16.100.102/24
 
 # Leaf Switches
-distribution_leaf:
+leaf:
   defaults:
     platform: cEOSLab
     mlag_peer_ipv4_pool: 192.168.0.0/24
@@ -69,7 +69,7 @@ internet_leaves:
           uplink_switch_interfaces: [Ethernet48, Ethernet48]
 
 
-l2subleaf:
+subleaf:
   defaults:
     platform: cEOSLab
     spanning_tree_mode: mstp

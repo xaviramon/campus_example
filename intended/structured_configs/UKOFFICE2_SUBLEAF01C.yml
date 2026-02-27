@@ -13,7 +13,7 @@ ethernet_interfaces:
   metadata:
     peer: UKOFFICE2_LEAF01A
     peer_interface: Ethernet1
-    peer_type: distribution_leaf
+    peer_type: leaf
 - name: Ethernet50
   description: L2_UKOFFICE2_LEAF01B_Ethernet1
   shutdown: true
@@ -23,7 +23,7 @@ ethernet_interfaces:
   metadata:
     peer: UKOFFICE2_LEAF01B
     peer_interface: Ethernet1
-    peer_type: distribution_leaf
+    peer_type: leaf
 hostname: UKOFFICE2_SUBLEAF01C
 ip_igmp_snooping:
   globally_enabled: true

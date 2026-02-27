@@ -28,8 +28,8 @@ custom_node_type_keys:
     underlay_router: false
     uplink_type: port-channel
     cv_tags_topology_type: leaf
-  - key: l2subleaf
-    type: l2subleaf
+  - key: subleaf
+    type: subleaf
     connected_endpoints: true
     default_evpn_role: none
     mlag_support: false
@@ -40,8 +40,8 @@ custom_node_type_keys:
     underlay_router: false
     uplink_type: port-channel
     cv_tags_topology_type: leaf
-  - key: distribution_leaf
-    type: distribution_leaf
+  - key: leaf
+    type: leaf
     connected_endpoints: true
     default_evpn_role: none
     mlag_support: true

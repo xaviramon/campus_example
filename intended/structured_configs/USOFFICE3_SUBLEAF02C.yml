@@ -13,7 +13,7 @@ ethernet_interfaces:
   metadata:
     peer: USOFFICE3_LEAF02A
     peer_interface: Ethernet1
-    peer_type: distribution_leaf
+    peer_type: leaf
 - name: Ethernet50
   description: L2_USOFFICE3_LEAF02B_Ethernet1
   shutdown: true
@@ -23,7 +23,7 @@ ethernet_interfaces:
   metadata:
     peer: USOFFICE3_LEAF02B
     peer_interface: Ethernet1
-    peer_type: distribution_leaf
+    peer_type: leaf
 hostname: USOFFICE3_SUBLEAF02C
 ip_igmp_snooping:
   globally_enabled: true

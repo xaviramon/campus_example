@@ -33,7 +33,7 @@ ethernet_interfaces:
   metadata:
     peer: UKOFFICE1_LEAF01A
     peer_interface: Ethernet52
-    peer_type: distribution_leaf
+    peer_type: leaf
 - name: Ethernet2
   description: L2_UKOFFICE1_LEAF01B_Ethernet52
   shutdown: true
@@ -43,7 +43,7 @@ ethernet_interfaces:
   metadata:
     peer: UKOFFICE1_LEAF01B
     peer_interface: Ethernet52
-    peer_type: distribution_leaf
+    peer_type: leaf
 - name: Ethernet3
   description: L2_UKOFFICE1_LEAF02A_Ethernet52
   shutdown: true
@@ -53,7 +53,7 @@ ethernet_interfaces:
   metadata:
     peer: UKOFFICE1_LEAF02A
     peer_interface: Ethernet52
-    peer_type: distribution_leaf
+    peer_type: leaf
 - name: Ethernet4
   description: L2_UKOFFICE1_LEAF02B_Ethernet52
   shutdown: true
@@ -63,7 +63,7 @@ ethernet_interfaces:
   metadata:
     peer: UKOFFICE1_LEAF02B
     peer_interface: Ethernet52
-    peer_type: distribution_leaf
+    peer_type: leaf
 - name: Ethernet47
   description: L2_UKOFFICE1_INTERNET_LEAF01_Ethernet50
   shutdown: true

@@ -148,36 +148,36 @@ all:
                       hosts:
                         UKOFFICE1_LEAF01A:
                           is_deployed: false
-                          type: distribution_leaf
+                          type: leaf
                         UKOFFICE1_LEAF01B:
                           is_deployed: false
-                          type: distribution_leaf
+                          type: leaf
                     UKOFFICE1_LEAF02:
                       hosts:
                         UKOFFICE1_LEAF02A:
                           is_deployed: false
-                          type: distribution_leaf
+                          type: leaf
                         UKOFFICE1_LEAF02B:
                           is_deployed: false
-                          type: distribution_leaf
+                          type: leaf
                 UKOFFICE1_SUBLEAVES:
                   children:
                     UKOFFICE1_SUBLEAF01:
                       hosts:
                         UKOFFICE1_SUBLEAF01C:
                           is_deployed: false
-                          type: l2subleaf
+                          type: subleaf
                         UKOFFICE1_SUBLEAF01D:
                           is_deployed: false
-                          type: l2subleaf
+                          type: subleaf
                     UKOFFICE1_SUBLEAF02:
                       hosts:
                         UKOFFICE1_SUBLEAF02C:
                           is_deployed: false
-                          type: l2subleaf
+                          type: subleaf
                         UKOFFICE1_SUBLEAF02D:
                           is_deployed: false
-                          type: l2subleaf
+                          type: subleaf
                 UKOFFICE1_INTERNET_LEAVES:
                   hosts:
                     UKOFFICE1_INTERNET_LEAF01:
