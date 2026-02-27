@@ -1,0 +1,22 @@
+# name: GitHub Actions Push configurations to CV
+# run-name: ${{ github.actor }} launched a push to CV workflow for ${{ github.event.pull_request.title }}
+# on:
+#   push:
+#     branches:
+#       - main
+# jobs:
+#   cv-push:
+#     name: 'CV push'
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: "Install Ansible"
+#         run: |
+#           pip install ansible-core==2.19.5
+#       - name: 'Install AVD'
+#         run: |
+#           pip install "pyavd[ansible]==6.0.0"
+#           ansible-galaxy collection install arista.avd:6.0.0
+#       - name: 'Checkout'
+#         uses: actions/checkout@v5
+#       - name: 'Push configurations to CV'
+#         run: make deploy

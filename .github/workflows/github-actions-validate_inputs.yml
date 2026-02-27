@@ -1,5 +1,5 @@
 name: GitHub Actions Validate Inputs
-run-name: ${{ github.actor }} is executing GitHub Actions Validate Inputs
+run-name: ${{ github.actor }} launched a input validation workflow for ${{ github.event.pull_request.title }}
 on: [pull_request]
 jobs:
   yamllint:
