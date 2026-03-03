@@ -162,7 +162,7 @@ vlan 3000
 !
 interface Ethernet49
    description L2_USOFFICE1_SPINE01_Ethernet48
-   shutdown
+   no shutdown
    channel-group 49 mode active
 !
 interface Ethernet50

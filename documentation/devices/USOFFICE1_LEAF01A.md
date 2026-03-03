@@ -229,7 +229,7 @@ interface Ethernet50
 !
 interface Ethernet51
    description L2_USOFFICE1_SPINE01_Ethernet1
-   shutdown
+   no shutdown
    channel-group 51 mode active
 !
 interface Ethernet52
