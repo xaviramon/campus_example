@@ -9,7 +9,7 @@ all:
                 USOFFICE1_SPINES:
                   hosts:
                     USOFFICE1_SPINE01:
-                      is_deployed: true
+                      is_deployed: false
                     USOFFICE1_SPINE02:
                       is_deployed: false
                 USOFFICE1_LEAVES:
