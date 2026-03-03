@@ -11,4 +11,4 @@
         cv_server: www.cv-prod-euwest-2.arista.io
         cv_token: "{{ cvaas_production_token }}"
         cv_verify_certs: true
-        cv_skip_missing_devices: true
+        cv_skip_missing_devices: false
