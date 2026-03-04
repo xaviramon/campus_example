@@ -6,7 +6,7 @@ enable_password:
 ethernet_interfaces:
 - name: Ethernet49
   description: L2_USOFFICE1_SPINE01_Ethernet47
-  shutdown: false
+  shutdown: true
   channel_group:
     id: 49
     mode: active

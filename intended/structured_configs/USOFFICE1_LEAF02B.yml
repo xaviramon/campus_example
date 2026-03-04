@@ -46,7 +46,7 @@ ethernet_interfaces:
     peer_type: subleaf
 - name: Ethernet51
   description: L2_USOFFICE1_SPINE01_Ethernet4
-  shutdown: false
+  shutdown: true
   channel_group:
     id: 51
     mode: active
