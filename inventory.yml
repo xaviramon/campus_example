@@ -302,12 +302,6 @@ all:
                       is_deployed: false
                     INOFFICE2_INTERNET_LEAF02:
                       is_deployed: false
-    CONNECTED_ENDPOINTS_USOFFICE1:
-      children:
-        USOFFICE1_SPINES: null
-        USOFFICE1_LEAVES: null
-        USOFFICE1_SUBLEAVES: null
-        USOFFICE1_INTERNET_LEAVES: null
     CONNECTED_ENDPOINTS_USOFFICE2:
       children:
         USOFFICE2_SPINES: null
@@ -338,12 +332,6 @@ all:
         UKOFFICE2_LEAVES: null
         UKOFFICE2_SUBLEAVES: null
         UKOFFICE2_INTERNET_LEAVES: null
-    TENANT_NETWORKS_USOFFICE1:
-      children:
-        USOFFICE1_SPINES: null
-        USOFFICE1_LEAVES: null
-        USOFFICE1_SUBLEAVES: null
-        USOFFICE1_INTERNET_LEAVES: null
     TENANT_NETWORKS_USOFFICE2:
       children:
         USOFFICE2_SPINES: null
