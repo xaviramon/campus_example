@@ -46,10 +46,94 @@ all:
                       is_deployed: false
                     USOFFICE1_INTERNET_LEAF02:
                       is_deployed: false
+            USOFFICE2:
+              children:
+                USOFFICE2_SPINES:
+                  hosts:
+                    USOFFICE2_SPINE01:
+                      is_deployed: false
+                    USOFFICE2_SPINE02:
+                      is_deployed: false
+                USOFFICE2_LEAVES:
+                  children:
+                    USOFFICE2_LEAF01:
+                      hosts:
+                        USOFFICE2_LEAF01A:
+                          is_deployed: false
+                        USOFFICE2_LEAF01B:
+                          is_deployed: false
+                    USOFFICE2_LEAF02:
+                      hosts:
+                        USOFFICE2_LEAF02A:
+                          is_deployed: false
+                        USOFFICE2_LEAF02B:
+                          is_deployed: false
+                USOFFICE2_SUBLEAVES:
+                  children:
+                    USOFFICE2_SUBLEAF01:
+                      hosts:
+                        USOFFICE2_SUBLEAF01C:
+                          is_deployed: false
+                        USOFFICE2_SUBLEAF01D:
+                          is_deployed: false
+                    USOFFICE2_SUBLEAF02:
+                      hosts:
+                        USOFFICE2_SUBLEAF02C:
+                          is_deployed: false
+                        USOFFICE2_SUBLEAF02D:
+                          is_deployed: false
+                USOFFICE2_INTERNET_LEAVES:
+                  hosts:
+                    USOFFICE2_INTERNET_LEAF01:
+                      is_deployed: false
+                    USOFFICE2_INTERNET_LEAF02:
+                      is_deployed: false
         EMEA:
           children:
+            ESOFFICE1:
+              children:
+                ESOFFICE1_SPINES:
+                  hosts:
+                    ESOFFICE1_SPINE01:
+                      is_deployed: false
+                    ESOFFICE1_SPINE02:
+                      is_deployed: false
+                ESOFFICE1_LEAVES:
+                  children:
+                    ESOFFICE1_LEAF01:
+                      hosts:
+                        ESOFFICE1_LEAF01A:
+                          is_deployed: false
+                        ESOFFICE1_LEAF01B:
+                          is_deployed: false
+                    ESOFFICE1_LEAF02:
+                      hosts:
+                        ESOFFICE1_LEAF02A:
+                          is_deployed: false
+                        ESOFFICE1_LEAF02B:
+                          is_deployed: false
+                ESOFFICE1_SUBLEAVES:
+                  children:
+                    ESOFFICE1_SUBLEAF01:
+                      hosts:
+                        ESOFFICE1_SUBLEAF01C:
+                          is_deployed: false
+                        ESOFFICE1_SUBLEAF01D:
+                          is_deployed: false
+                    ESOFFICE1_SUBLEAF02:
+                      hosts:
+                        ESOFFICE1_SUBLEAF02C:
+                          is_deployed: false
+                        ESOFFICE1_SUBLEAF02D:
+                          is_deployed: false
+                ESOFFICE1_INTERNET_LEAVES:
+                  hosts:
+                    ESOFFICE1_INTERNET_LEAF01:
+                      is_deployed: false
+                    ESOFFICE1_INTERNET_LEAF02:
+                      is_deployed: false
         APAC:
-          children:
+          children: null
     CVaaS:
       hosts:
         cvaas:

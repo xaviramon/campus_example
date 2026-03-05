@@ -1,0 +1,14 @@
+---
+USOFFICE2_SPINE:
+- name: USOFFICE2_SPINE_Eth10
+  adapters:
+  - endpoint_ports:
+    - FW01A
+    - FW01B
+    switches:
+    - USOFFICE2_SPINE01
+    - USOFFICE2_SPINE02
+    switch_ports:
+    - Ethernet10
+    - Ethernet10
+    profile: PP_TEST

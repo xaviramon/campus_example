@@ -17,6 +17,18 @@
 
 | POD | Type | Node | Management IP | Platform | Provisioned in CloudVision | Serial Number |
 | --- | ---- | ---- | ------------- | -------- | -------------------------- | ------------- |
+| ESOFFICE1 | internet_leaves | ESOFFICE1_INTERNET_LEAF01 | 172.16.100.120/24 | cEOSLab | Not Available | - |
+| ESOFFICE1 | internet_leaves | ESOFFICE1_INTERNET_LEAF02 | 172.16.100.121/24 | cEOSLab | Not Available | - |
+| ESOFFICE1 | leaf | ESOFFICE1_LEAF01A | 172.16.100.103/24 | cEOSLab | Not Available | - |
+| ESOFFICE1 | leaf | ESOFFICE1_LEAF01B | 172.16.100.104/24 | cEOSLab | Not Available | - |
+| ESOFFICE1 | leaf | ESOFFICE1_LEAF02A | 172.16.100.105/24 | cEOSLab | Not Available | - |
+| ESOFFICE1 | leaf | ESOFFICE1_LEAF02B | 172.16.100.106/24 | cEOSLab | Not Available | - |
+| ESOFFICE1 | l3spine | ESOFFICE1_SPINE01 | 172.16.100.101/24 | cEOSLab | Not Available | - |
+| ESOFFICE1 | l3spine | ESOFFICE1_SPINE02 | 172.16.100.102/24 | cEOSLab | Not Available | - |
+| ESOFFICE1 | subleaf | ESOFFICE1_SUBLEAF01C | 172.16.100.108/24 | cEOSLab | Not Available | - |
+| ESOFFICE1 | subleaf | ESOFFICE1_SUBLEAF01D | 172.16.100.109/24 | cEOSLab | Not Available | - |
+| ESOFFICE1 | subleaf | ESOFFICE1_SUBLEAF02C | 172.16.100.110/24 | cEOSLab | Not Available | - |
+| ESOFFICE1 | subleaf | ESOFFICE1_SUBLEAF02D | 172.16.100.111/24 | cEOSLab | Not Available | - |
 | USOFFICE1 | internet_leaves | USOFFICE1_INTERNET_LEAF01 | 172.16.100.120/24 | cEOSLab | Not Available | - |
 | USOFFICE1 | internet_leaves | USOFFICE1_INTERNET_LEAF02 | 172.16.100.121/24 | cEOSLab | Not Available | - |
 | USOFFICE1 | leaf | USOFFICE1_LEAF01A | 172.16.100.103/24 | cEOSLab | Not Available | - |
@@ -29,6 +41,18 @@
 | USOFFICE1 | subleaf | USOFFICE1_SUBLEAF01D | 172.16.100.109/24 | cEOSLab | Not Available | - |
 | USOFFICE1 | subleaf | USOFFICE1_SUBLEAF02C | 172.16.100.110/24 | cEOSLab | Not Available | - |
 | USOFFICE1 | subleaf | USOFFICE1_SUBLEAF02D | 172.16.100.111/24 | cEOSLab | Not Available | - |
+| USOFFICE2 | internet_leaves | USOFFICE2_INTERNET_LEAF01 | 172.16.100.120/24 | cEOSLab | Not Available | - |
+| USOFFICE2 | internet_leaves | USOFFICE2_INTERNET_LEAF02 | 172.16.100.121/24 | cEOSLab | Not Available | - |
+| USOFFICE2 | leaf | USOFFICE2_LEAF01A | 172.16.100.103/24 | cEOSLab | Not Available | - |
+| USOFFICE2 | leaf | USOFFICE2_LEAF01B | 172.16.100.104/24 | cEOSLab | Not Available | - |
+| USOFFICE2 | leaf | USOFFICE2_LEAF02A | 172.16.100.105/24 | cEOSLab | Not Available | - |
+| USOFFICE2 | leaf | USOFFICE2_LEAF02B | 172.16.100.106/24 | cEOSLab | Not Available | - |
+| USOFFICE2 | l3spine | USOFFICE2_SPINE01 | 172.16.100.101/24 | cEOSLab | Not Available | - |
+| USOFFICE2 | l3spine | USOFFICE2_SPINE02 | 172.16.100.102/24 | cEOSLab | Not Available | - |
+| USOFFICE2 | subleaf | USOFFICE2_SUBLEAF01C | 172.16.100.108/24 | cEOSLab | Not Available | - |
+| USOFFICE2 | subleaf | USOFFICE2_SUBLEAF01D | 172.16.100.109/24 | cEOSLab | Not Available | - |
+| USOFFICE2 | subleaf | USOFFICE2_SUBLEAF02C | 172.16.100.110/24 | cEOSLab | Not Available | - |
+| USOFFICE2 | subleaf | USOFFICE2_SUBLEAF02D | 172.16.100.111/24 | cEOSLab | Not Available | - |
 
 > Provision status is based on Ansible inventory declaration and do not represent real status from CloudVision.
 
@@ -41,6 +65,32 @@
 
 | Type | Node | Node Interface | Peer Type | Peer Node | Peer Interface |
 | ---- | ---- | -------------- | --------- | --------- | -------------- |
+| internet_leaves | ESOFFICE1_INTERNET_LEAF01 | Ethernet49 | l3spine | ESOFFICE1_SPINE01 | Ethernet47 |
+| internet_leaves | ESOFFICE1_INTERNET_LEAF01 | Ethernet50 | l3spine | ESOFFICE1_SPINE02 | Ethernet47 |
+| internet_leaves | ESOFFICE1_INTERNET_LEAF02 | Ethernet49 | l3spine | ESOFFICE1_SPINE01 | Ethernet48 |
+| internet_leaves | ESOFFICE1_INTERNET_LEAF02 | Ethernet50 | l3spine | ESOFFICE1_SPINE02 | Ethernet48 |
+| leaf | ESOFFICE1_LEAF01A | Ethernet1 | subleaf | ESOFFICE1_SUBLEAF01C | Ethernet49 |
+| leaf | ESOFFICE1_LEAF01A | Ethernet2 | subleaf | ESOFFICE1_SUBLEAF01D | Ethernet49 |
+| leaf | ESOFFICE1_LEAF01A | Ethernet49 | mlag_peer | ESOFFICE1_LEAF01B | Ethernet49 |
+| leaf | ESOFFICE1_LEAF01A | Ethernet50 | mlag_peer | ESOFFICE1_LEAF01B | Ethernet50 |
+| leaf | ESOFFICE1_LEAF01A | Ethernet51 | l3spine | ESOFFICE1_SPINE01 | Ethernet1 |
+| leaf | ESOFFICE1_LEAF01A | Ethernet52 | l3spine | ESOFFICE1_SPINE02 | Ethernet1 |
+| leaf | ESOFFICE1_LEAF01B | Ethernet1 | subleaf | ESOFFICE1_SUBLEAF01C | Ethernet50 |
+| leaf | ESOFFICE1_LEAF01B | Ethernet2 | subleaf | ESOFFICE1_SUBLEAF01D | Ethernet50 |
+| leaf | ESOFFICE1_LEAF01B | Ethernet51 | l3spine | ESOFFICE1_SPINE01 | Ethernet2 |
+| leaf | ESOFFICE1_LEAF01B | Ethernet52 | l3spine | ESOFFICE1_SPINE02 | Ethernet2 |
+| leaf | ESOFFICE1_LEAF02A | Ethernet1 | subleaf | ESOFFICE1_SUBLEAF02C | Ethernet49 |
+| leaf | ESOFFICE1_LEAF02A | Ethernet2 | subleaf | ESOFFICE1_SUBLEAF02D | Ethernet49 |
+| leaf | ESOFFICE1_LEAF02A | Ethernet49 | mlag_peer | ESOFFICE1_LEAF02B | Ethernet49 |
+| leaf | ESOFFICE1_LEAF02A | Ethernet50 | mlag_peer | ESOFFICE1_LEAF02B | Ethernet50 |
+| leaf | ESOFFICE1_LEAF02A | Ethernet51 | l3spine | ESOFFICE1_SPINE01 | Ethernet3 |
+| leaf | ESOFFICE1_LEAF02A | Ethernet52 | l3spine | ESOFFICE1_SPINE02 | Ethernet3 |
+| leaf | ESOFFICE1_LEAF02B | Ethernet1 | subleaf | ESOFFICE1_SUBLEAF02C | Ethernet50 |
+| leaf | ESOFFICE1_LEAF02B | Ethernet2 | subleaf | ESOFFICE1_SUBLEAF02D | Ethernet50 |
+| leaf | ESOFFICE1_LEAF02B | Ethernet51 | l3spine | ESOFFICE1_SPINE01 | Ethernet4 |
+| leaf | ESOFFICE1_LEAF02B | Ethernet52 | l3spine | ESOFFICE1_SPINE02 | Ethernet4 |
+| l3spine | ESOFFICE1_SPINE01 | Ethernet49 | mlag_peer | ESOFFICE1_SPINE02 | Ethernet49 |
+| l3spine | ESOFFICE1_SPINE01 | Ethernet50 | mlag_peer | ESOFFICE1_SPINE02 | Ethernet50 |
 | internet_leaves | USOFFICE1_INTERNET_LEAF01 | Ethernet49 | l3spine | USOFFICE1_SPINE01 | Ethernet47 |
 | internet_leaves | USOFFICE1_INTERNET_LEAF01 | Ethernet50 | l3spine | USOFFICE1_SPINE02 | Ethernet47 |
 | internet_leaves | USOFFICE1_INTERNET_LEAF02 | Ethernet49 | l3spine | USOFFICE1_SPINE01 | Ethernet48 |
@@ -67,6 +117,32 @@
 | leaf | USOFFICE1_LEAF02B | Ethernet52 | l3spine | USOFFICE1_SPINE02 | Ethernet4 |
 | l3spine | USOFFICE1_SPINE01 | Ethernet49 | mlag_peer | USOFFICE1_SPINE02 | Ethernet49 |
 | l3spine | USOFFICE1_SPINE01 | Ethernet50 | mlag_peer | USOFFICE1_SPINE02 | Ethernet50 |
+| internet_leaves | USOFFICE2_INTERNET_LEAF01 | Ethernet49 | l3spine | USOFFICE2_SPINE01 | Ethernet47 |
+| internet_leaves | USOFFICE2_INTERNET_LEAF01 | Ethernet50 | l3spine | USOFFICE2_SPINE02 | Ethernet47 |
+| internet_leaves | USOFFICE2_INTERNET_LEAF02 | Ethernet49 | l3spine | USOFFICE2_SPINE01 | Ethernet48 |
+| internet_leaves | USOFFICE2_INTERNET_LEAF02 | Ethernet50 | l3spine | USOFFICE2_SPINE02 | Ethernet48 |
+| leaf | USOFFICE2_LEAF01A | Ethernet1 | subleaf | USOFFICE2_SUBLEAF01C | Ethernet49 |
+| leaf | USOFFICE2_LEAF01A | Ethernet2 | subleaf | USOFFICE2_SUBLEAF01D | Ethernet49 |
+| leaf | USOFFICE2_LEAF01A | Ethernet49 | mlag_peer | USOFFICE2_LEAF01B | Ethernet49 |
+| leaf | USOFFICE2_LEAF01A | Ethernet50 | mlag_peer | USOFFICE2_LEAF01B | Ethernet50 |
+| leaf | USOFFICE2_LEAF01A | Ethernet51 | l3spine | USOFFICE2_SPINE01 | Ethernet1 |
+| leaf | USOFFICE2_LEAF01A | Ethernet52 | l3spine | USOFFICE2_SPINE02 | Ethernet1 |
+| leaf | USOFFICE2_LEAF01B | Ethernet1 | subleaf | USOFFICE2_SUBLEAF01C | Ethernet50 |
+| leaf | USOFFICE2_LEAF01B | Ethernet2 | subleaf | USOFFICE2_SUBLEAF01D | Ethernet50 |
+| leaf | USOFFICE2_LEAF01B | Ethernet51 | l3spine | USOFFICE2_SPINE01 | Ethernet2 |
+| leaf | USOFFICE2_LEAF01B | Ethernet52 | l3spine | USOFFICE2_SPINE02 | Ethernet2 |
+| leaf | USOFFICE2_LEAF02A | Ethernet1 | subleaf | USOFFICE2_SUBLEAF02C | Ethernet49 |
+| leaf | USOFFICE2_LEAF02A | Ethernet2 | subleaf | USOFFICE2_SUBLEAF02D | Ethernet49 |
+| leaf | USOFFICE2_LEAF02A | Ethernet49 | mlag_peer | USOFFICE2_LEAF02B | Ethernet49 |
+| leaf | USOFFICE2_LEAF02A | Ethernet50 | mlag_peer | USOFFICE2_LEAF02B | Ethernet50 |
+| leaf | USOFFICE2_LEAF02A | Ethernet51 | l3spine | USOFFICE2_SPINE01 | Ethernet3 |
+| leaf | USOFFICE2_LEAF02A | Ethernet52 | l3spine | USOFFICE2_SPINE02 | Ethernet3 |
+| leaf | USOFFICE2_LEAF02B | Ethernet1 | subleaf | USOFFICE2_SUBLEAF02C | Ethernet50 |
+| leaf | USOFFICE2_LEAF02B | Ethernet2 | subleaf | USOFFICE2_SUBLEAF02D | Ethernet50 |
+| leaf | USOFFICE2_LEAF02B | Ethernet51 | l3spine | USOFFICE2_SPINE01 | Ethernet4 |
+| leaf | USOFFICE2_LEAF02B | Ethernet52 | l3spine | USOFFICE2_SPINE02 | Ethernet4 |
+| l3spine | USOFFICE2_SPINE01 | Ethernet49 | mlag_peer | USOFFICE2_SPINE02 | Ethernet49 |
+| l3spine | USOFFICE2_SPINE01 | Ethernet50 | mlag_peer | USOFFICE2_SPINE02 | Ethernet50 |
 
 ## Fabric IP Allocation
 
@@ -84,14 +160,18 @@
 
 | Loopback Pool | Available Addresses | Assigned addresses | Assigned Address % |
 | ------------- | ------------------- | ------------------ | ------------------ |
-| 172.16.1.0/24 | 256 | 2 | 0.79 % |
+| 172.16.1.0/24 | 256 | 6 | 2.35 % |
 
 ### Loopback0 Interfaces Node Allocation
 
 | POD | Node | Loopback0 |
 | --- | ---- | --------- |
+| ESOFFICE1 | ESOFFICE1_SPINE01 | 172.16.1.1/32 |
+| ESOFFICE1 | ESOFFICE1_SPINE02 | 172.16.1.2/32 |
 | USOFFICE1 | USOFFICE1_SPINE01 | 172.16.1.1/32 |
 | USOFFICE1 | USOFFICE1_SPINE02 | 172.16.1.2/32 |
+| USOFFICE2 | USOFFICE2_SPINE01 | 172.16.1.1/32 |
+| USOFFICE2 | USOFFICE2_SPINE02 | 172.16.1.2/32 |
 
 ### VTEP Loopback VXLAN Tunnel Source Interfaces (VTEPs Only)
 

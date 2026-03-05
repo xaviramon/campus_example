@@ -17,3 +17,35 @@ node_id_pools:
     hostname=USOFFICE1_SUBLEAF01D: 2
     hostname=USOFFICE1_SUBLEAF02C: 3
     hostname=USOFFICE1_SUBLEAF02D: 4
+  fabric_name=GLOBAL/dc_name=AMER/pod_name=USOFFICE2/type=internet_leaves:
+    hostname=USOFFICE2_INTERNET_LEAF01: 1
+    hostname=USOFFICE2_INTERNET_LEAF02: 2
+  fabric_name=GLOBAL/dc_name=AMER/pod_name=USOFFICE2/type=l3spine:
+    hostname=USOFFICE2_SPINE01: 1
+    hostname=USOFFICE2_SPINE02: 2
+  fabric_name=GLOBAL/dc_name=AMER/pod_name=USOFFICE2/type=leaf:
+    hostname=USOFFICE2_LEAF01A: 1
+    hostname=USOFFICE2_LEAF01B: 2
+    hostname=USOFFICE2_LEAF02A: 3
+    hostname=USOFFICE2_LEAF02B: 4
+  fabric_name=GLOBAL/dc_name=AMER/pod_name=USOFFICE2/type=subleaf:
+    hostname=USOFFICE2_SUBLEAF01C: 1
+    hostname=USOFFICE2_SUBLEAF01D: 2
+    hostname=USOFFICE2_SUBLEAF02C: 3
+    hostname=USOFFICE2_SUBLEAF02D: 4
+  fabric_name=GLOBAL/dc_name=EMEA/pod_name=ESOFFICE1/type=internet_leaves:
+    hostname=ESOFFICE1_INTERNET_LEAF01: 1
+    hostname=ESOFFICE1_INTERNET_LEAF02: 2
+  fabric_name=GLOBAL/dc_name=EMEA/pod_name=ESOFFICE1/type=l3spine:
+    hostname=ESOFFICE1_SPINE01: 1
+    hostname=ESOFFICE1_SPINE02: 2
+  fabric_name=GLOBAL/dc_name=EMEA/pod_name=ESOFFICE1/type=leaf:
+    hostname=ESOFFICE1_LEAF01A: 1
+    hostname=ESOFFICE1_LEAF01B: 2
+    hostname=ESOFFICE1_LEAF02A: 3
+    hostname=ESOFFICE1_LEAF02B: 4
+  fabric_name=GLOBAL/dc_name=EMEA/pod_name=ESOFFICE1/type=subleaf:
+    hostname=ESOFFICE1_SUBLEAF01C: 1
+    hostname=ESOFFICE1_SUBLEAF01D: 2
+    hostname=ESOFFICE1_SUBLEAF02C: 3
+    hostname=ESOFFICE1_SUBLEAF02D: 4

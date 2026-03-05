@@ -1,0 +1,14 @@
+---
+ESOFFICE1_SPINE:
+- name: ESOFFICE1_SPINE_Eth10
+  adapters:
+  - endpoint_ports:
+    - FW01A
+    - FW01B
+    switches:
+    - ESOFFICE1_SPINE01
+    - ESOFFICE1_SPINE02
+    switch_ports:
+    - Ethernet10
+    - Ethernet10
+    profile: PP_TEST
