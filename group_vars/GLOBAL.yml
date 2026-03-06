@@ -1,4 +1,6 @@
 ---
+# Unique values per that affect to all regions (usernames / passwords / etc...)
+
 fabric_name: GLOBAL # it has to match the inventory group as mentioned here: https://avd.arista.com/devel/ansible_collections/arista/avd/roles/eos_designs/docs/data-models.html?h=fabric_name#fabric-topology-hierarchy
 
 fabric_numbering:
